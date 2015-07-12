@@ -5,7 +5,7 @@ tags : [Python,Linux,Django,Ubuntu]
 ---
 很高兴我大半个月来做的[dlpucsdn.com](http://dlpucsdn.com)已经能正常访问了，源码在https://github.com/tcitry/dlpucsdn, 经过好几天的研究，也可以在服务器端运行了，以下所有代码中的操作都需要在命令行运行
 
-##安装mysql
+###安装mysql
 
 ```bash
 apt-get update
@@ -14,7 +14,7 @@ apt-get install mysql-server mysql-client
 
 根据提示设置MySQL root用户密码
 
-##MySQL设置中文utf8格式
+###MySQL设置中文utf8格式
 
 一般在`/etc/mysql`下
 
@@ -38,7 +38,7 @@ show variables like 'char%';
 
 ![](/image/djangoapp.png)
 
-##为MySQL建立远程连接
+###为MySQL建立远程连接
 
 由于修改数据库时不可能频繁的登服务器在命令行下修改，远程用workbench连接MySQL服务器是更方便的选择，先登入MySQL，授权一个可以远程连接这个数据库的用户名和密码
 
@@ -47,7 +47,7 @@ show variables like 'char%';
 >>FLUSH PRIVILEGES; 
 ```
 
-有的MySQL没有开放远程连接的端口，只允许本地连接，你需要查看my.conf之类的文件，我的在`/etc/mysql/my.cnf`把
+有的MySQL没有开放远程连接的端口，只允许本地连接，你需要查看my.conf之类的文件，我的在`/etc/mysql/my.conf`把
 
 ```bash
 bind-address:127.0.0.1
@@ -55,14 +55,14 @@ bind-address:127.0.0.1
 
 那行注释掉即可
 
-##安装pip
+###安装pip
 [下载地址](https://pypi.python.org/pypi/pip#downloads)
 
 ```bash
 apt-get install python-pip
 ```
 
-##安装django1.7
+###安装django1.7
 [django官网](https://www.djangoproject.com/)
 
 ```bash
@@ -78,7 +78,7 @@ python进入python2.7解释器
 
 不出错说明安装成功
 	
-##安装mysql-python
+###安装mysql-python
 
 安装mysql-python注意需要配置`mysql_config`我的在(/usr/bin目录下，其他的类似也在bin目录下，视不同系统不同版本而定)如果 `/usr/bin`目录下没有`mysql_config`，需要安装mysql开发包
 
@@ -89,7 +89,7 @@ apt-get install libmysqlclient-dev
 apt-get install python-dev
 ```
 
-下载链接[https://pypi.python.org/pypi/MySQL-python/](https://pypi.python.org/pypi/MySQL-python/)
+[下载链接](https://pypi.python.org/pypi/MySQL-python/)
 
 ```bash
 wget 'url'
@@ -130,7 +130,7 @@ pymysql.install_as_MySQLdb()
 
 这是由于Django调用MySQL的接口问题，在setting.py文件中具体为`'ENGINE': 'django.db.backends.mysql',`，仔细查看这句代码就会发现Django默认调用的是MySQLdb，虽然它只支持Python2.0。
 	
-##配置nginx
+###配置nginx
 最重要的就是nginx的配置
 
 我的配置目录在`/etc/nginx/nginx.conf`和`/etc/nginx/sites-enable/*`后者可以在前者文件中设置，先查看配置文件`/etc/nginx/sites-enable/django`
@@ -142,7 +142,7 @@ pymysql.install_as_MySQLdb()
 关于静态文件的地址配置还是需要多说一句，nginx中的`/static`目录对应的是`setting.py`文件中的`STATIC_ROOT`目录，两个写一样的，执行`python manage.py collectstatic`收集的文件是admin后台模块的静态样式文件，执行完后这些静态文件就被复制在你设置的`STATIC_ROOT`目录了。
 
 
-##部署代码
+###部署代码
 因为我的代码在github，先安装git
 
 ```bash
@@ -152,7 +152,7 @@ git clone https://github.com/tcitry/dlpucsdn.git
 
 部署以后注意修改数据库密码，邮件服务器密码，debug模式False，template_debug模式为False。
 
-##virtualenv
+###virtualenv
 
 ```bash
 pip install virtualenv
@@ -160,14 +160,14 @@ pip install virtualenv
 
 根据网上现有的教程简单看看virtualenv的使用很容易理解，在项目依赖的相关程序配置过程中需要始终开着virtualenv。
 
-##配置Gunicorn
+###配置Gunicorn
 查看这个[教程](https://www.digitalocean.com/community/tutorials/how-to-use-the-django-one-click-install-image)修改为自己的应用参数
 
 ```bash
 service gunicorn restart
 ```
 
-当部署一个应用时可以将配置文件放在`/etc/init.d/gunicorn.conf`文件里面。但同时部署多个文件的时候，可以使用**supervisor+gunicorn+virtualenv**的部署方式，这样可以在每个不同的项目目录利用virtualenv为每个应用配置不同的环境，同时可以使服务器的环境更加易于管理。
+当部署一个应用时可以将配置文件放在`/etc/init.d/gunicorn.conf`文件里面。但同时部署多个文件的时候，可以使用supervisor+gunicorn+virtualenv的部署方式，这样可以在每个不同的项目目录利用virtualenv为每个应用配置不同的环境，同时可以使服务器的环境更加易于管理。
 
 先在项目的根目录测试一下，确保gunicorn安装正确，
 
@@ -177,7 +177,7 @@ service gunicorn restart
 
 不出错就说明正确了，出错一般是提示没有那个module名，检查一下django是否安装，执行命令的文件目录是否正确。
 
-##supervisor的使用
+###supervisor的使用
 
 ```bash
 apt-get install supervisor
@@ -214,7 +214,7 @@ supervisorctl start <name>
 supervisorctl stop <name>
 ```
 
-##安装七牛云SDK
+###安装七牛云SDK
 由于网站的静态存储要用七牛云，在运行程序前要安装否则报错没有qiniu SDK的方法。
 
 ```bash
@@ -223,7 +223,7 @@ pip install qiniu
 
 七牛云安装前注意安装的版本，我被坑过一次，写程序时是6.0版本，部署时都7.0了，接口全都不一样。
 	
-##还有
+###还有
 还有不推荐cloudflare等国外CDN加速，亲身体验。
 
 还有推荐下这篇来自digitalocean的[部署实例](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-django-with-postgres-nginx-and-gunicorn)

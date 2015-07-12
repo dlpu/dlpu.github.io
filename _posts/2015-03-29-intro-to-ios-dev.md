@@ -2,7 +2,7 @@
 layout: post
 title: iOS开发介绍
 tags : [iOS,Swift]
-published: false
+published: true
 ---
 这篇文章主要是针对iOS零基础入门的同学，介绍一下iOS开发相关的知识体系。给A406研究室的同学学习iOS开发提供一个引导。
 
@@ -76,8 +76,8 @@ Facebook开源的origami，社区反映很好，可以尝试一下https://facebo
 
 ###推荐链接
 
-- http://objc.io ，中文版http://objccn.io
-- http://onevcat.com 猫叔博客
+- [http://objc.io](http://objc.io) ，[中文版](http://objccn.io)
+- [猫叔博客](http://onevcat.com) 
 - [swift官方文档](https://developer.apple.com/swift/)，[中文版](https://www.gitbook.com/book/numbbbbb/-the-swift-programming-language-/details)
 - [官方objective-c文档](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html#//apple_ref/doc/uid/TP40011210)
 - [iOS开发--知乎主题](http://www.zhihu.com/topic/19555404)
