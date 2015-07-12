@@ -36,7 +36,7 @@ service mysql restart
 show variables like 'char%';
 ```
 
-![](https://dn-eastio.qbox.me/mysql-utf8.png?imageView/2/h/400)
+![](/image/djangoapp.png)
 
 ##为MySQL建立远程连接
 
@@ -135,7 +135,7 @@ pymysql.install_as_MySQLdb()
 
 我的配置目录在`/etc/nginx/nginx.conf`和`/etc/nginx/sites-enable/*`后者可以在前者文件中设置，先查看配置文件`/etc/nginx/sites-enable/django`
 
-![](https://dn-eastio.qbox.me/nginx-server-dango.png?imageView/2/h/500)
+![](/image/nginxsetting.png)
 
 根据自己的应用修改配置文件中static路径，server_name，root等。修改完毕注意要`service nginx reload`
 

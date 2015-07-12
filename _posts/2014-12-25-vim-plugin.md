@@ -5,7 +5,7 @@ tags : [Vim,Linux]
 ---
 最近觉得在小部分修改代码的时候应该抛弃大型的IDE而转向Vim，下面的图就是我的环境了。
 
-![](https://dn-eastio.qbox.me/QQ20141213-3.png?imageView/2/w/800)
+![](/image/QQ20141213-3.png)
 
 关于Mac上vim的版本更新，我建议使用Macvim，然后alias命令
 
@@ -44,7 +44,7 @@ alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 
 [Matrix](https://github.com/vim-scripts/matrix.vim--Yang)绝对是vim插件里最装X的一个，没有之一。
 
-![](https://dn-eastio.qbox.me/matrix1.gif)
+![](/image/matrix1.gif)
 
 [gist-vim](https://github.com/mattn/gist-vim)可以向自己的github-gist上传代码
 
