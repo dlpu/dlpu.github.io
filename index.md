@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 
+title: 殷东亮的博客
 <!-- tagline: Supporting tagline -->
 ---
 {% include JB/setup %}
