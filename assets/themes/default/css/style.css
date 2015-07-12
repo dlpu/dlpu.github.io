@@ -817,4 +817,11 @@ hr {
   display: none;
 }
 
+.sns{
+  width: 30px;
+  height: 30px;
+  position: relative;
+  display: inline-block;
+  margin: 0 8px;
+}
 
