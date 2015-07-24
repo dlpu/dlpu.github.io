@@ -18,6 +18,7 @@ author :
   github : tcitry
   twitter : tcitry
   #feedburner : feedname
+
 gems:
   - jekyll-sitemap
 
