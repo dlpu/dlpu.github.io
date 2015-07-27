@@ -5,7 +5,20 @@ header: Posts By Tag
 group: navigation
 ---
 {% include JB/setup %}
-
+<div class="ui secondary pointing menu">
+	<a class="item" href="/">
+		Home
+	</a>
+	<a class="item" href="/archive.html">
+		Archive
+	</a>
+	<a class="active item" href="/tags.html">
+		Tags
+	</a>
+	<a class="ui item" href="/about.html">
+		About
+	</a>
+</div>
 <ul class="tag_box inline">
   {% assign tags_list = site.tags %}  
   {% include JB/tags_list %}
