@@ -182,11 +182,8 @@ sub {
  */
 
 img {
-  border: 0;
-  -ms-interpolation-mode: bicubic;
-  vertical-align: middle;
-  -webkit-box-shadow: 0 0 10px #555;
-  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid #eee;
 }
 
 /**
