@@ -10,6 +10,7 @@ html {
   font-family: "Lucida Grande","Lucida Sans Unicode","STHeiti","Helvetica","Arial","Verdana","sans-serif"; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  background-color: #fffefb;
 }
 
 /**
@@ -184,6 +185,11 @@ sub {
 img {
   padding: 3px;
   border: 1px solid #eee;
+}
+
+.sns-img{
+  padding: 0;
+  border: none;
 }
 
 /**

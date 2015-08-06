@@ -22,9 +22,9 @@ title: 殷东亮的博客
 			<ul class="posts ui list">
 				{% for post in site.posts %}
 				<li class="">
-					<h3 class=""><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h3>
+					<h3 class=""><a href="{{ BASE_PATH }}{{ post.url }}" style="color: #159957;">{{ post.title }}</a></h3>
 					<div>
-						<span>{{ post.date | date_to_string }}</span>
+						<span class="site-footer-credits">{{ post.date | date_to_string }}</span>
 					</div>
 					<p></p>
 				</li>
@@ -39,9 +39,12 @@ title: 殷东亮的博客
 			<div style="text-align: center;">
 				<a href="https://github.com/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -263px -5px no-repeat;" class="sns"></a>
 				<a href="https://twitter.com/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -4px -5px no-repeat;" class="sns"></a>
-				<a href="http://www.zhihu.com/people/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -314px -5px no-repeat;" class="sns"></a>
 				<a href="http://segmentfault.com/u/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -520px -5px no-repeat;" class="sns"></a>
+				<a href="http://www.zhihu.com/people/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -314px -5px no-repeat;" class="sns"></a>
 				<a href="http://weibo.com/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -469px -5px no-repeat;" class="sns"></a>
+				<a href="http://www.douban.com/people/yindongliang/" target="_blank" class="sns">
+					<img src="/image/douban.png" class="sns-img">
+				</a>
 			</div>
 		</div>
 	</div>
