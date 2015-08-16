@@ -15,9 +15,6 @@ title: 殷东亮的博客
 	<a class="item" href="/tags.html">
 		Tags
 	</a>
-	<a class="item" href="/wwdc.html">
-		WWDC
-	</a>
 </div>
 <div class="ui">
 	<div class="ui stackable grid">
