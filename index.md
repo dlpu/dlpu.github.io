@@ -15,7 +15,7 @@ title: 殷东亮的博客
 	<a class="item" href="/tags.html">
 		Tags
 	</a>
-	<a class="item" href="/tags.html">
+	<a class="item" href="/wwdc.html">
 		WWDC
 	</a>
 </div>
