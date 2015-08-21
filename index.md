@@ -19,6 +19,7 @@ title: 殷东亮的博客
 		About
 	</a>
 </div>
+<br>
 <div class="ui">
 	<ul class="posts ui list">
 		{% for post in site.posts %}
