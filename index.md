@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 殷东亮的博客
+title: 殷东亮
 <!-- tagline: Supporting tagline -->
 ---
 {% include JB/setup %}
@@ -19,7 +19,6 @@ title: 殷东亮的博客
 		About
 	</a>
 </div>
-<p></p>
 <div class="ui">
 	<ul class="posts ui list">
 		{% for post in site.posts %}
