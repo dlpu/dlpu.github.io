@@ -4,7 +4,7 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Lucida Grande","Lucida Sans Unicode","STHeiti","Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 16px;
   line-height: 1.6;
   /*color: #606c71; */
@@ -118,7 +118,7 @@ a {
   margin-bottom: 1em; }
 .main-content code {
   padding: 4px 4px 1px 4px;
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-family: "Lucida Grande","Lucida Sans Unicode","STHeiti",Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 0.9rem;
   color: #383e41;
   background-color: #dce6f0;
@@ -127,7 +127,7 @@ a {
   padding: 0.8rem;
   margin-top: 0;
   margin-bottom: 1rem;
-  font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font: 1rem "Lucida Grande","Lucida Sans Unicode","STHeiti",Consolas, "Liberation Mono", Menlo, Courier, monospace;
   color: #567482;
   word-wrap: normal;
   background-color: #f3f6fa;
