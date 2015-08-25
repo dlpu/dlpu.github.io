@@ -19,16 +19,21 @@ title: 殷东亮的博客
 		About
 	</a>
 </div>
-<div class="ui">
-	<ul class="posts ui list">
-		{% for post in site.posts %}
-		<li class="">
-			<h3 class=""><a href="{{ BASE_PATH }}{{ post.url }}" style="color: #159957;">{{ post.title }}</a></h3>
-			<div>
-				<span class="site-footer-credits">{{ post.date | date_to_string }}</span>
-			</div>
-			<p></p>
-		</li>
-		{% endfor %}
-	</ul>
+<div class="ui two column stackable grid container">
+	<div class="column">
+		<div class="ui">
+			<h2></h2>
+			<ul class="posts ui list">
+				{% for post in site.posts %}
+				<li class="">
+					<h3 class=""><a href="{{ BASE_PATH }}{{ post.url }}" style="color: #159957;">{{ post.title }}</a></h3>
+					<div>
+						<span class="site-footer-credits">{{ post.date | date_to_string }}</span>
+					</div>
+					<p></p>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
 </div>
