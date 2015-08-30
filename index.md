@@ -15,9 +15,7 @@ title: 殷东亮的博客
 	<a class="item" href="/tags.html">
 		Tags
 	</a>
-	<a class="item" href="/about.html">
-		About
-	</a>
+
 </div>
 <div class="ui two column stackable grid container">
 	<div class="column">
@@ -35,5 +33,23 @@ title: 殷东亮的博客
 				{% endfor %}
 			</ul>
 		</div>
+	</div>
+	<div class="column">
+		<div class="" >
+			<img src="/image/wechat.png" height="200">
+			<br>
+		</div>
+		<div style="text-align: center;">
+			<a href="https://github.com/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -263px -5px no-repeat;" class="sns"></a>
+			<a href="https://twitter.com/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -4px -5px no-repeat;" class="sns"></a>
+			<a href="http://segmentfault.com/u/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -520px -5px no-repeat;" class="sns"></a>
+			<a href="http://www.zhihu.com/people/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -314px -5px no-repeat;" class="sns"></a>
+			<a href="http://weibo.com/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -469px -5px no-repeat;" class="sns"></a>
+			<a href="http://www.douban.com/people/yindongliang/" target="_blank" class="sns">
+				<img src="/image/douban.png" class="sns-img">
+			</a>
+		</div>
+		<div>关于作者</div>
+		
 	</div>
 </div>
