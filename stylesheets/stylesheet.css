@@ -117,7 +117,7 @@ a {
 .main-content p {
   margin-bottom: 1em; }
 .main-content code {
-  padding: 4px 4px 1px 4px;
+  padding: 1px 4px 2px 4px;
   font-family: "Lucida Grande","Lucida Sans Unicode","STHeiti",Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 0.9rem;
   color: #383e41;
