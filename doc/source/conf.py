@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # tcitry documentation build configuration file, created by
-# sphinx-quickstart on Wed Sep  9 22:09:05 2015.
+# sphinx-quickstart on Wed Sep  9 22:21:51 2015.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -47,8 +47,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'tcitry'
-copyright = u'2015, tcitry'
-author = u'tcitry'
+copyright = u'2015, Dongliang Yin'
+author = u'Dongliang Yin'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -108,7 +108,7 @@ todo_include_todos = False
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'alabaster'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -223,7 +223,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   (master_doc, 'tcitry.tex', u'tcitry Documentation',
-   u'tcitry', 'manual'),
+   u'Dongliang Yin', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
