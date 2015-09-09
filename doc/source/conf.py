@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# tcitry's blog documentation build configuration file, created by
-# sphinx-quickstart on Wed Sep  9 21:39:44 2015.
+# tcitry documentation build configuration file, created by
+# sphinx-quickstart on Wed Sep  9 22:09:05 2015.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -29,10 +29,7 @@ import shlex
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.mathjax',
-]
+extensions = []
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -49,7 +46,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'tcitry\'s blog'
+project = u'tcitry'
 copyright = u'2015, tcitry'
 author = u'tcitry'
 
@@ -67,7 +64,7 @@ release = '1.0'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = 'en'
+language = None
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
@@ -203,7 +200,7 @@ html_static_path = ['_static']
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'tcitrysblogdoc'
+htmlhelp_basename = 'tcitrydoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -225,7 +222,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'tcitrysblog.tex', u'tcitry\'s blog Documentation',
+  (master_doc, 'tcitry.tex', u'tcitry Documentation',
    u'tcitry', 'manual'),
 ]
 
@@ -255,7 +252,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'tcitrysblog', u'tcitry\'s blog Documentation',
+    (master_doc, 'tcitry', u'tcitry Documentation',
      [author], 1)
 ]
 
@@ -269,8 +266,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'tcitrysblog', u'tcitry\'s blog Documentation',
-   author, 'tcitrysblog', 'One line description of project.',
+  (master_doc, 'tcitry', u'tcitry Documentation',
+   author, 'tcitry', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -285,7 +282,3 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
-
-
-# Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
