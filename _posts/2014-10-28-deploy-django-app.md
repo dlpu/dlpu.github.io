@@ -14,7 +14,7 @@ apt-get install mysql-server mysql-client
 
 根据提示设置MySQL root用户密码
 
-###MySQL设置中文utf8格式
+###MySQL设置中文utf8格式(Linux、Mac系统通用)
 
 一般在`/etc/mysql`下
 
