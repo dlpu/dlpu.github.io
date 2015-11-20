@@ -47,8 +47,18 @@ title: 殷东亮的博客
 				<img src="/image/douban.png" class="sns-img"></a>
 		</div>
 		<div>关于作者</div>
-
-
 		
+
+		<ul  class="ds-top-threads" data-range="weekly" data-num-items="5"></ul>
+		<script type="text/javascript">
+		var duoshuoQuery = {short_name:"tcitry"};
+		(function() {
+		    var ds = document.createElement('script');
+		    ds.type = 'text/javascript';ds.async = true;
+		    ds.src = 'http://static.duoshuo.com/embed.js';
+		    ds.charset = 'UTF-8';
+		    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+		</script>
 	</div>
 </div>
