@@ -47,7 +47,7 @@ title: 殷东亮的博客
 				<img src="/image/douban.png" class="sns-img"></a>
 		</div>
 
-		<div style="text-align: center;">
+		<div style="margin-left: 20px;">
 			<div>热门文章</div>
 			<ul  class="ds-top-threads" data-range="monthly" data-num-items="5"></ul>
 			<script type="text/javascript">
