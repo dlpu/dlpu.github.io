@@ -46,10 +46,9 @@ title: 殷东亮的博客
 			<a href="http://www.douban.com/people/yindongliang/" target="_blank" class="sns">
 				<img src="/image/douban.png" class="sns-img"></a>
 		</div>
-		<div>关于作者</div>
-		
 
-		<ul  class="ds-top-threads" data-range="weekly" data-num-items="5"></ul>
+		<div>热门文章</div>
+		<ul  class="ds-top-threads" data-range="monthly" data-num-items="5"></ul>
 		<script type="text/javascript">
 		var duoshuoQuery = {short_name:"tcitry"};
 		(function() {
