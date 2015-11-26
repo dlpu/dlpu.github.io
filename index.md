@@ -48,18 +48,7 @@ title: 殷东亮的博客
 		</div>
 
 		<div style="margin-left: 20px;">
-			<div>热门文章</div>
-			<ul  class="ds-top-threads" data-range="monthly" data-num-items="5"></ul>
-			<script type="text/javascript">
-			var duoshuoQuery = {short_name:"tcitry"};
-			(function() {
-			    var ds = document.createElement('script');
-			    ds.type = 'text/javascript';ds.async = true;
-			    ds.src = 'http://static.duoshuo.com/embed.js';
-			    ds.charset = 'UTF-8';
-			    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-			})();
-			</script>
+			<div>关于作者</div>
 		</div>
 	</div>
 </div>
