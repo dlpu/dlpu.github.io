@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 在公司开始实习一个月的总结
+title: 在公司开始实习一个月的感悟
 published: true
 tags : [Python]
 ---
