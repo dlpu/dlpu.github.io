@@ -44,13 +44,12 @@ title: 殷东亮的博客
 			<a href="http://www.zhihu.com/people/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -314px -5px no-repeat;" class="sns"></a>
 			<a href="http://www.douban.com/people/yindongliang/" target="_blank" class="sns">
 				<img src="/image/douban.png" class="sns-img"></a>
+			<a href="http://weibo.com/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -469px -5px no-repeat;" class="sns"></a>
 			<a href="https://twitter.com/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -4px -5px no-repeat;" class="sns"></a>
 		</div>
 
 		<div style="margin-left: 20px;">
-			<div>
-				<iframe width="80%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=2510226067&verifier=ef835547&dpc=1"></iframe>
-			</div>
+			
 		</div>
 	</div>
 </div>
