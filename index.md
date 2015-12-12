@@ -49,7 +49,11 @@ title: 殷东亮的博客
 		</div>
 
 		<div style="margin-left: 20px;">
-			
+			我比较懒，个人搭建的博客在图片上传或是图片URL地址的处理上有点麻烦，同时我也想有一些交流，所以我尝试在简书或者SegmentFault上面发一些内容（那里图片可以直接Ctrl-V），等思路都捋顺了，最后发到博客上。
+			<ul>
+				<li><a href="http://www.jianshu.com/users/4ff4d2e2b16c">简书</a>主要是扯淡方面</li>
+				<li><a href="http://segmentfault.com/blog/tcitry">SegmentFault</a>主要是技术方面</li>
+			</ul>
 		</div>
 	</div>
 </div>
