@@ -4,7 +4,7 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Lantinghei SC', 'Open Sans', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', STHeiti, 'WenQuanYi Micro Hei', SimSun, Helvetica, sans-serif;
+  font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-size: 16px;
   line-height: 1.6;
   /*color: #606c71; */
@@ -55,10 +55,10 @@ a {
       margin-left: 0; } }
 
 .page-header {
-  color: #fff;
+  color: #000;
   text-align: center;
-  background-color: #DC8976;
-  background-image: linear-gradient(120deg, #155799, #DC8976); }
+  background-color: #000;
+  background-image: linear-gradient(120deg, #155799, #000); }
 
 @media screen and (min-width: 64em) {
   .page-header {
@@ -113,7 +113,7 @@ a {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: normal;
-  color: #DC8976; }
+  color: #000; }
 .main-content p {
   margin-bottom: 1em; }
 .main-content code {

@@ -23,7 +23,7 @@ title: 殷东亮的博客
 			<ul class="posts ui list">
 				{% for post in site.posts %}
 				<li class="">
-					<h3 class=""><a href="{{ BASE_PATH }}{{ post.url }}" style="color: #159957;">{{ post.title }}</a></h3>
+					<h3 class=""><a href="{{ BASE_PATH }}{{ post.url }}" style="color: #000;">{{ post.title }}</a></h3>
 					<div>
 						<span class="site-footer-credits">{{ post.date | date_to_string }}</span>
 					</div>
