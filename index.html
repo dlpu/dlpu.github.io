@@ -25,7 +25,7 @@ title: 殷东亮的博客
 		<ul class="posts ui list">
 			{% for post in paginator.posts %}
 			<li class="">
-				<h3 class=""><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h3>
+				<h2 class=""><a href="{{ BASE_PATH }}{{ post.url }}" style="color: #000;">{{ post.title }}</a></h2>
 				<div>
 					<span class="site-footer-credits">{{ post.date | date_to_string }}</span>
 				</div>
