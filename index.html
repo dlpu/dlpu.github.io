@@ -16,31 +16,59 @@ title: 殷东亮的博客
 		Tags
 	</a>
 	<a class="item" href="/about.html">
-        About
-    </a>
+		About
+	</a>
 </div>
 <div class="ui">
-		<div class="ui">
-			<h2></h2>
-			<ul class="posts ui list">
-				{% for post in site.posts %}
-				<li class="">
-					<h3 class=""><a href="{{ BASE_PATH }}{{ post.url }}" style="color: #468DF0;">{{ post.title }}</a></h3>
-					<div>
-						<span class="site-footer-credits">{{ post.date | date_to_string }}</span>
-					</div>
-					<div></div>
-					<div style="color: #666;">
+	<div class="ui">
+		<h2></h2>
+		<ul class="posts ui list">
+			{% for post in site.posts %}
+			<li class="">
+				<h3 class=""><a href="{{ BASE_PATH }}{{ post.url }}" style="color: #468DF0;">{{ post.title }}</a></h3>
+				<div>
+					<span class="site-footer-credits">{{ post.date | date_to_string }}</span>
+				</div>
+				<div></div>
+				<div style="color: #666;">
 					<p>
 						{{ post.content | split:'<!--break-->' | first }}
 						{% if post.content contains '<!--break-->' %}
 						<a href="{{ post.url }}" style="color: #DB5A44;">Read More</a><hr>
 						{% endif %}
 					</p>
-					</div>
-				</li>
-				{% endfor %}
-			</ul>
-		</div>
+				</div>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
 
+
+<div class="ui">
+	<div class="wp-pagenavi">
+		<span class='pages'>第 {{ paginator.page }} 页，共 {{ paginator.total_pages }} 页</span>
+
+		{% if paginator.previous_page %}
+		<a class="previouspostslink" rel="prev" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" > « </a>
+		{% endif %}
+
+		{% if paginator.page == 1 %}
+		<span class="current">1</span>
+		{% else %}
+		<a class="page larger" href="/">1</a>
+		{% endif %}
+
+		{% for count in (2..paginator.total_pages) %}
+		{% if count == paginator.page %}
+		<span class="current">{{ count }}</span>
+		{% else %}
+		<a class="page larger" href="{{ site.baseurl }}/blog/page{{ count }}">{{ count }}</a>
+		{% endif %}
+		{% endfor %}
+
+		{% if paginator.next_page %}
+		<a class="nextpostslink" rel="next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" > » </a>
+		{% endif %}
+	</div>
 </div>
