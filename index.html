@@ -25,7 +25,7 @@ title: 殷东亮的博客
 		<ul class="posts ui list">
 			{% for post in paginator.posts %}
 			<li class="">
-				<h3 class=""><a href="{{ BASE_PATH }}{{ post.url }}" style="color: #468DF0;">{{ post.title }}</a></h3>
+				<h3 class=""><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h3>
 				<div>
 					<span class="site-footer-credits">{{ post.date | date_to_string }}</span>
 				</div>
@@ -33,8 +33,11 @@ title: 殷东亮的博客
 				<div style="color: #666;">
 					<p>
 						{{ post.content | split:'<!--break-->' | first }}
+					</p>
+					<p>...</p>
+					<p>
 						{% if post.content contains '<!--break-->' %}
-						<a href="{{ post.url }}" style="color: #DB5A44;">Read More</a><hr>
+						<a href="{{ post.url }}" style="color: #468DF0;">Read More</a><hr>
 						{% endif %}
 					</p>
 				</div>
@@ -69,5 +72,6 @@ title: 殷东亮的博客
 		{% if paginator.next_page %}
 		<a class="" rel="next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" > Next » </a>
 		{% endif %}
+		<p></p>
 	</div>
 </div>
