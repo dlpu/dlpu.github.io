@@ -7,6 +7,8 @@ tags : [iOS,Swift]
 
 一些别人总结好的东西，汇总一下，平常每次现找都好麻烦。。
 
+<!--break-->
+
 - [iOS 开发最佳实践：OC 与 Swift 最佳实践](https://github.com/KevinHM/ios-good-practices-the-lastest-version)
 - [Swift 语言指南](https://github.com/ipader/SwiftGuide)
 - [iOS 禅](https://github.com/100mango/zen)

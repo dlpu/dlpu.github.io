@@ -7,6 +7,8 @@ tags : [Vim,Linux]
 
 ![](/image/QQ20141213-3.png)
 
+<!--break-->
+
 关于Mac上vim的版本更新，我建议使用Macvim，然后alias命令
 
 ```vim

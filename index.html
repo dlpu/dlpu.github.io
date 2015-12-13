@@ -1,0 +1,46 @@
+---
+layout: page
+title: 殷东亮的博客
+<!-- tagline: Supporting tagline -->
+---
+{% include JB/setup %}
+
+<div class="ui secondary pointing menu">
+	<a class="active item" href="/">
+		Home
+	</a>
+	<a class="item" href="/archive.html">
+		Archive
+	</a>
+	<a class="item" href="/tags.html">
+		Tags
+	</a>
+	<a class="item" href="/about.html">
+        About
+    </a>
+</div>
+<div class="ui">
+		<div class="ui">
+			<h2></h2>
+			<ul class="posts ui list">
+				{% for post in site.posts %}
+				<li class="">
+					<h3 class=""><a href="{{ BASE_PATH }}{{ post.url }}" style="color: #468DF0;">{{ post.title }}</a></h3>
+					<div>
+						<span class="site-footer-credits">{{ post.date | date_to_string }}</span>
+					</div>
+					<div></div>
+					<div style="color: #666;">
+					<p>
+						{{ post.content | split:'<!--break-->' | first }}
+						{% if post.content contains '<!--break-->' %}
+						<a href="{{ post.url }}" style="color: #DB5A44;">Read More</a><hr>
+						{% endif %}
+					</p>
+					</div>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+
+</div>

@@ -5,7 +5,7 @@ permalink: /:year/:month/:day/:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 highlighter: pygments
 # markdown: redcarpet
-markdown: rdiscount
+# markdown: rdiscount
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
@@ -19,8 +19,8 @@ author :
   twitter : tcitry
   #feedburner : feedname
 
-gems:
-  - jekyll-sitemap
+# gems:
+#   - jekyll-sitemap
 
 
 # The production_url is only used when full-domain names are needed
