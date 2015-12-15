@@ -7,14 +7,13 @@ tags : [Vim,Linux]
 
 ![](/image/QQ20141213-3.png)
 
-<!--break-->
-
 关于Mac上vim的版本更新，我建议使用Macvim，然后alias命令
 
 ```vim
 alias vi=vim
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim 
 ```
+<!--break-->
 
 [在这里](https://github.com/tcitry/my-tools/blob/master/vimrc)是我的.vimrc的配置。
 

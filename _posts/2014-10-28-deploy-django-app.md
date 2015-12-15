@@ -5,8 +5,6 @@ tags : [Python,Linux,Django,Ubuntu]
 ---
 很高兴我大半个月来做的[dlpucsdn.com](http://dlpucsdn.com)已经能正常访问了，源码在[Github](https://github.com/tcitry/dlpucsdn), 经过好几天的研究，也可以在服务器端运行了，以下所有代码中的操作都需要在命令行运行
 
-<!--break-->
-
 ###安装mysql
 
 ```bash
@@ -15,6 +13,8 @@ apt-get install mysql-server mysql-client
 ```
 
 根据提示设置MySQL root用户密码
+
+<!--break-->
 
 ###MySQL设置中文utf8格式(Linux、Mac系统通用)
 
