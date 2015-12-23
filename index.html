@@ -1,77 +1,36 @@
----
-layout: page
-title: 殷东亮的博客
-<!-- tagline: Supporting tagline -->
----
-{% include JB/setup %}
 
-<div class="ui secondary pointing menu">
-	<a class="active item" href="/">
-		Home
-	</a>
-	<a class="item" href="/archive.html">
-		Archive
-	</a>
-	<a class="item" href="/tags.html">
-		Tags
-	</a>
-	<a class="item" href="/about.html">
-		About
-	</a>
-</div>
-<div class="ui">
-	<div class="ui">
-		<h2></h2>
-		<ul class="posts ui list">
-			{% for post in paginator.posts %}
-			<li class="">
-				<h2 class=""><a href="{{ BASE_PATH }}{{ post.url }}" style="color: #000;">{{ post.title }}</a></h2>
-				<div>
-					<span class="site-footer-credits">{{ post.date | date_to_string }}</span>
-				</div>
-				<div></div>
-				<div style="color: #333;">
-					<p>
-						{{ post.content | split:'<!--break-->' | first }}
-					</p>
-					<p>(···)</p>
-					<p>
-						{% if post.content contains '<!--break-->' %}
-						<a href="{{ post.url }}" style="color: #468DF0;">Read More →</a><hr>
-						{% endif %}
-					</p>
-				</div>
-			</li>
-			{% endfor %}
-		</ul>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>殷东亮的个人主页</title>
+	<meta name="author" content="殷东亮">
+	<link rel="stylesheet" type="text/css" href="/dist/semantic.css">
+	<script type="text/javascript" src="/dist/semantic.min.js"></script>
+</head>
+<body>
+	<div class="" >
+		<img src="/image/wechat.png" height="200">
+		<br>
 	</div>
-</div>
-
-
-<div class="ui">
-	<div style="text-align: center;" class="site-footer-credits">
-		<span class="">第 {{ paginator.page }} 页，共 {{ paginator.total_pages }} 页</span>
-
-		{% if paginator.previous_page %}
-		<a class="" rel="prev" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" > « Previous </a>
-		{% endif %}
-
-		{% if paginator.page == 1 %}
-		<span class="">1</span>
-		{% else %}
-		<a class="" href="/">1</a>
-		{% endif %}
-		{% for count in (2..paginator.total_pages) %}
-		{% if count == paginator.page %}
-		<span>{{ count }}</span>
-		{% else %}
-		<a class="" href="{{ site.baseurl }}/blog/page{{ count }}">{{ count }}</a>
-		{% endif %}
-		{% endfor %}
-
-		{% if paginator.next_page %}
-		<a class="" rel="next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" > Next » </a>
-		{% endif %}
-		<p></p>
+	<div style="text-align: center;">
+		<a href="https://github.com/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -263px -5px no-repeat;" class="sns"></a>
+		<a href="http://segmentfault.com/u/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -520px -5px no-repeat;" class="sns"></a>
+		<a href="http://www.zhihu.com/people/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -314px -5px no-repeat;" class="sns"></a>
+		<a href="http://www.douban.com/people/yindongliang/" target="_blank" class="sns">
+			<img src="/image/douban.png" class="sns-img"></a>
+			<a href="http://weibo.com/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -469px -5px no-repeat;" class="sns"></a>
+			<a href="https://twitter.com/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -4px -5px no-repeat;" class="sns"></a>
+		</div>
+		<br>
+		<div>
+			<p>
+				我把博客转移到了<a href="http://www.jianshu.com/users/4ff4d2e2b16c">简书</a>，对于写作来说或许是最好的平台了。
+			</p>
+			<p>
+				这是<a href="/resume.html", target="">我的简历</a>，欢迎<a href="mailto:tcitry@gmail.com" target="_blank">邮件</a>交流。
+			</p>
+		</div>
 	</div>
-</div>
+</body>
+</html>
