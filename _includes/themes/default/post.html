@@ -1,0 +1,57 @@
+<article class="unit-article layout-post">
+	<div class="unit-inner unit-article-inner">
+		<div class="content">
+			<div class="ui secondary pointing menu">
+				<a class="item" href="/">
+					Home
+				</a>
+				<a class="item" href="/archive.html">
+					Archive
+				</a>
+				<a class="item" href="/tags.html">
+					Tags
+				</a>
+				<a class="item" href="/about.html">
+					About
+				</a>
+
+			</div>
+			<header>
+				<div class="unit-head">
+					<div class="unit-inner unit-head-inner">
+						<h1 class="h2 entry-title">{{ page.title }}</h1>
+					</div><!-- unit-inner -->
+				</div><!-- unit-head -->
+			</header>
+
+			<div class="bd">
+				<div class="entry-content">
+					{{ content }}
+
+					<div class="meta" style="border-top: 1px dashed #468DF0;padding-top: 10px;">
+						<div class="list-tag list-linear">
+							<div class="list-head"></div>
+							{% assign tags_list = page.tags %}
+							{% include JB/tags_list %}
+						</div>
+					</div><!-- meta -->
+				</div><!-- entry-content -->
+				<div id="related">
+					<div style="font-size: 24px;color: #468DF0;">Recent Posts</div>
+					<div class="posts ui animated list">
+						{% for post in site.related_posts limit:5 %}
+						<div class="item"><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></div>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="misc-content">
+					<div class="social">
+					</div>
+					<div class="comment">
+						{% include JB/comments %}
+					</div>
+				</div><!-- misc-content -->
+			</div><!-- bd -->
+		</div><!-- content -->
+	</div><!-- unit-inner -->
+</article>
