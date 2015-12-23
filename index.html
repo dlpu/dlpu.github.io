@@ -34,7 +34,7 @@ title: 殷东亮的博客
 					<p>
 						{{ post.content | split:'<!--break-->' | first }}
 					</p>
-					<p>···</p>
+					<p>(···)</p>
 					<p>
 						{% if post.content contains '<!--break-->' %}
 						<a href="{{ post.url }}" style="color: #468DF0;">Read More →</a><hr>
