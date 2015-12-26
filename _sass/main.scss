@@ -203,13 +203,14 @@ time {
 }
 code,
 pre {
-  font-family: monospace, monospace;
+  font-family: 'Source Code Pro',Courier,monospace;
 }
 code {
   color: #f14e32;
   background: #eee;
-  padding: 2px 6px;
-  font-size: 13px;
+  padding: 2px 4px;
+  margin: 0px 4px;
+  font-size: 14px;
   border-radius: 3px;
 }
 pre {
