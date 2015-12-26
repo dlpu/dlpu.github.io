@@ -1,28 +1,25 @@
 ---
-layout: page
-title: 殷东亮的个人主页
+layout: default
 ---
 
-<div class="" >
-    <img src="/image/wechat.png" height="200">
-    <br>
-</div>
-<div>
-    <a href="https://github.com/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -263px -5px no-repeat;" class="sns"></a>
-    <a href="http://segmentfault.com/u/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -520px -5px no-repeat;" class="sns"></a>
-    <a href="http://www.zhihu.com/people/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -314px -5px no-repeat;" class="sns"></a>
-    <a href="http://www.douban.com/people/yindongliang/" target="_blank" class="sns">
-        <img src="/image/douban.png" class="sns-img"></a>
-        <a href="http://weibo.com/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -469px -5px no-repeat;" class="sns"></a>
-        <a href="https://twitter.com/tcitry" target="_blank" style="background: url('/image/sns_bg.png') -4px -5px no-repeat;" class="sns"></a>
-    </div>
-    <br>
-    <div>
-        <p>
-            我把博客放到了<a href="http://www.jianshu.com/users/4ff4d2e2b16c">简书</a>，非常喜欢这个写作平台。
-        </p>
-        <p>
-            这是<a href="/resume.html", target="">我的简历</a>，欢迎<a href="mailto:tcitry@gmail.com" target="_blank">邮件</a>交流。
-        </p>
-    </div>
-</div>
+<section>
+	<ul>
+
+		{% for post in site.posts %}
+
+		<li>
+			<div class="post-date">
+				<span>{{ post.date | date: "%b %d, %Y" }}</span>
+			</div>
+			<div class="title">
+				<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+			</div>
+		</li>
+
+		{% endfor %}
+
+	</ul>
+	
+</section>
+
+

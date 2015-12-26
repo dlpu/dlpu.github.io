@@ -1,1 +1,1 @@
-参访[博客](http://yindongliang.com)
+[参访博客](http://yindongliang.com)
