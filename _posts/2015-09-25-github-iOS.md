@@ -13,4 +13,5 @@ title: Github上关于iOS开发集合
 - [iOS的函数响应型编程](https://github.com/KevinHM/FunctionalReactiveProgrammingOniOS)
 - [TimLiu-iOS(自己总结的iOS、mac开源项目及库)](https://github.com/Tim9Liu9/TimLiu-iOS)
 - [Swift 语言指南](https://github.com/ipader/SwiftGuide)
+- [ibireme的iOS备忘](http://github.ibireme.com/github/list/ios/)
 
