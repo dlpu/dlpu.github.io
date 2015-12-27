@@ -17,7 +17,7 @@ timezone:           Asia/Shanghai # https://en.wikipedia.org/wiki/List_of_tz_dat
 
 # Site Build
 highlighter:        pygments
-markdown:           rdiscount
+# markdown:           rdiscount
 # markdown:           redcarpet
 # redcarpet:
 #    extensions:     ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data", "highlight", "footnotes"]
@@ -30,8 +30,8 @@ sass:
 # Other Params
 include:            [ "robots.txt" ]
 exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile" ]
-gems:
-  - jekyll-sitemap
+# gems:
+#   - jekyll-sitemap
 
 compress_html:
     clippings:      all
