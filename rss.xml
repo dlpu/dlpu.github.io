@@ -8,8 +8,8 @@ title : RSS Feed
 <channel>
         <title>{{ site.title | xml_escape }}</title>
         <description>{{ site.title | xml_escape }} - {{ site.author.name | xml_escape }}</description>
-        <link>{{ site.production_url }}{{ site.rss_path }}</link>
-        <link>{{ site.production_url }}</link>
+        <link>http://yindongliang.com/rss.xml</link>
+        <link>http://yindongliang.com</link>
         <lastBuildDate>{{ site.time | date_to_xmlschema }}</lastBuildDate>
         <pubDate>{{ site.time | date_to_xmlschema }}</pubDate>
         <ttl>1800</ttl>
@@ -18,8 +18,8 @@ title : RSS Feed
         <item>
                 <title>{{ post.title | xml_escape }}</title>
                 <description>{{ post.content | xml_escape }}</description>
-                <link>{{ site.production_url }}{{ post.url }}</link>
-                <guid>{{ site.production_url }}{{ post.id }}</guid>
+                <link>http://yindongliang.com{{ post.url }}</link>
+                <guid>http://yindongliang.com{{ post.id }}</guid>
                 <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
         </item>
 {% endfor %}
