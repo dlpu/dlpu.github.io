@@ -43,8 +43,6 @@ alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 
 [Matrix](https://github.com/vim-scripts/matrix.vim--Yang)绝对是vim插件里最装X的一个，没有之一。
 
-![](/image/matrix1.gif)
-
 [gist-vim](https://github.com/mattn/gist-vim)可以向自己的github-gist上传代码
 
 [xml](https://github.com/othree/xml.vim)可以匹配<></>这样的字符成对输出
