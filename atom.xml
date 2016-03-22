@@ -18,7 +18,7 @@ title : Atom Feed
 
  {% for post in site.posts %}
  <entry>
-   <title>{{ post.title | xml_escape }} - 殷东亮的博客</title>
+   <title>{{ post.title | xml_escape }}</title>
    <link href="http://yindongliang.com{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>http://yindongliang.com{{ post.id }}</id>
