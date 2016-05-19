@@ -1,0 +1,11 @@
+<span class="reading-time" title="Estimated read time">
+    {% assign words = content | number_of_words %}
+
+    {% if words < 360 %}
+        1 min read
+    {% else %}
+        {{ words | divided_by:180 }} mins read
+    {% endif %}
+</span>
+
+<!--The read time function has some problems with chinese characters. (Seems that do not recognize Chinese characters). So won't use it.-->

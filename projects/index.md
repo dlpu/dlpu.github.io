@@ -7,9 +7,7 @@ title: 关于作者
     <img src="/image/wechat.png" height="200" alt="赞助作者~">
     <div style="text-align: center;" class="sns-img">
         <a href="https://github.com/tcitry/" target="_blank"><img src="/image/github.png"></a>
-        <a href="http://www.jianshu.com/users/4ff4d2e2b16c/" target="_blank"><img src="/image/jianshu.png"></a>
         <a href="http://www.douban.com/people/yindongliang/" target="_blank"><img src="/image/douban.png"></a>
-        <a href="https://coding.net/u/tcitry" target="_blank"><img src="/image/coding.png"></a>
     </div>
 </div>
 <p>

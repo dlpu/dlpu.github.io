@@ -1,1 +1,1 @@
-[参访博客](http://yindongliang.com)
+This blog is powered by <a href="http://jekyllrb.com/">Jekyll</a> based on <a href="https://github.com/swanson/lagom">Lagom theme</a>.

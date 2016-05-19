@@ -1,0 +1,38 @@
+# Theme customization - please change from the defaults!
+
+# Color for top bar, links, etc
+# highlight_color: '#db3445'
+highlight_color: '#ff0000'
+
+# Profile links on the left sidebar, leave blank to ignore
+social:
+  github: tcitry
+  #bitbucket: tcitry
+  hacker_news: tcitry
+  stackexchange: 2676742
+  stackoverflow: 2676742
+  twitter: tcitry
+  #facebook: zuck
+  #tumblr: animalygifs
+  # linkedin: tcitry
+  gplus: 101958662077560399708
+  medium: tcitry
+  gravatar: 7299cfb7415c83033f2a9aa9f635b2c6
+  #flickr: johndoe
+
+# "Hi, I'm _______"
+name: 殷东亮
+email: tcitry@gmail.com
+tagline: "Python"
+
+# Google Analytics key, leave blank to ignore
+google_analytics_key: UA-50554094-4
+
+# Toggle "Postings are my own" disclaimer in footer
+show_disclaimer: true
+
+# Toggle link/icon to view atom feed (/atom.xml) in sidebar
+show_atom_feed: true
+
+# Disqus comments
+comments: true

@@ -1,56 +1,15 @@
-# Site Info
-title:              "殷东亮的博客"
-description:        "殷东亮的博客"
-# google_verify:      epFgX0s_0RM3CdjwFcsewfXzPov2g8s9ZBOLyaIUH-o
-# google_analytics:   UA-50554094-4 # Put your Google Analytics code
-
-# Author Info
-author_name:        "殷东亮"
-author_email:       tcitry@gmail.com
-author_gravatar:    4d5229b40a02e193dd556a6f62a056b7 # Gravatar md5 hash
-twitter_username:   tcitry
-
-# Site Settings
-baseurl:            "" # Base URL must end WITHOUT a slash, default: ""
-permalink:          /:year/:month/:title # Post permalink
-timezone:           Asia/Shanghai # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
-# Site Build
-highlighter:        rouge
-markdown:           kramdown
-# markdown:           redcarpet
-# redcarpet:
-#    extensions:     ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data", "highlight", "footnotes"]
-# markdown:           kramdown
-# kramdown:
-#     input:          GFM
-sass:
-    style:          :compressed
-
-# Other Params
-include:            [ "robots.txt" ]
-exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile" ]
-gems:
-  - jekyll-sitemap
-
-compress_html:
-    clippings:      all
-    ingore:
-        envs:       [ "test" ]
-
-defaults:
-  -
-    scope:
-      path:         ""
-    values:
-      layout:       "null"
-  -
-    scope:
-      type:         "pages"
-    values:
-      layout:       "page"
-  -
-    scope:
-      type:         "posts"
-    values:
-      layout:       "post"
+# General Jekyll Config
+highlighter: rouge
+url: http://yindongliang.com
+title: 殷东亮的博客
+author: Dongliang Yin
+email: tcitry@gmail.com
+description: Dongliang Yin's Blog | 殷东亮的博客
+simple_search: https://www.google.com/search
+lsi: false
+disqus: yindongliang
+permalink: /blog/:year/:month/:day/:title/
+category_dir: blog/categories
+paginate: 100
+paginate_path: "page:num"
+exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
