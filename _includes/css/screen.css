@@ -236,11 +236,6 @@ nav h1, nav h2 {
   border-radius: 50%;
 }
 
-#gravatar:hover {
-  border: 70px solid #000;
-  border-radius: 50%;
-}
-
 #stalker {
   display: inline-block;
   height: 18px;
