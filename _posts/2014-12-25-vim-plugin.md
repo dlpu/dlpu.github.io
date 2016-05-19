@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Vim常用插件
+categories: [Vim]
 ---
 最近觉得在小部分修改代码的时候应该抛弃大型的IDE而转向Vim，下面的图就是我的环境了。
 

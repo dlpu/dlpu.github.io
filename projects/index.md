@@ -1,18 +1,5 @@
 ---
-layout: page
+layout: post
 title: 关于作者
 ---
 
-<div style="text-align: center">
-    <img src="/image/wechat.png" height="200" alt="赞助作者~">
-    <div style="text-align: center;" class="sns-img">
-        <a href="https://github.com/tcitry/" target="_blank"><img src="/image/github.png"></a>
-        <a href="http://www.douban.com/people/yindongliang/" target="_blank"><img src="/image/douban.png"></a>
-    </div>
-</div>
-<p>
-    应届毕业生，热爱编程，喜欢Python，对编译器有浓厚兴趣。
-</p>
-<p>
-    这是<a href="/resume.html", target="">我的简历</a>，欢迎<a href="mailto:tcitry@gmail.com" target="_blank">邮件</a>交流。
-</p>
