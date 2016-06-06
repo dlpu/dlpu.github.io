@@ -139,7 +139,7 @@ nav h1, nav h2 {
 }
 
 #navigation a{display:block;padding:.1em .1em;color:#000000;}
-#navigation a:hover{background-color:#ff0000;text-decoration:none;color:#f9f9f9;-webkit-transition:color .2s linear;}
+#navigation a:hover{background-color:{{ site.data.theme.highlight_color }};text-decoration:none;color:#f9f9f9;-webkit-transition:color .2s linear;}
 
 #social {
   font-weight: normal;
