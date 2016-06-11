@@ -13,6 +13,24 @@
   </a>
   {% endif %}
 
+  {% if site.data.theme.social.douban %}
+  <a title="{{ site.data.theme.social.douban }} on douban" href="https://douban.com/people/{{ site.data.theme.social.douban }}/">
+    <i class="fa icon-sn-douban"></i>
+  </a>
+  {% endif %}
+
+  {% if site.data.theme.social.weibo %}
+  <a title="{{ site.data.theme.social.weibo }} on weibo" href="https://weibo.com/{{ site.data.theme.social.weibo }}/">
+    <i class="fa icon-sn-weibo"></i>
+  </a>
+  {% endif %}
+
+  {% if site.data.theme.social.gplus %}
+  <a title="{{ site.data.theme.name }} on Google Plus" href="https://plus.google.com/{{ site.data.theme.social.gplus }}">
+    <i class="fa fa-google-plus-square"></i>
+  </a>
+  {% endif %}
+
   {% if site.data.theme.social.bitbucket %}
   <a title="{{ site.data.theme.social.bitbucket }} on Bitbucket" href="https://bitbucket.com/{{ site.data.theme.social.bitbucket }}/">
     <i class="fa fa-bitbucket-square"></i>
@@ -55,23 +73,17 @@
   </a>
   {% endif %}
 
-  {% if site.data.theme.social.gplus %}
-  <a title="{{ site.data.theme.name }} on Google Plus" href="https://plus.google.com/{{ site.data.theme.social.gplus }}">
-    <i class="fa fa-google-plus-square"></i>
-  </a>
-  {% endif %}
-
   {% if site.data.theme.social.flickr %}
   <a title="{{ site.data.theme.name }} on Flickr" href="https://www.flickr.com/photos/{{ site.data.theme.social.flickr }}">
     <i class="fa fa-flickr"></i>
   </a>
   {% endif %}
 
-  <!--{% if site.data.theme.show_atom_feed %}
+  {% if site.data.theme.show_atom_feed %}
   <a title="Atom feed" id="atom" href="/atom.xml">
     <i class="fa fa-rss-square"></i>
   </a>
-  {% endif %}-->
+  {% endif %}
 </div>
 
 

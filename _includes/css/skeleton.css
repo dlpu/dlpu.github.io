@@ -236,7 +236,7 @@
 
 
 #tag_cloud {display:block;padding:.1em .1em;color:#000000;}
-#tag_cloud a:hover{background-color:#ff0000;text-decoration:none;color:#f9f9f9;-webkit-transition:color .2s linear;}
+#tag_cloud a:hover{background-color:{{ site.data.theme.highlight_color }};text-decoration:none;color:#f9f9f9;-webkit-transition:color .2s linear;}
 
     /*#tag_cloud{margin-bottom: 1em;}
     #tag_cloud a:hover{color:#333333 !important;text-decoration:none;} */

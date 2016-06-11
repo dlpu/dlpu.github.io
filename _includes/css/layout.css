@@ -104,8 +104,28 @@ color: white;
 background: #83BF73;
 }
 
-
-
-
-
+[class*=icon-sn-]{
+	display: inline-block;
+	background-image: url(../../icon-sn.svg);
+	background-repeat: no-repeat;
+	width: 28px;
+	height: 28px;
+	vertical-align: middle;
+	border-radius: 2px;
+	background-size: auto 56px;
+}
+.icon-sn-douban{
+	background-position: -224px -28px;
+}
+.icon-sn-google{
+	background-position: 0 -28px;
+}
+.icon-sn-github{
+	background-position: -28px -28px;
+}
+.icon-sn-weibo{
+	background-position: -56px -28px;
+}
+.icon-sn-twitter{
+	background-position: -112px -28px;
 }
