@@ -10,6 +10,6 @@ lsi: false
 disqus: yindongliang
 permalink: /:year/:month/:day/:title/
 category_dir: blog/categories
-paginate: 2
+paginate: 100
 paginate_path: "page:num"
 exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]

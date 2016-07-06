@@ -25,7 +25,7 @@ title: Home
 
 <div id="post-pagination" class="paginator">
 
-  {% if paginator.previous_page %}
+  <!-- {% if paginator.previous_page %}
     {% if paginator.previous_page == 1 %}
     <a href="/"><Previous</a>
     {% else %}
@@ -53,8 +53,8 @@ title: Home
     <a class="next" href="/page{{paginator.next_page}}">Next&gt;</a>
   {% else %}
     <span class="next disabled" >Next&gt;</span>
-  {% endif %}
-  <!-- ({{ paginator.total_posts }} posts in all.) -->
+  {% endif %} -->
+  ({{ paginator.total_posts }} posts in all.)
 
 </div>
 </div>
