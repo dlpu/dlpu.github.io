@@ -11,3 +11,4 @@ Thumbs.db
 
 doc/build/*
 .sass-cache/*
+.tags
