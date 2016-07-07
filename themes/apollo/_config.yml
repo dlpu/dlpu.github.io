@@ -1,0 +1,27 @@
+menu:
+    Blog: /
+    Archive: /archives/
+    About: /about/
+    Douban: https://www.douban.com/people/yindongliang
+    GitHub: https://github.com/tcitry
+    Rss: /atom.xml
+
+favicon: /favicon.png
+logo: /qrcode.jpeg
+
+# Comment
+# e.g disqus: seansun
+disqus: 
+duoshuo: 
+
+# Analytics
+# google-analytics:
+ga: UA-50554094-4
+
+# Copyright Infomation
+startyear: 2012
+
+# Font CDN
+#true : use google fonts api, not stable for chinese visitor sometimes, caused by force majeure factor
+#false: use useso fonts api instead of google's, great response speed for chinese visitor
+googlefonts: false

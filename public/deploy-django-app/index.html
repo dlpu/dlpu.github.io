@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Ubuntu下部署Django应用 · 殷东亮的博客</title><meta name="description" content="Ubuntu下部署Django应用 - tcitry"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="http://fonts.useso.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/qrcode.jpeg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">ABOUT</a></li><li class="nav-list-item"><a href="https://www.douban.com/people/yindongliang" target="_blank" class="nav-list-link">DOUBAN</a></li><li class="nav-list-item"><a href="https://github.com/tcitry" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Ubuntu下部署Django应用</h1><div class="post-info">Oct 28, 2014</div><div class="post-content"><p>做了一个Django小应用，主要内容是一个论坛，源码在<a href="https://github.com/tcitry/dlpucsdn" target="_blank" rel="external">Github</a>, 经过好几天的研究，也可以在服务器端运行了，以下所有代码中的操作都需要在命令行运行</p>
+<a id="more"></a>
+<h2 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">apt-get update</div><div class="line">apt-get install mysql-server mysql-client</div></pre></td></tr></table></figure>
+<p>根据提示设置MySQL root用户密码</p>
+<h2 id="MySQL设置中文utf8格式-Linux、Mac系统通用"><a href="#MySQL设置中文utf8格式-Linux、Mac系统通用" class="headerlink" title="MySQL设置中文utf8格式(Linux、Mac系统通用)"></a>MySQL设置中文utf8格式(Linux、Mac系统通用)</h2><p>一般在<code>/etc/mysql</code>下</p>
+<p>[client]下添加<code>default-character-set=utf8</code></p>
+<p>[mysqld]下添加<code>character-set-server=utf8</code></p>
+<p>[mysql]下添加<code>default-character-set=utf8</code></p>
+<p>重启MySQL </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">service mysql restart</div></pre></td></tr></table></figure>
+<p>进入MySQL查看编码 </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">show variables like <span class="string">'char%'</span>;</div></pre></td></tr></table></figure>
+<p><img src="/image/djangoapp.png" alt=""></p>
+<h2 id="为MySQL建立远程连接"><a href="#为MySQL建立远程连接" class="headerlink" title="为MySQL建立远程连接"></a>为MySQL建立远程连接</h2><p>由于修改数据库时不可能频繁的登服务器在命令行下修改，远程用workbench连接MySQL服务器是更方便的选择，先登入MySQL，授权一个可以远程连接这个数据库的用户名和密码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&gt;&gt;GRANT ALL PRIVILEGES ON *.* TO myuser@&apos;%&apos; IDENTIFIED BY &apos;mypassword&apos; WITH GRANT OPTION;</div><div class="line">&gt;&gt;FLUSH PRIVILEGES;</div></pre></td></tr></table></figure>
+<p>有的MySQL没有开放远程连接的端口，只允许本地连接，你需要查看my.conf之类的文件，我的在<code>/etc/mysql/my.conf</code>把</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="built_in">bind</span>-address:127.0.0.1</div></pre></td></tr></table></figure>
+<p>那行注释掉即可</p>
+<h2 id="安装pip"><a href="#安装pip" class="headerlink" title="安装pip"></a>安装pip</h2><p><a href="https://pypi.python.org/pypi/pip#downloads" target="_blank" rel="external">下载地址</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">apt-get install python-pip</div></pre></td></tr></table></figure>
+<h2 id="安装django1-7"><a href="#安装django1-7" class="headerlink" title="安装django1.7"></a>安装django1.7</h2><p><a href="https://www.djangoproject.com/" target="_blank" rel="external">django官网</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">pip install Django==1.7</div></pre></td></tr></table></figure>
+<p>python进入python2.7解释器</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">&gt;&gt;import django</div><div class="line">&gt;&gt;</div></pre></td></tr></table></figure>
+<p>不出错说明安装成功</p>
+<h2 id="安装mysql-python"><a href="#安装mysql-python" class="headerlink" title="安装mysql-python"></a>安装mysql-python</h2><p>安装mysql-python注意需要配置<code>mysql_config</code>我的在(/usr/bin目录下，其他的类似也在bin目录下，视不同系统不同版本而定)如果 <code>/usr/bin</code>目录下没有<code>mysql_config</code>，需要安装mysql开发包</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">apt-get install python-setuptools</div><div class="line">apt-get install libmysqld-dev</div><div class="line">apt-get install libmysqlclient-dev</div><div class="line">apt-get install python-dev</div></pre></td></tr></table></figure>
+<p><a href="https://pypi.python.org/pypi/MySQL-python/" target="_blank" rel="external">下载链接</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">wget <span class="string">'url'</span></div></pre></td></tr></table></figure>
+<p>解压zip文件，首先安装unzip</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">apt-get install unzip</div><div class="line">unzip mysql-python.zip</div><div class="line"><span class="built_in">cd</span> mysql-python</div><div class="line">vi site.cfg</div></pre></td></tr></table></figure>
+<p>把<code>mysql_config</code>路径那行取消注释，路径为<code>/usr/bin/mysql_config</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="built_in">cd</span> ..</div><div class="line">python setup.py build</div><div class="line">python setup.py install</div></pre></td></tr></table></figure>
+<p>进去python解释器</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">&gt;&gt;import MySQLdb</div><div class="line">&gt;&gt;</div></pre></td></tr></table></figure>
+<p>不报错说明安装成功</p>
+<p>MySQLdb不支持python3，可以试试pymysql，同时在Python3的项目中，需要在<code>__init__.py</code>中添加</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">import pymysql</div><div class="line">pymysql.install_as_MySQLdb()</div></pre></td></tr></table></figure>
+<p>这是由于Django调用MySQL的接口问题，在setting.py文件中具体为<code>&#39;ENGINE&#39;: &#39;django.db.backends.mysql&#39;,</code>，仔细查看这句代码就会发现Django默认调用的是MySQLdb，虽然它只支持Python2.0。</p>
+<h2 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h2><p>最重要的就是nginx的配置</p>
+<p>我的配置目录在<code>/etc/nginx/nginx.conf</code>和<code>/etc/nginx/sites-enable/*</code>后者可以在前者文件中设置，先查看配置文件<code>/etc/nginx/sites-enable/django</code></p>
+<p><img src="/image/nginxsetting.png" alt=""></p>
+<p>根据自己的应用修改配置文件中static路径，server_name，root等。修改完毕注意要<code>service nginx reload</code></p>
+<p>关于静态文件的地址配置还是需要多说一句，nginx中的<code>/static</code>目录对应的是<code>setting.py</code>文件中的<code>STATIC_ROOT</code>目录，两个写一样的，执行<code>python manage.py collectstatic</code>收集的文件是admin后台模块的静态样式文件，执行完后这些静态文件就被复制在你设置的<code>STATIC_ROOT</code>目录了。</p>
+<h2 id="部署代码"><a href="#部署代码" class="headerlink" title="部署代码"></a>部署代码</h2><p>因为我的代码在github，先安装git</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">apt-get install git</div><div class="line">git <span class="built_in">clone</span> https://github.com/tcitry/dlpucsdn.git</div></pre></td></tr></table></figure>
+<p>部署以后注意修改数据库密码，邮件服务器密码，debug模式False，template_debug模式为False。</p>
+<h2 id="virtualenv"><a href="#virtualenv" class="headerlink" title="virtualenv"></a>virtualenv</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">pip install virtualenv</div></pre></td></tr></table></figure>
+<p>根据网上现有的教程简单看看virtualenv的使用很容易理解，在项目依赖的相关程序配置过程中需要始终开着virtualenv。</p>
+<h2 id="配置Gunicorn"><a href="#配置Gunicorn" class="headerlink" title="配置Gunicorn"></a>配置Gunicorn</h2><p>查看这个<a href="https://www.digitalocean.com/community/tutorials/how-to-use-the-django-one-click-install-image" target="_blank" rel="external">教程</a>修改为自己的应用参数</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">service gunicorn restart</div></pre></td></tr></table></figure>
+<p>当部署一个应用时可以将配置文件放在<code>/etc/init.d/gunicorn.conf</code>文件里面。但同时部署多个文件的时候，可以使用supervisor+gunicorn+virtualenv的部署方式，这样可以在每个不同的项目目录利用virtualenv为每个应用配置不同的环境，同时可以使服务器的环境更加易于管理。</p>
+<p>先在项目的根目录测试一下，确保gunicorn安装正确，</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">../bin/gunicorn myapp.wsgi:application</div></pre></td></tr></table></figure>
+<p>不出错就说明正确了，出错一般是提示没有那个module名，检查一下django是否安装，执行命令的文件目录是否正确。</p>
+<h2 id="supervisor的使用"><a href="#supervisor的使用" class="headerlink" title="supervisor的使用"></a>supervisor的使用</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">apt-get install supervisor</div><div class="line">sudo vim /etc/supervisord.conf</div></pre></td></tr></table></figure>
+<p>编辑的内容如下，请自行修改项目和目录名。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">[program:classroom]</div><div class="line"><span class="built_in">command</span> = sh /home/projects/classroom/classroom/gunicorn_start</div><div class="line">user = root</div><div class="line">redirect_stderr = <span class="literal">true</span></div><div class="line">autorestart = <span class="literal">true</span></div></pre></td></tr></table></figure>
+<p>配置这个gunicorn_start.sh</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/projects/classroom/classroom</div><div class="line">../bin/gunicorn classroom.wsgi:application -w 4 -b :8000</div></pre></td></tr></table></figure>
+<p>启动supervisor</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">/etc/init.d/supervisord start</div></pre></td></tr></table></figure>
+<p>其他方式</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">supervisorctl start &lt;name&gt;</div><div class="line">supervisorctl stop &lt;name&gt;</div></pre></td></tr></table></figure>
+<h2 id="安装七牛云SDK"><a href="#安装七牛云SDK" class="headerlink" title="安装七牛云SDK"></a>安装七牛云SDK</h2><p>由于网站的静态存储要用七牛云，在运行程序前要安装否则报错没有qiniu SDK的方法。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">pip install qiniu</div></pre></td></tr></table></figure>
+<p>七牛云安装前注意安装的版本，我被坑过一次，写程序时是6.0版本，部署时都7.0了，接口全都不一样。</p>
+<h2 id="还有"><a href="#还有" class="headerlink" title="还有"></a>还有</h2><p>还有不推荐cloudflare等国外CDN加速，亲身体验。</p>
+<p>还有推荐下这篇来自digitalocean的<a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-django-with-postgres-nginx-and-gunicorn" target="_blank" rel="external">部署实例</a></p>
+</div></article></div></section><footer><div class="paginator"><a href="/vim-plugin/" class="prev">PREV</a><a href="/this-blog/" class="next">NEXT</a></div><div class="copyright"><p>© 2012 - 2016 <a href="http://yindongliang.com">tcitry</a>, unless otherwise noted.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-50554094-4",'auto');ga('send','pageview');</script></body></html>
