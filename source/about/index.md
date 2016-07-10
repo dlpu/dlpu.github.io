@@ -1,4 +1,5 @@
 ---
+layout: post
 title: about
 date: 2016-07-07 16:22:51
 ---
@@ -13,9 +14,8 @@ date: 2016-07-07 16:22:51
 
 擅长：Python技术栈、Django框架
 
-[Github](https://github.com/tcitry)
 
-###成长经历
+### 成长经历
 
 2016.6大学毕业
 
