@@ -1,8 +1,8 @@
 menu:
     Blog: /
     Archive: /archives/
+    Projects: /projects/
     About: /about/
-    Douban: https://www.douban.com/people/yindongliang
     GitHub: https://github.com/tcitry
     Rss: /atom.xml
 
@@ -11,7 +11,7 @@ logo: /favicon.png
 
 # Comment
 # e.g disqus: seansun
-disqus: 
+disqus: yindongliang
 duoshuo: 
 
 # Analytics
