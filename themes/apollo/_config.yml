@@ -1,9 +1,9 @@
 menu:
     Blog: /
     Archive: /archives/
-    Projects: /projects/
     About: /about/
     GitHub: https://github.com/tcitry
+    Jianshu: http://jianshu.com/users/4ff4d2e2b16c
     Rss: /atom.xml
 
 favicon: /favicon.png

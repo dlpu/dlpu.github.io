@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yindongliang.com/2014-12-28-deploy-django-app/</loc>
+    
+    <lastmod>2016-07-19T04:58:15.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yindongliang.com/2015-09-25-github-iOS/</loc>
+    
+    <lastmod>2016-07-19T04:58:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yindongliang.com/projects/index.html</loc>
     
     <lastmod>2016-07-16T17:06:25.000Z</lastmod>
@@ -30,44 +44,30 @@
   </url>
   
   <url>
-    <loc>http://yindongliang.com/this-blog/</loc>
+    <loc>http://yindongliang.com/2014-09-22-this-blog/</loc>
     
     <lastmod>2016-07-07T08:48:38.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yindongliang.com/github-iOS/</loc>
-    
-    <lastmod>2016-07-07T08:21:02.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yindongliang.com/price-of-software/</loc>
+    <loc>http://yindongliang.com/2015-04-29-price-of-software/</loc>
     
     <lastmod>2016-07-07T08:20:57.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yindongliang.com/vim-plugin/</loc>
+    <loc>http://yindongliang.com/2014-12-25-vim-plugin/</loc>
     
     <lastmod>2016-07-07T08:20:45.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yindongliang.com/one-month-intern/</loc>
+    <loc>http://yindongliang.com/2015-11-24-one-month-intern/</loc>
     
     <lastmod>2016-07-07T08:16:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yindongliang.com/deploy-django-app/</loc>
-    
-    <lastmod>2016-07-07T08:01:11.000Z</lastmod>
     
   </url>
   
