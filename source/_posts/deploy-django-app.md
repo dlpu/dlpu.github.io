@@ -19,7 +19,7 @@ apt-get install mysql-server mysql-client
 
 ## MySQL设置中文utf8格式(Linux、Mac系统通用)
 
-一般在`/etc/mysql`下
+一般在`/etc/mysql`下`my.cnf`文件
 
 [client]下添加`default-character-set=utf8`
 	
