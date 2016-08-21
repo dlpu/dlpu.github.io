@@ -1,0 +1,27 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{% include head.html %}
+</head>
+
+<body>
+
+	{% include header.html %}
+
+	<main>
+		{{ content | replace: '&#8617;', '&#8617;&#xfe0e;' }}
+	</main>
+
+	<div style="color: #666;text-align: center;">
+        <br>
+        &copy;2012-2016 殷东亮 
+    </div>
+
+</body>
+
+</html>
