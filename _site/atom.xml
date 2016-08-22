@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>殷东亮的博客</title>
+  <link href="http://yindongliang.com/atom.xml" rel="self" />
+  <link href="http://yindongliang.com/"/>
+  <updated>2016-08-23T00:56:59+08:00</updated>
+  <id>http://yindongliang.com</id>
+  <author>
+    <name></name>
+    <email></email>
+  </author>
+  
+    <entry>
+      <title>在公司实习一个月来的感悟</title>
+      <link href="http://yindongliang.com/one-month-intern" />
+      <updated>2015-11-24T00:00:00+08:00</updated>
+      <id>http://yindongliang.com/one-month-intern</id>
+      <content type="html"></content>
+    </entry>
+  
+    <entry>
+      <title>Github上关于iOS开发集合</title>
+      <link href="http://yindongliang.com/github-iOS" />
+      <updated>2015-09-25T00:00:00+08:00</updated>
+      <id>http://yindongliang.com/github-iOS</id>
+      <content type="html"></content>
+    </entry>
+  
+    <entry>
+      <title>独立软件的付费方式</title>
+      <link href="http://yindongliang.com/price-of-software" />
+      <updated>2015-04-29T00:00:00+08:00</updated>
+      <id>http://yindongliang.com/price-of-software</id>
+      <content type="html"></content>
+    </entry>
+  
+    <entry>
+      <title>Vim常用插件</title>
+      <link href="http://yindongliang.com/vim-plugin" />
+      <updated>2014-12-25T00:00:00+08:00</updated>
+      <id>http://yindongliang.com/vim-plugin</id>
+      <content type="html"></content>
+    </entry>
+  
+    <entry>
+      <title>Ubuntu下部署Django应用</title>
+      <link href="http://yindongliang.com/deploy-django-app" />
+      <updated>2014-10-28T00:00:00+08:00</updated>
+      <id>http://yindongliang.com/deploy-django-app</id>
+      <content type="html"></content>
+    </entry>
+  
+    <entry>
+      <title>这个博客</title>
+      <link href="http://yindongliang.com/this-blog" />
+      <updated>2014-09-22T00:00:00+08:00</updated>
+      <id>http://yindongliang.com/this-blog</id>
+      <content type="html"></content>
+    </entry>
+  
+</feed>
