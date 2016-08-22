@@ -10,7 +10,6 @@ highlighter: rouge
 gems: [jekyll-paginate]
 paginate: 50
 markdown: kramdown
-IMG_PATH: http://source.fooleap.org
 exclude: ['media', 'update.lftp', 'pushbaidu.sh', '.htaccess', "LICENSE", "README.md", "CNAME", "vendor", "Gemfile"]
 sass:
   sass_dir: _sass
