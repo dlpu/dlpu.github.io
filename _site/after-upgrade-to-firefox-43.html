@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html class="ie lte8"><![endif]-->
+<!--[if IE]><html class="ie"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>解决 Firefox 升级后的问题 | 殷东亮的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.3, user-scalable=no" />
+    <meta name="description" content="这两天，把 Firefox 升级到 43.0 64 位版本，升级后有两个问题困扰我，在此记下以备忘。" />
+    <meta name="keywords" content="Firefox, Pentadactyl, Git" />
+    <meta name="author" content="fooleap" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="canonical" href="http://127.0.0.1:4000/after-upgrade-to-firefox-43" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="alternate" type="application/atom+xml" title="殷东亮的博客 Atom Feed" href="http://blog.fooleap.org/atom.xml" />
+    <script type="text/javascript" src="/assets/js/modernizr.js"></script>
+    <!--[if lte IE 9]>
+      <script src="/assets/js/html5shiv.min.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+      <script src="/assets/js/classList.min.js"></script>
+      <script type="text/javascript">
+        document.createElement('main');
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+  <nav id="navigation">
+      <ul class="navigation-list hide">
+          <li><a href="/" class="navigation-item"><i class="icon-home"></i>首页</a></li>
+          <li><a href="/archive.html" class="navigation-item"><i class="icon-box"></i>归档</a></li>
+          <li><a href="/about.html" class="navigation-item"><i class="icon-user"></i>关于</a></li>
+      </ul>
+      <i id="menu" class="icon icon-menu"></i>
+  </nav>
+  
+  <div class="container">
+    <main class="wrapper">
+      <header class="site-header">
+        <h1>
+          解决 Firefox 升级后的问题
+        </h1>
+        <h2 class="sub-heading">
+            <i class="icon-calendar"></i><time datetime="2015-12-18">2015 年 12 月 18 日</time>
+        </h2>
+      </header>
+  <article class="post-content">
+    
+  <div class="main-content">
+<ul id="toc">
+  <li><a href="#id-section" id="markdown-toc-id-section">未验证扩展被禁用</a></li>
+  <li><a href="#id-git--pentadactyl" id="markdown-toc-id-git--pentadactyl">Git 版 Pentadactyl</a></li>
+  <li><a href="#id-section-1" id="markdown-toc-id-section-1">参考资料</a></li>
+</ul>
+
+<p>这两天，把 Firefox 升级到 43.0 64 位版本，升级后有两个问题困扰我，在此记下以备忘。</p>
+
+<h2 id="id-section">未验证扩展被禁用</h2>
+
+<p>升级后，有多款扩展提示“未被验证在 Firefox 中使用，现已被禁用。”，这是因为那些扩展并没有托管到 <code class="highlighter-rouge">addons.mozilla.org</code>并通过审核，Firefox 的新版本默认将其禁止。</p>
+
+<p><img src="http://source.fooleap.org/after-upgrade-to-firefox-43-01.png" alt="多款扩展被禁用" />
+▲多款扩展被禁用</p>
+
+<p>这个问题的解决方法很简单，仅需根据提示点击了解详情，便可在其帮助页面中<a href="https://support.mozilla.org/zh-CN/kb/add-ons-signing-firefox" title="Firefox 中的附加组件签名 &#124; Firefox 帮助">[1]</a> 找到。</p>
+
+<p><img src="http://source.fooleap.org/after-upgrade-to-firefox-43-02.png" alt="扩展被禁用的解决方法" />
+▲扩展被禁用的解决方法</p>
+
+<p>根据提示，仅需打开 <code class="highlighter-rouge">about:config</code>，将里面的 <code class="highlighter-rouge">xpinstall.signatures.required</code> 首选项的值设为 <code class="highlighter-rouge">false</code>（双击）即可。</p>
+
+<p>##Pentadactyl 无法使用</p>
+
+<p>Pentadactyl 很好用，然而无论其官网或 AMO 没有很及时的更新 XPI 安装包。就算官网的 Nightly 版本，也仅更新到今年 8 月，当时适配到最新的 Firefox 41.*。</p>
+
+<p>新版本要更新，就必须用 7-Zip 等工具将其 <code class="highlighter-rouge">install.rdf</code> 文件里规定版本号修改一下，例如下面的修改后，可使其允许在 43.0 版本中安装。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    &lt;em:targetApplication&gt;
+        &lt;Description
+            em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+            em:minVersion="31.0"
+            em:maxVersion="43.*"/&gt;
+    &lt;/em:targetApplication&gt;
+</code></pre>
+</div>
+
+<p>不过升级 43.0 之后，安装完却无法使用。搜了下，在 GitHub Pentadactyl 项目的 Issues 中找到答案<a href="https://github.com/5digits/dactyl/issues/112" title="Pentadactyl doesn&#39;t work with Firefox 43 · Issue #112 · 5digits/dactyl">[2]</a>。</p>
+
+<p>仅需将其为修复 FF43 无法使用问题，做修改后的 <code class="highlighter-rouge">util.jsm</code> 文件<a href="https://github.com/5digits/dactyl/commit/e3c3748511ff6dfa8d917cbba04eaa7d94ad461c" title="Fix util.regexp.iterate for FF43. · 5digits/dactyl@e3c3748">[3]</a>，覆盖 XPI 中的原文件并重新安装即可（也可以自己修改文件）。</p>
+
+<h2 id="id-git--pentadactyl">Git 版 Pentadactyl</h2>
+
+<p>更好的做法是自己编译 Git 版本的 Pentadactyl，具体方法如下：</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>git clone https://github.com/5digits/dactyl.git
+<span class="gp">$ </span><span class="nb">cd </span>dactyl.git
+<span class="gp">$ </span>make -C pentadactyl xpi</code></pre></figure>
+
+<p>执行之后，便可在 <code class="highlighter-rouge">downloads</code> 目录下找到自己编译的版本。</p>
+
+<p>若不方便编译，可在此下载：<a href="http://source.fooleap.org/pentadactyl-git.xpi">pentadactyl-git.xpi</a></p>
+
+<h2 id="id-section-1">参考资料</h2>
+
+<p><strong>本文历史</strong></p>
+
+<ul>
+  <li>2015 年 12 月 18 日 完成初稿</li>
+  <li>2015 年 12 月 20 日 增加编译 Git 版 Pentadactyl 部分</li>
+</ul>
+
+  </div>
+
+  <div id="posts">
+    <div id="random-posts" class="posts">
+      <strong>猜你喜欢</strong>
+      <ul>
+      </ul>
+    </div>
+  
+    <div id="recent-posts" class="posts">
+      <strong>最近更新</strong>
+      <ul>
+      
+        <li><a href="/configuring-ip-address-by-specifying-gateway" title="配置特定 IP 地址走指定网关">配置特定 IP 地址走指定网关 </a></li>
+      
+        <li><a href="/add-google-satellite-layer-in-amap" title="高德地图 API 叠加谷歌地图图层">高德地图 API 叠加谷歌地图图层 </a></li>
+      
+        <li><a href="/from-codoon-to-nikeplus" title="将咕咚的数据导入到 Nike+">将咕咚的数据导入到 Nike+ </a></li>
+      
+        <li><a href="/the-influence-of-sports-apps" title="运动 APP 的作用">运动 APP 的作用 </a></li>
+      
+        <li><a href="/the-last-run-of-june" title="今年 6 月的最后一次跑步">今年 6 月的最后一次跑步 </a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div id="info" class="tech">
+
+    <span id="share">
+  <div id="qrcode"></div>
+  <a id="wechat" title="分享到微信" data-wechat-url="http://127.0.0.1:4000/after-upgrade-to-firefox-43" href="javascript:void(0);"><i class="icon-wechat"></i></a>
+  <a id="weibo" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=解决 Firefox 升级后的问题 | 殷东亮的博客 via @&amp;url=http://127.0.0.1:4000/after-upgrade-to-firefox-43&amp;type=3&amp;searchPic=1"><i class="icon-weibo"></i></a>
+  <a id="qzone" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://127.0.0.1:4000/after-upgrade-to-firefox-43&amp;title=解决 Firefox 升级后的问题 | 殷东亮的博客&amp;summary=这两天，把 Firefox 升级到 43.0 64 位版本，升级后有两个问题困扰我，在此记下以备忘。&amp;site=http://127.0.0.1:4000"><i class="icon-qzone"></i></a>
+  <a id="twitter" target="_blank" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=http://127.0.0.1:4000/after-upgrade-to-firefox-43&amp;text=解决 Firefox 升级后的问题｜殷东亮的博客&amp;via="><i class="icon-twitter"></i></a>
+  <a id="facebook" target="_blank" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=http://127.0.0.1:4000/after-upgrade-to-firefox-43&amp;t=解决 Firefox 升级后的问题 | 殷东亮的博客"><i class="icon-facebook-official"></i></a>
+  <a id="gplus" target="_blank" title="Share to Google+" href="https://plus.google.com/share?url=http://127.0.0.1:4000/after-upgrade-to-firefox-43"><i class="icon-gplus-squared"></i></a>
+</span>
+
+
+    <span class='like'><a href="javascript:void(0)" title=""><i class="icon-heart-empty"></i> <span class="disqus-like-count"></span></a></span>
+    <span class='view-code'><a href="javascript:void(0)" data-md="https://raw.githubusercontent.com/fooleap/fooleap.github.io/master/_posts/2015-12-18-after-upgrade-to-firefox-43.md" title="在正文中查看源码"><i class="icon-file-code"></i>源码</a></span>
+    <span class="number-of-word"><i class="icon-calc"></i>1156 字</span>
+    <span class="page-tags"><i class="icon-tags"></i><ul class="tags"> <li class="tag"><a href="/tags.html#Firefox" target="_blank" title="查看“Firefox”的相关文章">Firefox</a></li><li class="tag"><a href="/tags.html#Pentadactyl" target="_blank" title="查看“Pentadactyl”的相关文章">Pentadactyl</a></li><li class="tag"><a href="/tags.html#Git" target="_blank" title="查看“Git”的相关文章">Git</a></li></ul></span>
+  </div>
+
+</article>
+
+<div class="comment" id="disqus_thread">
+    <a class="show-comments" href="http://127.0.0.1:4000/after-upgrade-to-firefox-43#disqus_thread" data-disqus-identifier="/after-upgrade-to-firefox-43"><span class="has-comment"><i class="icon-chat-empty"></i> 留下</span>评论 <span class="disqus-comment-count" data-disqus-url="http://127.0.0.1:4000/after-upgrade-to-firefox-43"></span></a>
+</div>
+
+  
+      <footer class="site-footer">
+        <small>&copy; 2012-2016 by Jekyll Theme</small>
+      </footer>
+  
+    </main>
+
+  </div>
+  <div id="backtotop">
+    <i class="icon-up-big"></i>
+  </div>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  </body>
+</html>

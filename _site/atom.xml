@@ -1,0 +1,1157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>殷东亮的博客</title>
+  <link href="http://127.0.0.1:4000/atom.xml" rel="self" />
+  <link href="http://127.0.0.1:4000/"/>
+  <updated>2016-08-22T20:23:41+08:00</updated>
+  <id>http://127.0.0.1:4000</id>
+  <author>
+    <name></name>
+    <email></email>
+  </author>
+  
+    <entry>
+      <title>配置特定 IP 地址走指定网关</title>
+      <link href="http://127.0.0.1:4000/configuring-ip-address-by-specifying-gateway" />
+      <updated>2016-08-13T13:30:00+08:00</updated>
+      <id>http://127.0.0.1:4000/configuring-ip-address-by-specifying-gateway</id>
+      <content type="html">公司有两个日常上网用的路由器，分别接不同的两条网线，虽然都是电信的，但是一条偶尔会抽风，我的 VPS 会连不上，也就是挂在上面的 SS 无法使用。恰好这根线是公司接台式机的，也就是说平时上班偶尔会无法科学上网。</content>
+    </entry>
+  
+    <entry>
+      <title>高德地图 API 叠加谷歌地图图层</title>
+      <link href="http://127.0.0.1:4000/add-google-satellite-layer-in-amap" />
+      <updated>2016-08-07T10:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/add-google-satellite-layer-in-amap</id>
+      <content type="html">Google Earth 的卫星图一直比国内地图所用的卫星图要新一些，然而 Google 早已不在墙内，中文版的谷歌地图虽能访问，但路网数据各方面并没有国内地图的完善。</content>
+    </entry>
+  
+    <entry>
+      <title>将咕咚的数据导入到 Nike+</title>
+      <link href="http://127.0.0.1:4000/from-codoon-to-nikeplus" />
+      <updated>2016-07-31T18:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/from-codoon-to-nikeplus</id>
+      <content type="html">上篇文章说到运动 APP，Nike+ Running 是我目前正在使用的运动 APP，使用起来还算比较舒服，如果没特殊情况的话，我想不会更换成其他的。</content>
+    </entry>
+  
+    <entry>
+      <title>运动 APP 的作用</title>
+      <link href="http://127.0.0.1:4000/the-influence-of-sports-apps" />
+      <updated>2016-07-27T13:45:00+08:00</updated>
+      <id>http://127.0.0.1:4000/the-influence-of-sports-apps</id>
+      <content type="html">如今，若没带手机或者任何记录距离或路径的设备，我会选择不跑。不知道从什么时候开始，跑步记录路径成为一种必不可少的需求。</content>
+    </entry>
+  
+    <entry>
+      <title>今年 6 月的最后一次跑步</title>
+      <link href="http://127.0.0.1:4000/the-last-run-of-june" />
+      <updated>2016-07-01T01:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/the-last-run-of-june</id>
+      <content type="html">这几天项目比较紧，几乎天天都需要加班。当然偶尔我是拒绝的，吃不消，加班到十点，回家很快很快就会睡着，并且第二天没法很早起。</content>
+    </entry>
+  
+    <entry>
+      <title>请注意防摔</title>
+      <link href="http://127.0.0.1:4000/please-protect-your-mobile-phone" />
+      <updated>2016-06-29T13:25:06+08:00</updated>
+      <id>http://127.0.0.1:4000/please-protect-your-mobile-phone</id>
+      <content type="html">前些天帮堂妹买了台大法好家的 Xperia Z3，这手机各种感觉还不错，还宣称防水，虽然不敢故意放水里，但偶尔掉水啥的就不用怕。不过这手机买不到半个月，摔过几次，后盖就摔成如下一副模样。</content>
+    </entry>
+  
+    <entry>
+      <title>一日之计在于晨</title>
+      <link href="http://127.0.0.1:4000/a-days-plan-starts-with-early-morning" />
+      <updated>2016-06-24T06:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/a-days-plan-starts-with-early-morning</id>
+      <content type="html">博客写着写着变成跑步日记了，废话特别多，现在我认为博客也必要写得那么正式，只要不写一些谬论或者概念错误的东西便可，随便写写，就算行文那么那么的口头化，当自己的一个小记录也行。</content>
+    </entry>
+  
+    <entry>
+      <title>今年首日跑破二十公里</title>
+      <link href="http://127.0.0.1:4000/the-first-20km-run-day-of-2016" />
+      <updated>2016-06-22T13:52:00+08:00</updated>
+      <id>http://127.0.0.1:4000/the-first-20km-run-day-of-2016</id>
+      <content type="html">18 号晚上就寝之前，没想太多，学别人在朋友圈上发上一条状态，写着“一个赞一公里，明天跑。”，发完即睡。果然“损人不利己”的事情大家都喜欢做，19 号一早就看到 20+ 个赞。好的，说到做到，那么当天至少得跑一个半马的距离，才能完成朋友圈的承诺。</content>
+    </entry>
+  
+    <entry>
+      <title>今年首次跑过上村市场</title>
+      <link href="http://127.0.0.1:4000/the-first-run-through-shangcun-market-of-2016" />
+      <updated>2016-06-18T08:25:00+08:00</updated>
+      <id>http://127.0.0.1:4000/the-first-run-through-shangcun-market-of-2016</id>
+      <content type="html">词穷不知道怎么起名字，很随意的起了个，这篇要说的这条线路比较少跑，从小到大总共加起来可能还不到五次。原因很简单，莲东路上村市场路段每天早上都堵塞不通，很不好跑。</content>
+    </entry>
+  
+    <entry>
+      <title>今年第一个十公里</title>
+      <link href="http://127.0.0.1:4000/the-first-10km-run-of-2016" />
+      <updated>2016-06-17T08:14:00+08:00</updated>
+      <id>http://127.0.0.1:4000/the-first-10km-run-of-2016</id>
+      <content type="html">这几个月在老家跑了那么多次，直至最近，才跑出了今年的第一个 10 公里。仔细想想，也许是因为路跑环境较差，而事实是因为自己太懒，去年一整年都没跑过 10 公里，杭马没有参加。</content>
+    </entry>
+  
+    <entry>
+      <title>手机端调试 ASP.NET 网站</title>
+      <link href="http://127.0.0.1:4000/sharpproxy" />
+      <updated>2016-06-14T17:50:00+08:00</updated>
+      <id>http://127.0.0.1:4000/sharpproxy</id>
+      <content type="html">公司之前一个项目是采用 ASP.NET 开发，第一次使用 Visual Studio 写代码，感觉挺好用的说。然而，在调试时，有一个问题困扰了我，就是无法在手机预览调试。</content>
+    </entry>
+  
+    <entry>
+      <title>小环湾头一圈</title>
+      <link href="http://127.0.0.1:4000/run-around-wantou" />
+      <updated>2016-05-29T14:15:00+08:00</updated>
+      <id>http://127.0.0.1:4000/run-around-wantou</id>
+      <content type="html">春节前回家到现在， 也大概有四个月， 这段时间却很少更新博客， 应该说是业余时间很少在电脑前，在家大部分时间就是滴茶。</content>
+    </entry>
+  
+    <entry>
+      <title>更改 RubyGems 镜像源问题</title>
+      <link href="http://127.0.0.1:4000/rubygems-source-problem" />
+      <updated>2016-03-29T11:30:00+08:00</updated>
+      <id>http://127.0.0.1:4000/rubygems-source-problem</id>
+      <content type="html"></content>
+    </entry>
+  
+    <entry>
+      <title>冷漠的社会人</title>
+      <link href="http://127.0.0.1:4000/indifferent" />
+      <updated>2016-03-14T21:25:00+08:00</updated>
+      <id>http://127.0.0.1:4000/indifferent</id>
+      <content type="html"></content>
+    </entry>
+  
+    <entry>
+      <title>汕头 206 路公交车</title>
+      <link href="http://127.0.0.1:4000/number-206-bus" />
+      <updated>2016-03-13T23:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/number-206-bus</id>
+      <content type="html">20 世纪末，澄海汽车运输总公司将农村客运公交化，开通了往返于澄海汽车总站和南湾戏院的 6 路公交车，早中晚各一班进入凤洲。</content>
+    </entry>
+  
+    <entry>
+      <title>屏蔽 SEO 垃圾网站</title>
+      <link href="http://127.0.0.1:4000/block-rubbish-of-seo" />
+      <updated>2016-01-23T23:30:00+08:00</updated>
+      <id>http://127.0.0.1:4000/block-rubbish-of-seo</id>
+      <content type="html">现在用谷歌搜索的时候，若没掌握好技巧，很容易搜出 SEO 垃圾网站。就算把握好技巧，也难免会出现那样的网站。</content>
+    </entry>
+  
+    <entry>
+      <title>清理微信存储空间</title>
+      <link href="http://127.0.0.1:4000/clean-wechat" />
+      <updated>2016-01-23T22:30:00+08:00</updated>
+      <id>http://127.0.0.1:4000/clean-wechat</id>
+      <content type="html">发现手机的内存一直提示不足，想拍张相片都不给拍，用插件清理也没多出空间。其实不用看，就是微信越用占用的存储空间越来越大，而鄙人的 4S 8G，仅有几 G 的可用空间，明显不耐操。</content>
+    </entry>
+  
+    <entry>
+      <title>替换 iOS 版微信小视频</title>
+      <link href="http://127.0.0.1:4000/replace-wechat-sight" />
+      <updated>2015-12-31T08:50:00+08:00</updated>
+      <id>http://127.0.0.1:4000/replace-wechat-sight</id>
+      <content type="html">昨日，看表弟在群里发一小视频，有几分钟时间长，而且还是原腾讯视频的。我认为那肯定不是用微信录制的，而是通过某些手段实现的。随便搜索了一下，点开了一个教程，却被误导，于是决定写一篇不大必要的教程。</content>
+    </entry>
+  
+    <entry>
+      <title>杭州冬日的天空</title>
+      <link href="http://127.0.0.1:4000/hangzhou-winter-sky" />
+      <updated>2015-12-28T23:30:00+08:00</updated>
+      <id>http://127.0.0.1:4000/hangzhou-winter-sky</id>
+      <content type="html">前天蓝天白云，这几年杭州的冬天很少见，于是我拍了下来，视频最后还可以看到远处的山。昨天天空又回到冬天日常，我又同个角度拍了下来，别说是山，连远处的建筑都模糊了。</content>
+    </entry>
+  
+    <entry>
+      <title>寻找微信公众号的原始 ID</title>
+      <link href="http://127.0.0.1:4000/get-the-wechat-id" />
+      <updated>2015-12-24T23:30:00+08:00</updated>
+      <id>http://127.0.0.1:4000/get-the-wechat-id</id>
+      <content type="html">注册微信个人号或公众号，都会自动分配一个原始 ID。个人为 wxid_**************，公众号为 gh_**************。无论有没有设置微信号，这个原始 ID 都可当微信号使用。</content>
+    </entry>
+  
+    <entry>
+      <title>大葱还是大蒜</title>
+      <link href="http://127.0.0.1:4000/allium-fistulosum-or-garlic" />
+      <updated>2015-12-20T23:30:00+08:00</updated>
+      <id>http://127.0.0.1:4000/allium-fistulosum-or-garlic</id>
+      <content type="html">昨天傍晚去买菜，买了几根“蒜”，如下图，老家见长这个样子的也就只有蒜了，因此我以为是蒜，想起老家常吃的大蒜焖鱼，都快流口水啦！</content>
+    </entry>
+  
+    <entry>
+      <title>解决 Git 的 Everything up-to-date 问题</title>
+      <link href="http://127.0.0.1:4000/everything-up-to-date" />
+      <updated>2015-12-18T19:20:00+08:00</updated>
+      <id>http://127.0.0.1:4000/everything-up-to-date</id>
+      <content type="html">前几天，我更新完博客后进行 push 操作，上传数据到 GitHub 时，遇到一个问题，无论我怎么 commit，push 后依然返回提示 Everything up-to-date。</content>
+    </entry>
+  
+    <entry>
+      <title>解决 Firefox 升级后的问题</title>
+      <link href="http://127.0.0.1:4000/after-upgrade-to-firefox-43" />
+      <updated>2015-12-18T17:30:00+08:00</updated>
+      <id>http://127.0.0.1:4000/after-upgrade-to-firefox-43</id>
+      <content type="html">这两天，把 Firefox 升级到 43.0 64 位版本，升级后有两个问题困扰我，在此记下以备忘。</content>
+    </entry>
+  
+    <entry>
+      <title>工夫茶和保温瓶</title>
+      <link href="http://127.0.0.1:4000/gongfu-tea-and-vacuum-flask" />
+      <updated>2015-12-16T23:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/gongfu-tea-and-vacuum-flask</id>
+      <content type="html">“水滚，冲茶。”是潮汕人生活的日常。水滚意思是水烧开，冲茶即泡茶。工夫茶喝的是烧（热）茶，水凉了泡出来的茶就不好喝，所以对烧水工具也有一定讲究。</content>
+    </entry>
+  
+    <entry>
+      <title>京东通信使用体验</title>
+      <link href="http://127.0.0.1:4000/jd-mobile" />
+      <updated>2015-12-14T15:40:00+08:00</updated>
+      <id>http://127.0.0.1:4000/jd-mobile</id>
+      <content type="html">之前在说京东退货时顺带提了一下，就是我买了京东的 170 卡。那是在去年五月底，入了京东通信的手机卡，图的大概就是不用漫游费，而且京东上购物会返话费及流量。</content>
+    </entry>
+  
+    <entry>
+      <title>LFTP 镜像功能排除多个文件</title>
+      <link href="http://127.0.0.1:4000/lftp-mirror-exclude-multi-files" />
+      <updated>2015-12-10T23:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/lftp-mirror-exclude-multi-files</id>
+      <content type="html">昨天在老杨处得知 WordPress 最近更新版本，不过鄙人无意换用博客引擎。今天想想以前弃用 WordPress 时留下一个备份，刚好阿里云的免费虚拟主机，目前仅用于本站的存储，就想在上面再搭个 WordPress，看看以前的备份是否能成功恢复。</content>
+    </entry>
+  
+    <entry>
+      <title>那些年看过的雪</title>
+      <link href="http://127.0.0.1:4000/the-snow-of-those-years" />
+      <updated>2015-12-08T12:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/the-snow-of-those-years</id>
+      <content type="html">在两广要见一场雪，真不是一件容易的事情。印象中，广东也就粤北的韶关、清远地区偶尔才会飘起令人羡慕雪花。深刻的是，08 年的大雪压塌了湖南及粤北多少输电线和电线杆。</content>
+    </entry>
+  
+    <entry>
+      <title>今年冬天杭州的第一场雪</title>
+      <link href="http://127.0.0.1:4000/first-snowfall-of-this-winter-in-hangzhou" />
+      <updated>2015-12-07T20:40:00+08:00</updated>
+      <id>http://127.0.0.1:4000/first-snowfall-of-this-winter-in-hangzhou</id>
+      <content type="html">这个冬天杭州的第一场雪，就在前天，悄无声息地就来了。作为在常年不入冬（气象学）的潮汕地区长大的我来说，每次见下雪都十分激动。前两日，我看预报气温并没有低于零度，也没有随时关注天气，可以说是毫无准备的，流水账又来了。</content>
+    </entry>
+  
+    <entry>
+      <title>iOS 6 原生输入法增强</title>
+      <link href="http://127.0.0.1:4000/ime-for-ios6" />
+      <updated>2015-12-07T15:40:00+08:00</updated>
+      <id>http://127.0.0.1:4000/ime-for-ios6</id>
+      <content type="html">此前，简单说了我在 iPhone 上所使用的双拼输入法，如今，使用 iOS 6 也有几个月时间了，我目前使用的依然是原生输入法，就是加了好几个插件。</content>
+    </entry>
+  
+    <entry>
+      <title>利用七牛 API 显示照片的 Exif</title>
+      <link href="http://127.0.0.1:4000/show-exif-data-of-photo" />
+      <updated>2015-12-04T17:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/show-exif-data-of-photo</id>
+      <content type="html">常访问鄙人博客的朋友，将鼠标覆盖到博客中的某一张图片时，会看到上方会显示该照片的拍摄日期、器材、曝光数据等，看起来好像有点意（zhuāng）思（bī），我就是相片拍得那么烂也好意思晒数据，因为总感觉缺点什么。</content>
+    </entry>
+  
+    <entry>
+      <title>天上不会掉馅饼之果郡王</title>
+      <link href="http://127.0.0.1:4000/guojunwang" />
+      <updated>2015-12-04T13:43:00+08:00</updated>
+      <id>http://127.0.0.1:4000/guojunwang</id>
+      <content type="html">今年双十一那天凌晨，在 SMZDM 上见一“手慢无”的信息，九两的冻榴莲仅需一分钱。虽然我并不很喜欢榴莲，不管，见便宜占先，一直下完单我完全没意识到那是秒杀活动（真是秒杀我就抢不到了）。</content>
+    </entry>
+  
+    <entry>
+      <title>天上不会掉馅饼之微信诈骗</title>
+      <link href="http://127.0.0.1:4000/wechat-fraud" />
+      <updated>2015-12-02T15:43:00+08:00</updated>
+      <id>http://127.0.0.1:4000/wechat-fraud</id>
+      <content type="html">微信的免费领取陷阱。</content>
+    </entry>
+  
+    <entry>
+      <title>为博客添加分享到微信功能</title>
+      <link href="http://127.0.0.1:4000/share-to-wechat" />
+      <updated>2015-11-30T20:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/share-to-wechat</id>
+      <content type="html">网页上所谓的分享到微信功能，充其量就是显示一个该网页或该网页手机版对应页面 URL 地址的二维码，让别人用微信去扫码，便可通过微信自身的功能进行分享。</content>
+    </entry>
+  
+    <entry>
+      <title>潮汕站的交通乱象</title>
+      <link href="http://127.0.0.1:4000/the-chaos-near-chaoshan-station" />
+      <updated>2015-11-29T19:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/the-chaos-near-chaoshan-station</id>
+      <content type="html">潮汕站位于潮州市，地处潮汕三市中心的潮安沙溪镇与浮洋镇交界处，这个站点设立的位置有利有弊。既然起这个标题，下面是要说它在交通方面的一些不足。</content>
+    </entry>
+  
+    <entry>
+      <title>记在 iPhone 4s 降级之后</title>
+      <link href="http://127.0.0.1:4000/after-my-iphone-4s-downgraded" />
+      <updated>2015-11-27T16:20:00+08:00</updated>
+      <id>http://127.0.0.1:4000/after-my-iphone-4s-downgraded</id>
+      <content type="html">iPhone 4s 滚回 iOS 6 后，用习惯 iOS 7/8 的我感觉还是稍不适，所以选择越狱装插件。</content>
+    </entry>
+  
+    <entry>
+      <title>七牛的自定义域名</title>
+      <link href="http://127.0.0.1:4000/domain-setting-with-qiniu" />
+      <updated>2015-11-26T16:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/domain-setting-with-qiniu</id>
+      <content type="html">使用七牛也有一段时间了，毫无疑问七牛是我用过的最好用的图床，此前已经说过七牛的一些优点。前些天把域名备案搞定，这下可以使用七牛云的自定义域名功能。</content>
+    </entry>
+  
+    <entry>
+      <title>工夫茶的二三事</title>
+      <link href="http://127.0.0.1:4000/gongfu-tea" />
+      <updated>2015-11-25T21:25:00+08:00</updated>
+      <id>http://127.0.0.1:4000/gongfu-tea</id>
+      <content type="html">身为潮汕人，对茶总有一份特殊的感情，总离不开从小到大耳濡目染的工夫茶，而工夫茶的范围有些大，恐怕是鄙人之手难以描绘的，在此只能挑几点简单说说。</content>
+    </entry>
+  
+    <entry>
+      <title>服务器对百度收录的影响</title>
+      <link href="http://127.0.0.1:4000/server-and-baidu-seo" />
+      <updated>2015-11-25T20:45:00+08:00</updated>
+      <id>http://127.0.0.1:4000/server-and-baidu-seo</id>
+      <content type="html">我的博客采用 Jekyll 搭建，刚开始一直托管于 GitHub。有时 push 速度有点慢，网页访问也相对慢，但并不影响我对 GitHub 的印象。后来我发现我博客在百度的收录一直不大好，收录很少，有时候直接被清空。</content>
+    </entry>
+  
+    <entry>
+      <title>带磁珠的数据线</title>
+      <link href="http://127.0.0.1:4000/ferrite-bead" />
+      <updated>2015-11-20T19:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/ferrite-bead</id>
+      <content type="html">四年前，我购买了一个 60 G 的移动硬盘 IT-CEO IT900，主要是图个便宜，这货现在看起来似乎就是用 IT-CEO 的硬盘盒套个小硬盘。</content>
+    </entry>
+  
+    <entry>
+      <title>清除快速访问中无法删除的项目</title>
+      <link href="http://127.0.0.1:4000/clean-up-quick-access" />
+      <updated>2015-11-20T08:25:00+08:00</updated>
+      <id>http://127.0.0.1:4000/clean-up-quick-access</id>
+      <content type="html">由于某些需要，这段时间一直使用 Windows，目前使用的是 Windows 10，最近碰到一个令强迫症患者无法接受的小问题。</content>
+    </entry>
+  
+    <entry>
+      <title>上海路牌印象</title>
+      <link href="http://127.0.0.1:4000/the-impression-of-shanghai-signpost" />
+      <updated>2015-11-16T22:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/the-impression-of-shanghai-signpost</id>
+      <content type="html">作为中国最大城市，上海的城市管理绝对不是盖的，在城市的一些细节上更能体现出来，例如今天将要说到的路标路牌。</content>
+    </entry>
+  
+    <entry>
+      <title>蜻蜓 FM</title>
+      <link href="http://127.0.0.1:4000/qingting-fm" />
+      <updated>2015-11-15T14:10:00+08:00</updated>
+      <id>http://127.0.0.1:4000/qingting-fm</id>
+      <content type="html">前两年，有段时间喜欢听汕头电台的《今日评说》。《今日评说》是《今日视线》观众最直接的观点表达平台，节目个性鲜明，潮汕话听起来感觉比较亲切，也喜欢主持人@陈怀冰的主持。</content>
+    </entry>
+  
+    <entry>
+      <title>洗键盘</title>
+      <link href="http://127.0.0.1:4000/clean-poker-2" />
+      <updated>2015-11-14T21:30:00+08:00</updated>
+      <id>http://127.0.0.1:4000/clean-poker-2</id>
+      <content type="html">去年买了一把机械键盘 Poker II，然而用了一年多，并没有彻底清理一次，这几天看着实在太脏，所以决定清理一下。</content>
+    </entry>
+  
+    <entry>
+      <title>有意思的潮汕微信公众号</title>
+      <link href="http://127.0.0.1:4000/chaoshan-official-accounts" />
+      <updated>2015-11-02T18:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/chaoshan-official-accounts</id>
+      <content type="html">现如今，每天最离不开的手机 app 是微信，微信公众平台很不错，有一些订阅号也很有趣，截至到现在，鄙人接触到的潮汕本地公众号中，内容较有意思、原创度较高的公众号如下。</content>
+    </entry>
+  
+    <entry>
+      <title>阿里云代备案</title>
+      <link href="http://127.0.0.1:4000/registration-record" />
+      <updated>2015-10-28T13:40:00+08:00</updated>
+      <id>http://127.0.0.1:4000/registration-record</id>
+      <content type="html">此前，在老杨那边看到阿里云的备案体验，知道阿里云可以领免费虚拟主机，个人网站备案看起来不麻烦且全程免费，故决定试试。</content>
+    </entry>
+  
+    <entry>
+      <title>上海南京路人墙</title>
+      <link href="http://127.0.0.1:4000/the-armed-police-of-shanghai-nanjing-road" />
+      <updated>2015-10-22T18:30:00+08:00</updated>
+      <id>http://127.0.0.1:4000/the-armed-police-of-shanghai-nanjing-road</id>
+      <content type="html">长假出门人多，这早已不是什么新鲜事。自己本身就很宅，平时都懒得出门，也就不喜欢节假日出门，更何况是国庆期间景区肯定会人挤人的魔都上海？无奈勇哥兴致勃勃，只好跟着屁股前去看看。</content>
+    </entry>
+  
+    <entry>
+      <title>上海脚车印象</title>
+      <link href="http://127.0.0.1:4000/the-impression-of-shanghai-bicycle" />
+      <updated>2015-10-19T22:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/the-impression-of-shanghai-bicycle</id>
+      <content type="html">去上海之前，我还妄想着能骑公共自行车游上海，网上查了一下，才知道我想多了，并不是每座城市的公共自行车都能像杭州一般完善，国内公共自行车做得比较好的也许只有杭州和太原，上海似乎只有一些远郊区的公共自行车还行。</content>
+    </entry>
+  
+    <entry>
+      <title>善用 Win32 Disk Imager</title>
+      <link href="http://127.0.0.1:4000/win32-disk-imager" />
+      <updated>2015-10-18T23:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/win32-disk-imager</id>
+      <content type="html">很久以前，那时年轻不懂事，没完没了折腾 Linux 的各种发行版，刚开始捣鼓的时身上没有光盘，所以安装系统时常常采用硬盘安装的方式。</content>
+    </entry>
+  
+    <entry>
+      <title>iOS 6 安装最新兼容版本 app</title>
+      <link href="http://127.0.0.1:4000/install-the-last-compatible-version-of-an-app-with-ios6" />
+      <updated>2015-10-17T13:30:00+08:00</updated>
+      <id>http://127.0.0.1:4000/install-the-last-compatible-version-of-an-app-with-ios6</id>
+      <content type="html">对比最新的中高端手机，iPhone 4s 逊色不少，没有目前新手机的新特性，各种性能也比较差。但将 iPhone 4s 降级为 iOS 6 之后，运行速度快了不少，越狱之后加上 Activator 等插件，用起来相当顺手，感觉还能再战十年。</content>
+    </entry>
+  
+    <entry>
+      <title>上海公交印象</title>
+      <link href="http://127.0.0.1:4000/the-impression-of-shanghai-bus" />
+      <updated>2015-10-15T13:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/the-impression-of-shanghai-bus</id>
+      <content type="html">简单说完上海地铁的第一印象之后，也来说说上海的公交车。因为上海实在太大了，一天半其实活动范围也就那么一点点，所看到的也很局限，此文主要还是贴图为主。</content>
+    </entry>
+  
+    <entry>
+      <title>上海地铁窗外广告</title>
+      <link href="http://127.0.0.1:4000/shanghai-metro-ad-outside-the-window" />
+      <updated>2015-10-13T17:45:00+08:00</updated>
+      <id>http://127.0.0.1:4000/shanghai-metro-ad-outside-the-window</id>
+      <content type="html">国庆被勇哥拉到上海挤了两天，刚到上海，感受了一下上海地铁，让我这乡巴佬感兴趣的并不是人潮滚滚的地铁站，也不是那极易出现卡纸币的售票机，更不是一号线列车一开动就有的阴风阵阵，而是列车运行时窗外那动态的广告。</content>
+    </entry>
+  
+    <entry>
+      <title>汕头智能公交 app</title>
+      <link href="http://127.0.0.1:4000/swatow-smart-bus" />
+      <updated>2015-10-12T11:20:00+08:00</updated>
+      <id>http://127.0.0.1:4000/swatow-smart-bus</id>
+      <content type="html">所谓的智能公交据说是和移动合作，通过 4G 网络将其安装在公交车上的专用终端采集到的视频图像和位置信息传输到云计算中心平台，经过处理之后，可以为广大市民的手机提供实时的公交信息服务，也可以满足交通管理部门对公交企业进行智能调度和视频监控的需求。</content>
+    </entry>
+  
+    <entry>
+      <title>安卓，想说爱你不容易</title>
+      <link href="http://127.0.0.1:4000/hard-to-say-i-love-android" />
+      <updated>2015-10-11T01:30:00+08:00</updated>
+      <id>http://127.0.0.1:4000/hard-to-say-i-love-android</id>
+      <content type="html">好久之前，买了一部华为荣耀 3C 畅玩版给老妈，虽然配置相对低端，但可真谓物美价廉，玩起来流畅度并不比我的 iPhone 4S 差，这让我感觉，如今国内的安卓手机真是良心。老妈一般只用微信，其他 app 很少用，所以用起来感觉不错。</content>
+    </entry>
+  
+    <entry>
+      <title>备份 iOS 版微信小视频</title>
+      <link href="http://127.0.0.1:4000/backup-wechat-sight" />
+      <updated>2015-10-10T10:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/backup-wechat-sight</id>
+      <content type="html">微信很好很强大，还让几乎没上过网的长辈们开始触网，动不动就发图片、小视频过来，说到小视频，iPhone 的微信小视频应该如何备份呢？</content>
+    </entry>
+  
+    <entry>
+      <title>给地图标注加上字符</title>
+      <link href="http://127.0.0.1:4000/add-string-to-bmaps-api-markers" />
+      <updated>2015-10-08T18:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/add-string-to-bmaps-api-markers</id>
+      <content type="html">在地图中，显示多个地点的时候，想要更好的区分，往往会使用不同样式的地点图标，或改变图标的形状，或改变图标的颜色，或在图标上加上字符。论其成本，恐怕在原有地点图标上加上字符是最低的，添加字符相对来说也更利于区分。</content>
+    </entry>
+  
+    <entry>
+      <title>台风印象</title>
+      <link href="http://127.0.0.1:4000/typhoon" />
+      <updated>2015-10-05T18:30:00+08:00</updated>
+      <id>http://127.0.0.1:4000/typhoon</id>
+      <content type="html">台风是南方沿海地方夏秋十分常见的气象灾害，潮汕把台风叫做风台，小时候不懂事，总是喜欢盼风盼雨盼风台。长大后，才知道一个个名字好听的台风背后却都是那么的无情。</content>
+    </entry>
+  
+    <entry>
+      <title>2015 汕头春行</title>
+      <link href="http://127.0.0.1:4000/spring-cycle-2015" />
+      <updated>2015-09-29T23:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/spring-cycle-2015</id>
+      <content type="html">上一次较远距离的骑行，恐怕要追溯到同小伙伴们从家里骑行到汕头老市区，这么久了，在此记下流水账。</content>
+    </entry>
+  
+    <entry>
+      <title>抽风式散热器初体验</title>
+      <link href="http://127.0.0.1:4000/bluster-009-vento" />
+      <updated>2015-09-29T17:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/bluster-009-vento</id>
+      <content type="html">此前，我对自己的笔记本进行一系列的降温措施，然而并没有很好的效果，所以我还是决定买个抽风式散热器试试。</content>
+    </entry>
+  
+    <entry>
+      <title>备份七牛的文件</title>
+      <link href="http://127.0.0.1:4000/qiniu-file-backup" />
+      <updated>2015-09-26T12:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/qiniu-file-backup</id>
+      <content type="html">之前说过我现在是用七牛云做图床的，那么备份已经上传在七牛云的图片是否方便呢？在官网翻了一下，并没有找到类似一键备份的工具。</content>
+    </entry>
+  
+    <entry>
+      <title>JavaScript 实现 Vim 键绑定</title>
+      <link href="http://127.0.0.1:4000/vim-key-bindings-for-web-page" />
+      <updated>2015-09-20T07:10:00+08:00</updated>
+      <id>http://127.0.0.1:4000/vim-key-bindings-for-web-page</id>
+      <content type="html">一旦习惯 Vim 的热键操作，网页浏览也会想用熟悉的热键操作，有人为热门浏览器开发了扩展，例如 Firefox 有个人觉得近完美的扩展解决方案 Vimperator 或 Pentadactyl，Chrome 则有不大完美的 Vichrome、Vimium 等，还有些人直接写了类 vi 的浏览器，例如 dwb，不过我想没用过 vi 的人不会去尝试这样的扩展或软件。</content>
+    </entry>
+  
+    <entry>
+      <title>JavaScript 实现参考资料功能</title>
+      <link href="http://127.0.0.1:4000/reference" />
+      <updated>2015-09-16T12:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/reference</id>
+      <content type="html">有些时候写博文会引用很多外部链接，如果这些外部链接全部放在文中感觉有些不妥，至少在美观度上就有些偏离大众审美。为了更好地引（zhuāng）用（bī），在工夫茶的二三事中，我致（chāo）敬（xí）维基百科，模仿了其使用参考资料的形式，感觉还不错（当然不错）。</content>
+    </entry>
+  
+    <entry>
+      <title>显示 Disqus 评论计数</title>
+      <link href="http://127.0.0.1:4000/disqus-comment-count" />
+      <updated>2015-09-14T15:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/disqus-comment-count</id>
+      <content type="html">使用 Jekyll 生成静态页面做博客访问很快，可是网站托管在 GitHub，并不支持直接写入，所以就不得不外挂第三方评论系统。之前我也折腾对比过 Disqus 和多说，但最终还是没有切换到多说，选择继续留在 Disqus 观望，希望 Disqus 以后能一直保持不被墙。</content>
+    </entry>
+  
+    <entry>
+      <title>汕头台也能网上看直播</title>
+      <link href="http://127.0.0.1:4000/sttv-online" />
+      <updated>2015-09-11T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/sttv-online</id>
+      <content type="html">看电视，或许是一种悠闲的生活 ，对于很多人来说，动画片似乎是小时候的最爱，而在我的印象里，从小就跟着爷爷饭后一壶茶从新闻联播看到汕头新闻。</content>
+    </entry>
+  
+    <entry>
+      <title>图片浏览器 IrfanView</title>
+      <link href="http://127.0.0.1:4000/irfanview" />
+      <updated>2015-08-27T17:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/irfanview</id>
+      <content type="html">说起这个名字，或许大多数人都会感觉很陌生，听都没听说过。若说它是图片浏览器，很多人还是一脸茫然。或许是它的名字比较难记，IrfanView 命名源于软件作者 Irfan Skiljan，将拆成 irfan 及 view 两个单词就很好记。</content>
+    </entry>
+  
+    <entry>
+      <title>百度地图 API 制作路书</title>
+      <link href="http://127.0.0.1:4000/bmaps-lushu" />
+      <updated>2015-08-24T15:30:00+08:00</updated>
+      <id>http://127.0.0.1:4000/bmaps-lushu</id>
+      <content type="html">很久以前，Google Maps 还能使用，要分享一些去徒步、骑行的线路地图十分方便，里面插上一些图片啥的也是毫无压力，鼠标点点就可以将线路图搞得有声有色，例如在这篇博文中所嵌入的地图。</content>
+    </entry>
+  
+    <entry>
+      <title>百度地图 API 绘制折线</title>
+      <link href="http://127.0.0.1:4000/bmaps-polyline" />
+      <updated>2015-08-23T21:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/bmaps-polyline</id>
+      <content type="html">想要在百度地图上画一条自定义路线，路线说白了就是折线，使用百度地图 JS API 画折线可以使用 Polyline 类来实现。</content>
+    </entry>
+  
+    <entry>
+      <title>页面样式脚本各得其所</title>
+      <link href="http://127.0.0.1:4000/custom-css-and-js-for-page" />
+      <updated>2015-08-23T12:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/custom-css-and-js-for-page</id>
+      <content type="html">在写日志的时候，鄙人有时候需要引入及写自定义的 CSS 或 JS，一般是在日志里面直接引入标签直接写。</content>
+    </entry>
+  
+    <entry>
+      <title>Debian 上安装 Wine QQ</title>
+      <link href="http://127.0.0.1:4000/wineqq-for-debian" />
+      <updated>2015-08-20T15:30:00+08:00</updated>
+      <id>http://127.0.0.1:4000/wineqq-for-debian</id>
+      <content type="html">QQ 或许是无法离开 Windows 的借口之一，在 Linux 上也会想用 QQ，还好现在 Wine 版本的 QQ 还能使用，就没有去使用并不是很好用的 pidgin-lwqq。</content>
+    </entry>
+  
+    <entry>
+      <title>百度地图坐标转换</title>
+      <link href="http://127.0.0.1:4000/bmaps-changeposition" />
+      <updated>2015-08-19T17:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/bmaps-changeposition</id>
+      <content type="html">关于地图坐标系统，百度的文档里面一句话就概括得很清楚，这里引用过来。</content>
+    </entry>
+  
+    <entry>
+      <title>驱动 Debian 上的无线网卡</title>
+      <link href="http://127.0.0.1:4000/thinkpad-t410-wifi-on-debian" />
+      <updated>2015-08-16T18:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/thinkpad-t410-wifi-on-debian</id>
+      <content type="html">鄙人的 ThinkPad T410 此次安装的 Debian，是采用 Debian 8 LXDE 64 位的 CD1，安装过程中检测网络时提示硬件需要的是非自由固件驱动，需要手动安装。</content>
+    </entry>
+  
+    <entry>
+      <title>ThinkPad T410 降温记</title>
+      <link href="http://127.0.0.1:4000/cool-the-thinkpad-t410" />
+      <updated>2015-08-15T20:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/cool-the-thinkpad-t410</id>
+      <content type="html">朋友说，杭州的夏天温度有 40 ℃ 以上才是正常的，今年连续十来天的 38 ~ 39 ℃ 只能算是凉一点。而我却感觉今年算是正常的，前年的变态热则是史无前例。</content>
+    </entry>
+  
+    <entry>
+      <title>Firefox 的菜单栏</title>
+      <link href="http://127.0.0.1:4000/firefox-menubar" />
+      <updated>2015-08-14T18:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/firefox-menubar</id>
+      <content type="html">鄙人刚使用浏览器时，无论哪款浏览器，都有经典的菜单栏。菜单使用起来很简单，很多设置、操作都只需要用鼠标点点菜单即可，方便极了。</content>
+    </entry>
+  
+    <entry>
+      <title>第一次京东退货</title>
+      <link href="http://127.0.0.1:4000/the-first-jd-return" />
+      <updated>2015-08-12T14:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/the-first-jd-return</id>
+      <content type="html">自从几年前第一次京东购物开始，网购基本上都是优先选择京东等 B2C 平台进行购物，不得不的情况下才会选择去淘宝 C 店进行购物，其中的原因只因为省心吧。</content>
+    </entry>
+  
+    <entry>
+      <title>Disqus 和多说在 Jekyll 的恩怨情仇</title>
+      <link href="http://127.0.0.1:4000/talk-about-duoshuo" />
+      <updated>2015-08-01T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/talk-about-duoshuo</id>
+      <content type="html">介绍 Disqus 的缺点，以及怎么从 Disqus 迁移到多说，顺便使多说异步加载。</content>
+    </entry>
+  
+    <entry>
+      <title>图床的那些事儿</title>
+      <link href="http://127.0.0.1:4000/image-hosting" />
+      <updated>2015-07-06T21:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/image-hosting</id>
+      <content type="html">博客写得不多，但从 08 年开始到现在，也有大概 7 年左右的时间，这期间，自从使用博客大巴开始便使用图床，到现在也有 5 年左右时间，那么就聊聊图床的那些事吧。</content>
+    </entry>
+  
+    <entry>
+      <title>iPhone 4s 已降级至 iOS 6.1.3</title>
+      <link href="http://127.0.0.1:4000/downgrade-iphone-4s-to-ios-613" />
+      <updated>2015-06-30T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/downgrade-iphone-4s-to-ios-613</id>
+      <content type="html">这两天，iPhone 4s 可以降级的消息一爆出，iPhone 4s 用户激动纷纷，鄙人今日（6 月 30 日）已降级，发篇博吧，感受啥的后面补上。</content>
+    </entry>
+  
+    <entry>
+      <title>爱听的那些粤语歌</title>
+      <link href="http://127.0.0.1:4000/cantopop" />
+      <updated>2015-06-17T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/cantopop</id>
+      <content type="html">在很久以前，粤语歌就多听 Beyond、陈奕迅，而在这几年，喜欢的粤语歌逐渐多了起来，杨千嬅、谢安琪、邓丽欣等等的歌。</content>
+    </entry>
+  
+    <entry>
+      <title>iPhone 上的双拼输入法</title>
+      <link href="http://127.0.0.1:4000/shuangpin-for-iphone" />
+      <updated>2015-06-11T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/shuangpin-for-iphone</id>
+      <content type="html">作为双拼输入法用户，我总是希望在哪都能使用双拼，手机也不例外。记得当年在诺基亚手机上，都使用起点讯输入法的双拼功能，没错，那便是九宫格的双拼。</content>
+    </entry>
+  
+    <entry>
+      <title>科学使用 Google Earth Pro</title>
+      <link href="http://127.0.0.1:4000/google-earth-hosts" />
+      <updated>2015-06-07T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/google-earth-hosts</id>
+      <content type="html">那些年，一张地图，一辆买菜车，狂奔的车轮下映射的便是我那美好周末。如今，我已忘记买了几张本地地图，几本地图册，地图程序的出现，或许他们大多数的命运就只有吃灰。</content>
+    </entry>
+  
+    <entry>
+      <title>Jekyll 的 emoji 插件</title>
+      <link href="http://127.0.0.1:4000/jemoji" />
+      <updated>2015-06-03T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/jemoji</id>
+      <content type="html">从 iOS 支持 emoji 之后，支持 emoji 的 app、网站数不胜数，如今 emoji 可算是风靡全球，那么，Jekyll 是否也能拥有一样的功能？答案是肯定的。</content>
+    </entry>
+  
+    <entry>
+      <title>Firefox 的查看源代码功能</title>
+      <link href="http://127.0.0.1:4000/view-source-in-firefox" />
+      <updated>2015-05-27T23:24:00+08:00</updated>
+      <id>http://127.0.0.1:4000/view-source-in-firefox</id>
+      <content type="html">Firefox 的查看源代码功能的总总</content>
+    </entry>
+  
+    <entry>
+      <title>在 Windows 上搭建 Jekyll 写作环境</title>
+      <link href="http://127.0.0.1:4000/run-jekyll-on-windows" />
+      <updated>2015-05-27T09:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/run-jekyll-on-windows</id>
+      <content type="html">曾几何时，别说是 Jekyll，Windows 用户想要好好用一会 Ruby 也相当麻烦，安装时各种出错，但现在想在 Windows 上搭建一个可用的 Jekyll 写作环境还是挺简单的。</content>
+    </entry>
+  
+    <entry>
+      <title>获取微信文章中腾讯视频的页面</title>
+      <link href="http://127.0.0.1:4000/get-the-page-with-wechat-video" />
+      <updated>2015-05-26T21:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/get-the-page-with-wechat-video</id>
+      <content type="html">前段时间见汕头电视台可网上看直播，所以也想看看“澄海电视台”有没有在线渠道可以观看。</content>
+    </entry>
+  
+    <entry>
+      <title>湾头交通</title>
+      <link href="http://127.0.0.1:4000/wantou-traffic" />
+      <updated>2015-05-17T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/wantou-traffic</id>
+      <content type="html">想要聊聊澄海的公交，还真不知该从何说起，那就先说说湾头的公交（或者说交通）。</content>
+    </entry>
+  
+    <entry>
+      <title>我那丢了的手机</title>
+      <link href="http://127.0.0.1:4000/talk-about-my-lost-cell-phone" />
+      <updated>2015-05-06T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/talk-about-my-lost-cell-phone</id>
+      <content type="html">有时候不得不承认自己在记的都是流水账，那么这次，且听我聊聊关于那次手机丢了的事。</content>
+    </entry>
+  
+    <entry>
+      <title>无处不在的二维码</title>
+      <link href="http://127.0.0.1:4000/qrcode" />
+      <updated>2015-04-22T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/qrcode</id>
+      <content type="html">春节期间，阿鼠看到带二维码的东西说一定是在网上买的，事实何止，在街上买的很多也都会带的。</content>
+    </entry>
+  
+    <entry>
+      <title>千千静听李小珍</title>
+      <link href="http://127.0.0.1:4000/ttplayer-teochow-song" />
+      <updated>2015-04-16T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/ttplayer-teochow-song</id>
+      <content type="html">事情是这样的，这几天想给妈妈的手机放一些她喜欢听的歌曲或潮剧。像妈妈这个年龄的，一般最喜欢的是潮剧，潮语歌曲次之，当然一部分普通话老歌也是可以接受的。</content>
+    </entry>
+  
+    <entry>
+      <title>小熊猫 Firefox</title>
+      <link href="http://127.0.0.1:4000/firefox" />
+      <updated>2015-04-05T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/firefox</id>
+      <content type="html">不知何时开始，对 Firefox 情有独钟，就算用它偶尔假死，有时候看视频更是卡顿不堪，可我还是不会抛弃它而投入不断壮大的 Chrome 阵营，究其原因，还是迷恋它有独特的扩展。</content>
+    </entry>
+  
+    <entry>
+      <title>蓝牙耳机 Avantree Jogger Pro</title>
+      <link href="http://127.0.0.1:4000/avantree-jogger-pro" />
+      <updated>2015-01-11T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/avantree-jogger-pro</id>
+      <content type="html">前几天，我的一个耳塞又坏掉了，这一两年都不知道虐坏掉几个耳机，包括手机附带的以及买过的一些低端耳机。耳机之所以会坏，虽然耳机质量也有一定的关系，但主要原因个人觉得还是在佩戴习惯上的问题。</content>
+    </entry>
+  
+    <entry>
+      <title>2014 杭州国际马拉松</title>
+      <link href="http://127.0.0.1:4000/2014hzim" />
+      <updated>2014-11-07T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/2014hzim</id>
+      <content type="html">去年杭马，朋友同事没人参加马拉松，当时随便报了个短程马拉松。而今年，同事也好，朋友也好，都有想跑杭马的。意味着今年跑马拉松可能会有几个熟悉的人一起跑，突然感觉很好。</content>
+    </entry>
+  
+    <entry>
+      <title>如何搭建 Jekyll 写作环境</title>
+      <link href="http://127.0.0.1:4000/how-to-install-jekyll" />
+      <updated>2014-08-11T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/how-to-install-jekyll</id>
+      <content type="html">在好久好久以前，我提到了我从 WordPress 切换到 Jekyll 的缘由。自从使用 Jekyll 写博，到现在也已经有两年半左右的时间，Jekyll 也日趋成熟，使用起来也相当舒畅，无过多的不适感。</content>
+    </entry>
+  
+    <entry>
+      <title>固态硬盘印象</title>
+      <link href="http://127.0.0.1:4000/ssd" />
+      <updated>2014-08-02T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/ssd</id>
+      <content type="html">上次说到机械键盘，也顺带提了下固态硬盘，那这篇就来谈谈固态硬盘，和机械键盘一样，固态硬盘也是提升用户体验的硬件。</content>
+    </entry>
+  
+    <entry>
+      <title>雨雪天气的杭州交通</title>
+      <link href="http://127.0.0.1:4000/about-the-road-traffic-in-hangzhou-when-its-raining-or-snowing" />
+      <updated>2014-07-28T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/about-the-road-traffic-in-hangzhou-when-its-raining-or-snowing</id>
+      <content type="html">在杭城的游荡已有一年之久，对杭州的公共交通感觉很满意，各种服务相当到位。不得不提的是杭州公共自行车，在国内它敢认第二，估计没其他城市敢称第一。而另一面，杭州的雨雪天气，还是该塞车的塞车，十分令人唾弃。</content>
+    </entry>
+  
+    <entry>
+      <title>机械键盘印象——Poker II</title>
+      <link href="http://127.0.0.1:4000/poker-2" />
+      <updated>2014-07-19T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/poker-2</id>
+      <content type="html">机械键盘这既古老又新鲜的玩意，大概是上大学之后才有一定的认识，而一直到最近一个月，我才买了一个 Poker II，开始了全新的键盘体验生活。</content>
+    </entry>
+  
+    <entry>
+      <title>ThinkPad T410 的键盘问题</title>
+      <link href="http://127.0.0.1:4000/the-keyboard-problem-with-thinkpad-t410" />
+      <updated>2014-07-01T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/the-keyboard-problem-with-thinkpad-t410</id>
+      <content type="html">去年夏天，我经历了杭州几十年来最热的一个夏天，最高温甚至破历史记录，变态般达到 41.6 摄氏度。在那个夏天，我是在没有空调的寝室度过的，每天睡前一个澡，睡醒满身汗再一个澡。</content>
+    </entry>
+  
+    <entry>
+      <title>杭州的桥</title>
+      <link href="http://127.0.0.1:4000/bridge-in-hangzhou" />
+      <updated>2014-06-15T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/bridge-in-hangzhou</id>
+      <content type="html">这题目看起来范围有点广，杭州的桥，既可以是有江南特色的古代桥梁，又可以是近现代交通而新建的公路桥、铁路桥，甚至可以是目前杭州多地还在架起的高架桥。</content>
+    </entry>
+  
+    <entry>
+      <title>解决 iPhone 上应用程序的“等待中”</title>
+      <link href="http://127.0.0.1:4000/solved-waiting-with-app-of-iphone" />
+      <updated>2014-05-02T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/solved-waiting-with-app-of-iphone</id>
+      <content type="html">自从工作以后，感觉已经没有时间继续折腾，连手机也换成大众街机开箱即用的 iPhone，昨天在网上无意中看到这个网站——Fly It Remotely，大致理解为提供 APP 内测版本发布的地方，具体可以看其关于页面。</content>
+    </entry>
+  
+    <entry>
+      <title>原来，我也有梦想</title>
+      <link href="http://127.0.0.1:4000/originally-i-also-have-a-dream" />
+      <updated>2014-03-16T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/originally-i-also-have-a-dream</id>
+      <content type="html">做了一年的 SEO 也让我感觉是混日子般地生存着，生活缺少了挑战和激情，多了一些没营养的忙碌。看《拖延心理学》知道，拖延的深层是恐惧，而不是一种习惯。</content>
+    </entry>
+  
+    <entry>
+      <title>2013 年个人总结</title>
+      <link href="http://127.0.0.1:4000/2013-personal-review" />
+      <updated>2013-12-31T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/2013-personal-review</id>
+      <content type="html">一年又一年，怎么感觉每一年的现在，回忆起过去的一年，原本想要的年度总结都成为年度检讨。回想起去年的今天，也是这么的冷，那会我在南宁蜷缩着，而今年的最后一天，早晨五点多，气温接近零度……</content>
+    </entry>
+  
+    <entry>
+      <title>最近生活小记</title>
+      <link href="http://127.0.0.1:4000/recent-life" />
+      <updated>2013-10-07T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/recent-life</id>
+      <content type="html">现在已经是十月份了，也已经有半年多没写博客，刚过不久的中秋节，是第四个没在家过的中秋节，国庆亦是。此前都是在广西，而现在的我，在杭州。</content>
+    </entry>
+  
+    <entry>
+      <title>初到杭城</title>
+      <link href="http://127.0.0.1:4000/first-arrived-in-hangzhou" />
+      <updated>2013-03-23T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/first-arrived-in-hangzhou</id>
+      <content type="html">又到周末雨落时，手脚笨拙，表达能力较弱的我，也只能选择在这个时候，倾听雨声写写博客，显然有股小时写周记的味道，而思想心境却再也回不到过去。</content>
+    </entry>
+  
+    <entry>
+      <title>谈谈《鮀恋》</title>
+      <link href="http://127.0.0.1:4000/talk-about-tuolian" />
+      <updated>2013-03-17T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/talk-about-tuolian</id>
+      <content type="html">不知何时开始《鮀恋》在微博上的宣传吸引了我，看完预告片更是让我兴趣大增，一直等待网络视频的发布。而视频发布后，却一直没把它看完，直至上个周末，才完整地看了一遍。</content>
+    </entry>
+  
+    <entry>
+      <title>从头再来</title>
+      <link href="http://127.0.0.1:4000/reset-again" />
+      <updated>2013-03-09T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/reset-again</id>
+      <content type="html">去年 12 月份，我从桂林跑到南宁，在那度过了一个多月，原以为会在那里呆个一两年，最终却还是选择了离开。在南宁期间，我投了很多简历，并去了几场招聘会，前往一些公司面试，笔试，但直到离开，还是没有一个公司要我。</content>
+    </entry>
+  
+    <entry>
+      <title>安装 Fcitx 输入法，使用小鹤双拼</title>
+      <link href="http://127.0.0.1:4000/install-fcitx-and-use-xiaohe-shuangpin" />
+      <updated>2013-02-20T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/install-fcitx-and-use-xiaohe-shuangpin</id>
+      <content type="html">为了提高中文打字速度，从 2010 年开始使用双拼输入法。双拼，顾名思义，所有音节都只需输入 2 键，即所有汉字只需按两个键。虽然“音码 + 形码”更能提高打字速度，图个方便就没有使用这种方式，仅仅是纯双拼。起初使用自然码双拼方案，后来换为小鹤双拼。</content>
+    </entry>
+  
+    <entry>
+      <title>桂林徒步之环城</title>
+      <link href="http://127.0.0.1:4000/hiking-along-the-ring-road-of-guilin" />
+      <updated>2013-01-30T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/hiking-along-the-ring-road-of-guilin</id>
+      <content type="html">桂林这座城市，不知不觉已经待了两年多，爱上她那干净整洁的市容，便利的公交系统，以及令无数人向往的自然山水。桂林城不大，甚至开着电动车一天就可以逛完市区，这也让我的一个小小的理想成为可能。</content>
+    </entry>
+  
+    <entry>
+      <title>Vim 与系统剪切板交互</title>
+      <link href="http://127.0.0.1:4000/using-vim-with-clipboard-on-archlinux" />
+      <updated>2013-01-24T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/using-vim-with-clipboard-on-archlinux</id>
+      <content type="html">很多时候使用 Vim 编辑文本，总需要复制里面的东西出来，粘贴到其他地方，比如说网页，聊天窗口等等，而有些时候有需要从网页等地方复制文字过来粘贴到 Vim 正在编辑的文件里。</content>
+    </entry>
+  
+    <entry>
+      <title>使用 Jekyll 代替 WordPress</title>
+      <link href="http://127.0.0.1:4000/replace-wordpress-with-jekyll" />
+      <updated>2013-01-19T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/replace-wordpress-with-jekyll</id>
+      <content type="html">Jekyll 是针对博客平台的静态网站生成器，目前你所看到的博客正是使用这个轻巧的工具生成的。</content>
+    </entry>
+  
+    <entry>
+      <title>几款 Vi 操作方式的软件 / 插件</title>
+      <link href="http://127.0.0.1:4000/software-which-behaves-like-vim" />
+      <updated>2013-01-16T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/software-which-behaves-like-vim</id>
+      <content type="html">Vim 是编辑器之神，和 Emacs 有并列的关系，它的操作方式影响了好多 Linuxer，当然也不乏使用 Windows 之人士，如 xbeta 等。便捷高效的操作是它最吸引人的地方，还有很多扩展，如 VimIM 这样 Cool 的插件层出不穷，还有神奇的应用，如 Vim 也是个播放器。</content>
+    </entry>
+  
+    <entry>
+      <title>硬盘安装 Arch Linux</title>
+      <link href="http://127.0.0.1:4000/hard-disk-installation-for-archlinux" />
+      <updated>2013-01-15T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/hard-disk-installation-for-archlinux</id>
+      <content type="html">Chakra 虽稳定，KDE 臃肿，纯 QT 的环境用得别扭，没有 Arch Linux 的自由，于是切换回 Arch Linux，新版本的安装方式和以前稍有区别，下面一步一步来完成 Arch Linux 的安装。</content>
+    </entry>
+  
+    <entry>
+      <title>使用 Git 管理静态网站</title>
+      <link href="http://127.0.0.1:4000/using-git-to-manage-a-website" />
+      <updated>2013-01-10T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/using-git-to-manage-a-website</id>
+      <content type="html">本博使用 GitHub Pages，很喜欢使用 Git 这种方式管理网站，下面就一起来看看如何使用 Git 来管理静态网站</content>
+    </entry>
+  
+    <entry>
+      <title>Arch Linux 下的 ADSL 拨号上网</title>
+      <link href="http://127.0.0.1:4000/using-archlinux-with-adsl" />
+      <updated>2013-01-02T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/using-archlinux-with-adsl</id>
+      <content type="html">前几天拉了网，普通的 ADSL 宽带，由于没有路由器，因此只能通过自身的拨号。在 Arch Linux 下，可以通过自带的 Netcfg 来连接，可以通过 RP-PPPoE 来连接，也可直接配置 pppd 实现拨号。</content>
+    </entry>
+  
+    <entry>
+      <title>2012 年个人总结</title>
+      <link href="http://127.0.0.1:4000/2012-personal-review" />
+      <updated>2012-12-31T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/2012-personal-review</id>
+      <content type="html">这是我第一次写年度总结，2012 年我过得好么？是，塞翁失马，焉知非福。若坦白地说，这年过得极其糟糕。</content>
+    </entry>
+  
+    <entry>
+      <title>安装和配置 MPD</title>
+      <link href="http://127.0.0.1:4000/installation-and-configuration-mpd" />
+      <updated>2012-12-01T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/installation-and-configuration-mpd</id>
+      <content type="html">使用 i3 窗口管理器，感觉很舒服，更有帅帅的 i3status 点缀之，在 GitHub 搜了下，发现有个 i3status 修改版，可以显示 MPD 的播放状态，于是又用起 MPD。</content>
+    </entry>
+  
+    <entry>
+      <title>记南澳一游</title>
+      <link href="http://127.0.0.1:4000/travel-in-nanao" />
+      <updated>2012-10-17T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/travel-in-nanao</id>
+      <content type="html">谨以此文迎接今年的十一八！</content>
+    </entry>
+  
+    <entry>
+      <title>九月份跑步笔记</title>
+      <link href="http://127.0.0.1:4000/running-notes-in-september" />
+      <updated>2012-10-13T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/running-notes-in-september</id>
+      <content type="html">既然又一个月过去，那就记录下九月份的跑步情况。九月份的 30 天中跑了 17 天，总共跑了 100.5 公里，653 分钟，平均跑速为 9.23 千米每小时，单次最大跑量为 10 公里。</content>
+    </entry>
+  
+    <entry>
+      <title>海墘煏卵一记</title>
+      <link href="http://127.0.0.1:4000/go-barbecue-to-the-seaside" />
+      <updated>2012-10-02T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/go-barbecue-to-the-seaside</id>
+      <content type="html">虽说生活在海边，但离大海还是有段距离的。沧海桑田，随着时间的推移，进一步的围海造田，可能会越来越远。玩是孩子的天性，小时候，经常和伙伴一起玩游戏，一起去钓鱼，一起去烧烤。长大了，大家平时都无闲，各自去为理想奋斗，为生活奔波。</content>
+    </entry>
+  
+    <entry>
+      <title>学生时代的最后一个暑假</title>
+      <link href="http://127.0.0.1:4000/the-last-summer-in-student-times" />
+      <updated>2012-09-25T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/the-last-summer-in-student-times</id>
+      <content type="html">一直想提笔，一直想说些什么，记些什么，又总觉得无从提起。这个逝去了的暑假，是学生时代的最后一个暑假，或是人生中的最后一个暑假，又或是这一生中最铭记在心的暑假。生病、晨跑、骑行、情感、吃货，是这个暑假的关键词。</content>
+    </entry>
+  
+    <entry>
+      <title>麻雀虽小，五脏俱全</title>
+      <link href="http://127.0.0.1:4000/small-but-complete" />
+      <updated>2012-07-04T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/small-but-complete</id>
+      <content type="html">今年劳动节期间， 8700 屏幕排线出问题了，拆了几次，折腾折腾折腾之后还是一样，用着用着会白屏，猛力拍拍即可，虽能用，但不爽。小弟以为 8700 够用，基本不关注手机的行情，但很早就听说， HP 去年抛售的 Veer 有极高的性价比。</content>
+    </entry>
+  
+    <entry>
+      <title>五月份，计划的执行情况</title>
+      <link href="http://127.0.0.1:4000/implementation-of-the-plan-in-may" />
+      <updated>2012-06-01T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/implementation-of-the-plan-in-may</id>
+      <content type="html">上个月我在此文中说道，要每天早起，每天慢跑，每周一徒步。今天是 6 月 1 日，这一个月来，计划执行的情况到底是咋样的呢？下面一起来算算账。</content>
+    </entry>
+  
+    <entry>
+      <title>早起，慢跑，徒步！</title>
+      <link href="http://127.0.0.1:4000/early-rising-running-and-walking" />
+      <updated>2012-04-25T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/early-rising-running-and-walking</id>
+      <content type="html">开学到现在这种生活真够折磨人的，可以说天气和宿舍环境的恶劣对自己有一定的影响，还有自己的惰性，拖延症发，导致生活质量低下。</content>
+    </entry>
+  
+    <entry>
+      <title>又上尧山</title>
+      <link href="http://127.0.0.1:4000/the-second-climbing-notes-for-yaoshan" />
+      <updated>2012-04-18T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/the-second-climbing-notes-for-yaoshan</id>
+      <content type="html">4 月 3 日，尧山发了场山火，当天晚上得知，前往宿舍楼顶，能看到明火，明显已经烧到山顶。挺久没爬尧山，估计到毕业也爬不了多少次，天天坐着对身体也不好，同学说周末早上沿盘山公路跑上尧山，既锻炼身体又可以看看山火之后的尧山，正合心意。</content>
+    </entry>
+  
+    <entry>
+      <title>发烧一记</title>
+      <link href="http://127.0.0.1:4000/have-a-fever" />
+      <updated>2012-04-05T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/have-a-fever</id>
+      <content type="html">这是我在桂林第二次发烧，前天晚上着凉，然后开始全身无力，昨天貌似好点。昨晚又开始烧，刚一测腋下，还有 38.2 摄氏度。</content>
+    </entry>
+  
+    <entry>
+      <title>ThinkPad T410 的使用情况</title>
+      <link href="http://127.0.0.1:4000/thinkpad-t410" />
+      <updated>2012-03-25T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/thinkpad-t410</id>
+      <content type="html">某天早晨，终于盼到 ThinkPad T410，性能各方面比起此前的 X30，可谓天壤之别。人生苦短，睁眼闭眼之间已有四个多月。</content>
+    </entry>
+  
+    <entry>
+      <title>记大圩一游</title>
+      <link href="http://127.0.0.1:4000/travel-in-daxu" />
+      <updated>2011-12-03T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/travel-in-daxu</id>
+      <content type="html">我热爱体育，但不经常做运动。对于手脚笨拙的我而言，跑步和骑车是所喜爱的两项运动，球类运动一般不碰，一直不喜欢竞技运动，相对来说更适合做观众，而且是闷骚的观众，只会静静地看着而不会加油助威的。</content>
+    </entry>
+  
+    <entry>
+      <title>我的黑莓 8700 之使用篇</title>
+      <link href="http://127.0.0.1:4000/use-of-blackberry8700" />
+      <updated>2011-11-18T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/use-of-blackberry8700</id>
+      <content type="html">此前说过，黑莓是先结婚后恋爱的手机，刚开始使用黑莓那是相当不适应，慢慢的各种操作上手熟悉后，用起来就相当顺手了。</content>
+    </entry>
+  
+    <entry>
+      <title>我的黑莓 8700 之桌面篇</title>
+      <link href="http://127.0.0.1:4000/blackberry-desktop-software-for-pc" />
+      <updated>2011-11-04T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/blackberry-desktop-software-for-pc</id>
+      <content type="html">一款智能手机少不了的东西，除了应用之外，还有强大的桌面管理器，以方便用户在电脑端管理手机上的软件、文件，同步数据到电脑，利用手机进行拨号上网等。目前，黑莓的 PC 端软件，虽说不上完美，但以够用。主流桌面操作系统上都可对进行刷机，软件的安装 / 卸载，同步数据等操作。</content>
+    </entry>
+  
+    <entry>
+      <title>我的黑莓 8700 之应用篇</title>
+      <link href="http://127.0.0.1:4000/software-for-blackberry-8700" />
+      <updated>2011-10-26T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/software-for-blackberry-8700</id>
+      <content type="html">想在老机 8700 上拍照看视频是不可能的事，用它听歌玩游戏也不会好选择，因为它只有 16M 的 RAM 和 64M 的 ROM。这个配置大大落后于现在的热门机型，廉颇老矣，尚能饭否？目前手机上的大多数应用都是基于互联网，使用手机便捷上网十分流行，特别是微博客，即时通信等服务。</content>
+    </entry>
+  
+    <entry>
+      <title>我的黑莓 8700 之情结篇</title>
+      <link href="http://127.0.0.1:4000/the-complex-of-blackberry" />
+      <updated>2011-10-18T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/the-complex-of-blackberry</id>
+      <content type="html">使用黑莓手机到现在已经有一年时间了，黑莓在中国手机市场就如 Linux 在 PC 操作系统所占市场份额一样的低，但小众并不能忽略不计，也不能否定它的优秀。黑莓在美国受欢迎是因为它拥有稳定可靠的黑莓业务，这也是黑莓的核心，所谓“黑莓卖的不是手机，而是服务”。</content>
+    </entry>
+  
+    <entry>
+      <title>国内网络硬盘</title>
+      <link href="http://127.0.0.1:4000/netdisk" />
+      <updated>2011-10-14T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/netdisk</id>
+      <content type="html">小时侯拍了不少照片，但幸存的很少，几个月大白白胖胖的那张还在（目前在 @monkey_happy 手里），是我大姑保存的，很感谢她，照片在她那的都会一直在。记得 08 年的时候，家里电脑的硬盘突然坏了，但是数据并未备份，后来虽然换了个新硬盘，但原来的数据却再也回不来了，痛心啊。</content>
+    </entry>
+  
+    <entry>
+      <title>Thinkpad X30 上的 Windows 7</title>
+      <link href="http://127.0.0.1:4000/win7-for-thinkpad-x30" />
+      <updated>2011-09-23T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/win7-for-thinkpad-x30</id>
+      <content type="html">XP 毕竟该退休了，而单 Linux 又显得有点不切实际，无聊的搜了一下是否有人在 X30 上安装 Win 7 成功，大部分都说是显驱安装失败，Google 搜到的一篇文章（老筆電跑 Windows 7）让我很想试试，既然都有人把显驱安装上了，那就试试吧。</content>
+    </entry>
+  
+    <entry>
+      <title>记阳朔一游</title>
+      <link href="http://127.0.0.1:4000/travel-in-yangshuo" />
+      <updated>2011-09-17T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/travel-in-yangshuo</id>
+      <content type="html">话说桂林山水甲天下，阳朔山水甲桂林。来桂林，乐满地可以不去，大圩古镇可以不去，龙胜漂流也可以不去，但似乎找不到任何理由不去阳朔，何况在桂林已经呆了一年还没去过，所以有了 9 月 11 日到 12 日，宿舍六人阳朔游之说。</content>
+    </entry>
+  
+    <entry>
+      <title>博客定位问题及一些思考</title>
+      <link href="http://127.0.0.1:4000/something-of-blog-and-others" />
+      <updated>2011-06-16T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/something-of-blog-and-others</id>
+      <content type="html">看看自己的博客，发现原本应是 Windows 平台推荐软件的博客变成 Linux 类博客，原本属 IT 类的博客越来越像旅游博客，游记这么多，其实这种非正式的个人博客这样做也没什么不可，但还是别太离谱的好。</content>
+    </entry>
+  
+    <entry>
+      <title>步行桂林市区之二</title>
+      <link href="http://127.0.0.1:4000/walking-in-guilin-2" />
+      <updated>2011-06-04T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/walking-in-guilin-2</id>
+      <content type="html">5 月 29 日下午，再次去桂林市区步行，越来越发现这种方式的好处，更多的好处还是锻炼身体，何乐而不为呢？虽然不是跑，不过走得也不慢，5 个小时 16 公里。水喝多了，那天下午足足喝了三瓶水，记得爬尧山的过程三瓶半。</content>
+    </entry>
+  
+    <entry>
+      <title>爬尧山记</title>
+      <link href="http://127.0.0.1:4000/climbing-notes-for-yaoshan" />
+      <updated>2011-06-01T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/climbing-notes-for-yaoshan</id>
+      <content type="html">来到桂林的第八个月的一天，5 月 28 日下午，终于去爬了尧山，完成了早就应该去做，必要的事件。只因为尧山是桂林第一山，只因为尧山就在我们学校后面，因为……越来越喜欢旅游了，或者不是叫做旅游，而是锻炼，可以说每一次旅游都让自己原本属宅男的身躯得到锻炼。</content>
+    </entry>
+  
+    <entry>
+      <title>步行桂林市区之一</title>
+      <link href="http://127.0.0.1:4000/walking-in-guilin-1" />
+      <updated>2011-05-24T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/walking-in-guilin-1</id>
+      <content type="html">桂林市区不大，来这么久了，对它还是有点陌生，实在对不起自己，再说，某些亲戚朋友如果这两年真的来此一游，我可是导游，可不能出糗，因此我决定用几个月甚至一年多的时间来熟悉这座给自己第一印象很好的城市。以后有空都出去走走，我可不想当宅男。.. 说不定出去还可以多认识一些人。</content>
+    </entry>
+  
+    <entry>
+      <title>Linux 学习笔记 (4)</title>
+      <link href="http://127.0.0.1:4000/linux-study-4" />
+      <updated>2011-05-14T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/linux-study-4</id>
+      <content type="html">一直以来都对 Arch Linux 十分向往，而 Arch Linux 硬盘安装是十分折腾的，此次安装栽在安装源的设置，宿舍网络情况并不好，把 iso 文件挂载在 /src 目录下，不行，也还没找到相关信息。这我想起了 Archboot，而无意中却碰到了 ArchBang 这个图形界面的 Live CD。</content>
+    </entry>
+  
+    <entry>
+      <title>五一柳州之游有感</title>
+      <link href="http://127.0.0.1:4000/liuzhou-2011-5-1" />
+      <updated>2011-05-08T22:54:33+08:00</updated>
+      <id>http://127.0.0.1:4000/liuzhou-2011-5-1</id>
+      <content type="html">今年五一，我去了趟柳州，当然这不是第一次，也不可能是最后一次。此前去柳州，没有一次走的路如此之多，也没有一次去过如此之多的地方。此次去柳州，第一是见女友，第二是旅游。</content>
+    </entry>
+  
+    <entry>
+      <title>Linux 学习笔记 (3)</title>
+      <link href="http://127.0.0.1:4000/linux-study-3" />
+      <updated>2011-04-29T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/linux-study-3</id>
+      <content type="html">习惯于 Linux 之后，对 Windows 似乎有点陌生，前天一进去马上中毒，下了个 Avast 查杀，重起之后却无法进入系统，不知道什么原因了，于是重装了一下 XP……</content>
+    </entry>
+  
+    <entry>
+      <title>Linux 学习笔记 (2)</title>
+      <link href="http://127.0.0.1:4000/linux-study-2" />
+      <updated>2011-04-19T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/linux-study-2</id>
+      <content type="html">用了十天左右的 Fedora 14 Lxde ，感觉比 Ubuntu 要更加舒服，只不过它在我这小机子上表现不是很好。某天不觉进了一下 XP，感觉它比 Fedora 14 要轻巧得多，于是又想起了 Debian。</content>
+    </entry>
+  
+    <entry>
+      <title>Linux 学习笔记 (1)</title>
+      <link href="http://127.0.0.1:4000/linux-study-1" />
+      <updated>2011-04-09T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/linux-study-1</id>
+      <content type="html">现在使用的笔记本是二手的 IBM Thinkpad X30，上学期几百块钱从淘宝淘过来的，当初买这本子的时，根本没想到现在还会用着（第一学期学校不让带电脑，买这台凑合着用，1.2GHzCPU + 512RAM + 40GHDD ）。</content>
+    </entry>
+  
+    <entry>
+      <title>免费截图软件 FSCapture 5.3 和 PicPick</title>
+      <link href="http://127.0.0.1:4000/fscapture-picpick" />
+      <updated>2011-04-04T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/fscapture-picpick</id>
+      <content type="html">为什么要屏幕截图？简单来说是为了分享屏幕。软件简介一般都会有 Screenshot ，这需要截图。初学者是电脑出现问题时可以把屏幕共享给能解决问题的人，助人者则是为了教导网络上其他人正确的使用软件等，更进一步是图片教程教学。</content>
+    </entry>
+  
+    <entry>
+      <title>推荐及在用软件</title>
+      <link href="http://127.0.0.1:4000/default-software" />
+      <updated>2011-04-02T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/default-software</id>
+      <content type="html">Windows&lt;br /&gt;Google Chrome：简洁高效的跨平台网页浏览器&lt;br /&gt;Mozilla Firefox：中文称火狐，功能强大的浏览器，开源跨平台&lt;br /&gt;Opera：高速小巧的跨平台浏览器</content>
+    </entry>
+  
+    <entry>
+      <title>Hello world!</title>
+      <link href="http://127.0.0.1:4000/hello-world" />
+      <updated>2011-02-09T00:00:00+08:00</updated>
+      <id>http://127.0.0.1:4000/hello-world</id>
+      <content type="html">这是 Fooleap 个人博客的第一篇日志，原博客未完善的文章将转移到此博客。</content>
+    </entry>
+  
+</feed>

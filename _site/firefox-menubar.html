@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html class="ie lte8"><![endif]-->
+<!--[if IE]><html class="ie"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Firefox 的菜单栏 | 殷东亮的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.3, user-scalable=no" />
+    <meta name="description" content="鄙人刚使用浏览器时，无论哪款浏览器，都有经典的菜单栏。菜单使用起来很简单，很多设置、操作都只需要用鼠标点点菜单即可，方便极了。" />
+    <meta name="keywords" content="Firefox, Pentadactyl, Windows 10, 菜单栏" />
+    <meta name="author" content="fooleap" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="canonical" href="http://127.0.0.1:4000/firefox-menubar" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="alternate" type="application/atom+xml" title="殷东亮的博客 Atom Feed" href="http://blog.fooleap.org/atom.xml" />
+    <script type="text/javascript" src="/assets/js/modernizr.js"></script>
+    <!--[if lte IE 9]>
+      <script src="/assets/js/html5shiv.min.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+      <script src="/assets/js/classList.min.js"></script>
+      <script type="text/javascript">
+        document.createElement('main');
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+  <nav id="navigation">
+      <ul class="navigation-list hide">
+          <li><a href="/" class="navigation-item"><i class="icon-home"></i>首页</a></li>
+          <li><a href="/archive.html" class="navigation-item"><i class="icon-box"></i>归档</a></li>
+          <li><a href="/about.html" class="navigation-item"><i class="icon-user"></i>关于</a></li>
+      </ul>
+      <i id="menu" class="icon icon-menu"></i>
+  </nav>
+  
+  <div class="container">
+    <main class="wrapper">
+      <header class="site-header">
+        <h1>
+          Firefox 的菜单栏
+        </h1>
+        <h2 class="sub-heading">
+            <i class="icon-calendar"></i><time datetime="2015-08-14">2015 年 08 月 14 日</time>
+        </h2>
+      </header>
+  <article class="post-content">
+    
+  <div class="main-content">
+<ul id="toc">
+  <li><a href="#id-section" id="markdown-toc-id-section">浏览器菜单栏</a></li>
+  <li><a href="#id-pentadactyl-" id="markdown-toc-id-pentadactyl-">Pentadactyl 菜单栏</a></li>
+  <li><a href="#id-windows-10--ff-" id="markdown-toc-id-windows-10--ff-">Windows 10 的 FF 菜单栏</a></li>
+</ul>
+
+<h2 id="id-section">浏览器菜单栏</h2>
+
+<p>鄙人刚使用浏览器时，无论哪款浏览器，都有经典的菜单栏。菜单使用起来很简单，很多设置、操作都只需要用鼠标点点菜单即可，方便极了。</p>
+
+<p>Google Chrome 出来后，时代变了，各种浏览器的菜单栏没有了，各种浏览器 UI 都从简，只剩下一个菜单按钮。</p>
+
+<p>鄙人是一个怀旧的人，习惯于有菜单栏的浏览器。在 Firefox 还是一款默认有菜单栏的浏览器时，鄙人便习惯于使用 Firefox，一直到现在也是如此。</p>
+
+<p><img src="http://source.fooleap.org/firefox-menubar-01.jpg" alt="Firefox 马克杯镇文" />
+▲Firefox 马克杯镇文</p>
+
+<p>后来 Firefox 变了，默认不显示菜单栏，首先是在左上角搞了个菜单按钮，之后和 Chrome 一样在右上角搞了个菜单按钮，点开之后一阵小清新袭来，但对我来说却是面目全非不知所措，很多操作很难找到或根本没有在这个菜单里面。虽然只要按 Alt 键便可切换菜单栏的显示与否，但我还是将菜单栏设置为常显状态。</p>
+
+<p><img src="http://source.fooleap.org/firefox-menubar-01.png" alt="Firefox 现在的菜单按钮" />
+▲Firefox 现在的菜单按钮</p>
+
+<h2 id="id-pentadactyl-">Pentadactyl 菜单栏</h2>
+
+<p>Pentadactyl 默认是不显示菜单栏的，这样可以尽可能的减少鼠标操作，有很多操作都采用键盘形式进行。对于菜单操作，使用 <code class="highlighter-rouge">:emenu</code> 命令即可，可以使用快捷键绑定几个常用菜单操作，习惯之后，效率应该比较高。加上菜单栏的很多项目，本身就有对应的快捷键操作，其实菜单栏显得有点多余。</p>
+
+<p><img src="http://source.fooleap.org/firefox-menubar-02.png" alt="通过 :emenu 实现菜单操作" />
+▲通过 <code class="highlighter-rouge">:emenu</code> 实现菜单操作</p>
+
+<p>然而，鄙人还是想要菜单栏，不看到菜单栏不放心，只能修改配置，只要在 <code class="highlighter-rouge">_pentadactylrc</code> 或 <code class="highlighter-rouge">.pentadactylrc</code> 里加上 <code class="highlighter-rouge">set go+=m</code> 即可。</p>
+
+<h2 id="id-windows-10--ff-">Windows 10 的 FF 菜单栏</h2>
+
+<p>前几天安装了 Windows 10，Firefox 的菜单栏背景颜色居然和其他工具栏的背景颜色不同，这样看起来相当别扭，可能是 Firefox 默认主题有问题。</p>
+
+<p><img src="http://source.fooleap.org/firefox-menubar-03.png" alt="显示有问题的 Firefox 菜单栏" />
+▲显示有问题的 Firefox 菜单栏</p>
+
+<p>于是随便装了一款主题解决，发现主题还不错。这款主题名字为 <a href="https://addons.mozilla.org/zh-CN/firefox/addon/fxchrome">FXChrome</a>，是一款仿 Google Chrome 风格的主题。</p>
+
+<p><strong>本文历史</strong></p>
+
+<ul>
+  <li>2015 年 08 月 14 日 完成初稿</li>
+</ul>
+
+  </div>
+
+  <div id="posts">
+    <div id="random-posts" class="posts">
+      <strong>猜你喜欢</strong>
+      <ul>
+      </ul>
+    </div>
+  
+    <div id="recent-posts" class="posts">
+      <strong>最近更新</strong>
+      <ul>
+      
+        <li><a href="/configuring-ip-address-by-specifying-gateway" title="配置特定 IP 地址走指定网关">配置特定 IP 地址走指定网关 </a></li>
+      
+        <li><a href="/add-google-satellite-layer-in-amap" title="高德地图 API 叠加谷歌地图图层">高德地图 API 叠加谷歌地图图层 </a></li>
+      
+        <li><a href="/from-codoon-to-nikeplus" title="将咕咚的数据导入到 Nike+">将咕咚的数据导入到 Nike+ </a></li>
+      
+        <li><a href="/the-influence-of-sports-apps" title="运动 APP 的作用">运动 APP 的作用 </a></li>
+      
+        <li><a href="/the-last-run-of-june" title="今年 6 月的最后一次跑步">今年 6 月的最后一次跑步 </a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div id="info" class="tech">
+
+    <span id="share">
+  <div id="qrcode"></div>
+  <a id="wechat" title="分享到微信" data-wechat-url="http://127.0.0.1:4000/firefox-menubar" href="javascript:void(0);"><i class="icon-wechat"></i></a>
+  <a id="weibo" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=Firefox 的菜单栏 | 殷东亮的博客 via @&amp;url=http://127.0.0.1:4000/firefox-menubar&amp;type=3&amp;searchPic=1"><i class="icon-weibo"></i></a>
+  <a id="qzone" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://127.0.0.1:4000/firefox-menubar&amp;title=Firefox 的菜单栏 | 殷东亮的博客&amp;summary=鄙人刚使用浏览器时，无论哪款浏览器，都有经典的菜单栏。菜单使用起来很简单，很多设置、操作都只需要用鼠标点点菜单即可，方便极了。&amp;site=http://127.0.0.1:4000"><i class="icon-qzone"></i></a>
+  <a id="twitter" target="_blank" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=http://127.0.0.1:4000/firefox-menubar&amp;text=Firefox 的菜单栏｜殷东亮的博客&amp;via="><i class="icon-twitter"></i></a>
+  <a id="facebook" target="_blank" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=http://127.0.0.1:4000/firefox-menubar&amp;t=Firefox 的菜单栏 | 殷东亮的博客"><i class="icon-facebook-official"></i></a>
+  <a id="gplus" target="_blank" title="Share to Google+" href="https://plus.google.com/share?url=http://127.0.0.1:4000/firefox-menubar"><i class="icon-gplus-squared"></i></a>
+</span>
+
+
+    <span class='like'><a href="javascript:void(0)" title=""><i class="icon-heart-empty"></i> <span class="disqus-like-count"></span></a></span>
+    <span class='view-code'><a href="javascript:void(0)" data-md="https://raw.githubusercontent.com/fooleap/fooleap.github.io/master/_posts/2015-08-14-firefox-menubar.md" title="在正文中查看源码"><i class="icon-file-code"></i>源码</a></span>
+    <span class="number-of-word"><i class="icon-calc"></i>896 字</span>
+    <span class="page-tags"><i class="icon-tags"></i><ul class="tags"> <li class="tag"><a href="/tags.html#Firefox" target="_blank" title="查看“Firefox”的相关文章">Firefox</a></li><li class="tag"><a href="/tags.html#Pentadactyl" target="_blank" title="查看“Pentadactyl”的相关文章">Pentadactyl</a></li><li class="tag"><a href="/tags.html#Windows 10" target="_blank" title="查看“Windows 10”的相关文章">Windows 10</a></li><li class="tag"><a href="/tags.html#菜单栏" target="_blank" title="查看“菜单栏”的相关文章">菜单栏</a></li></ul></span>
+  </div>
+
+</article>
+
+<div class="comment" id="disqus_thread">
+    <a class="show-comments" href="http://127.0.0.1:4000/firefox-menubar#disqus_thread" data-disqus-identifier="/firefox-menubar"><span class="has-comment"><i class="icon-chat-empty"></i> 留下</span>评论 <span class="disqus-comment-count" data-disqus-url="http://127.0.0.1:4000/firefox-menubar"></span></a>
+</div>
+
+  
+      <footer class="site-footer">
+        <small>&copy; 2012-2016 by Jekyll Theme</small>
+      </footer>
+  
+    </main>
+
+  </div>
+  <div id="backtotop">
+    <i class="icon-up-big"></i>
+  </div>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  </body>
+</html>

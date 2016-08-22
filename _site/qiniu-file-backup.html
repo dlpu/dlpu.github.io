@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html class="ie lte8"><![endif]-->
+<!--[if IE]><html class="ie"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>备份七牛的文件 | 殷东亮的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.3, user-scalable=no" />
+    <meta name="description" content="之前说过我现在是用七牛云做图床的，那么备份已经上传在七牛云的图片是否方便呢？在官网翻了一下，并没有找到类似一键备份的工具。" />
+    <meta name="keywords" content="七牛, 备份, qrsb" />
+    <meta name="author" content="fooleap" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="canonical" href="http://127.0.0.1:4000/qiniu-file-backup" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="alternate" type="application/atom+xml" title="殷东亮的博客 Atom Feed" href="http://blog.fooleap.org/atom.xml" />
+    <script type="text/javascript" src="/assets/js/modernizr.js"></script>
+    <!--[if lte IE 9]>
+      <script src="/assets/js/html5shiv.min.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+      <script src="/assets/js/classList.min.js"></script>
+      <script type="text/javascript">
+        document.createElement('main');
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+  <nav id="navigation">
+      <ul class="navigation-list hide">
+          <li><a href="/" class="navigation-item"><i class="icon-home"></i>首页</a></li>
+          <li><a href="/archive.html" class="navigation-item"><i class="icon-box"></i>归档</a></li>
+          <li><a href="/about.html" class="navigation-item"><i class="icon-user"></i>关于</a></li>
+      </ul>
+      <i id="menu" class="icon icon-menu"></i>
+  </nav>
+  
+  <div class="container">
+    <main class="wrapper">
+      <header class="site-header">
+        <h1>
+          备份七牛的文件
+        </h1>
+        <h2 class="sub-heading">
+            <i class="icon-calendar"></i><time datetime="2015-09-26">2015 年 09 月 26 日</time>
+        </h2>
+      </header>
+  <article class="post-content">
+    
+  <div class="main-content">
+<p>之前说过我现在是 <a href="/image-hosting.html">用七牛云做图床的</a>，那么备份已经上传在七牛云的图片是否方便呢？在官网翻了一下，并没有找到类似一键备份的工具。</p>
+
+<p>那就只能先 Google 一番，有人提示可以使用其 API 来获取相关资源再进行相关操作以下载<a href="http://segmentfault.com/q/1010000000694227/a-1020000000694343" title="求七牛下载空间全部文件的方法 - SegmentFault">[1]</a>。这明显有些麻烦，只能继续搜寻。</p>
+
+<p>终于找到一款官方的备份工具 qrsb 的相关文档<a href="http://developer.qiniu.com/docs/v6/tools/qiniu-backup.html" title="备份工具 | 七牛云存储">[2]</a>，但却没找到下载地址；后以工具名搜索很轻松找到下载地址<a href="http://kb.qiniu.com/5rq9zcs8" title="备份工具 Qrsb 的下载及使用 - 七牛云存储">[3]</a>；而后得知该工具似乎早已下架<a href="http://segmentfault.com/q/1010000003034609" title="寻七牛官方提供的备份工具qrsb以及文档 - SegmentFault">[4]</a>。</p>
+
+<p>使用过程中发现很是奇怪，qrsb 的配置文件 <code class="highlighter-rouge">qrsb.conf</code> 居然不是放在工具所在目录下或手动指定，而是应该放在用于存放备份文件的本地目录，不过这个工具使用起来很方便，没一会就把所有文件扒了下来。</p>
+
+<p>写博客也可以配合同步上传工具 QRSBox<a href="http://developer.qiniu.com/docs/v6/tools/qrsbox.html" title="QRSBox 同步工具 | 七牛云存储">[5]</a>，就可不用打开网页也能传文件了。</p>
+
+<p>评论区 Bohan Yang 提醒，qshell <a href="http://developer.qiniu.com/docs/v6/tools/qshell.html" title="qshell 命令行工具 | 七牛云存储">[6]</a>也可轻松实现备份数据，尝试了一下，以上功能均可实现，很方便。</p>
+
+<h2 id="id-section">参考资料</h2>
+
+<p><strong>本文历史</strong></p>
+
+<ul>
+  <li>2015 年 09 月 26 日 完成初稿</li>
+  <li>2015 年 10 月 07 日 qshell</li>
+</ul>
+
+  </div>
+
+  <div id="posts">
+    <div id="random-posts" class="posts">
+      <strong>猜你喜欢</strong>
+      <ul>
+      </ul>
+    </div>
+  
+    <div id="recent-posts" class="posts">
+      <strong>最近更新</strong>
+      <ul>
+      
+        <li><a href="/configuring-ip-address-by-specifying-gateway" title="配置特定 IP 地址走指定网关">配置特定 IP 地址走指定网关 </a></li>
+      
+        <li><a href="/add-google-satellite-layer-in-amap" title="高德地图 API 叠加谷歌地图图层">高德地图 API 叠加谷歌地图图层 </a></li>
+      
+        <li><a href="/from-codoon-to-nikeplus" title="将咕咚的数据导入到 Nike+">将咕咚的数据导入到 Nike+ </a></li>
+      
+        <li><a href="/the-influence-of-sports-apps" title="运动 APP 的作用">运动 APP 的作用 </a></li>
+      
+        <li><a href="/the-last-run-of-june" title="今年 6 月的最后一次跑步">今年 6 月的最后一次跑步 </a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div id="info" class="tech">
+
+    <span id="share">
+  <div id="qrcode"></div>
+  <a id="wechat" title="分享到微信" data-wechat-url="http://127.0.0.1:4000/qiniu-file-backup" href="javascript:void(0);"><i class="icon-wechat"></i></a>
+  <a id="weibo" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=备份七牛的文件 | 殷东亮的博客 via @&amp;url=http://127.0.0.1:4000/qiniu-file-backup&amp;type=3&amp;searchPic=1"><i class="icon-weibo"></i></a>
+  <a id="qzone" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://127.0.0.1:4000/qiniu-file-backup&amp;title=备份七牛的文件 | 殷东亮的博客&amp;summary=之前说过我现在是用七牛云做图床的，那么备份已经上传在七牛云的图片是否方便呢？在官网翻了一下，并没有找到类似一键备份的工具。&amp;site=http://127.0.0.1:4000"><i class="icon-qzone"></i></a>
+  <a id="twitter" target="_blank" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=http://127.0.0.1:4000/qiniu-file-backup&amp;text=备份七牛的文件｜殷东亮的博客&amp;via="><i class="icon-twitter"></i></a>
+  <a id="facebook" target="_blank" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=http://127.0.0.1:4000/qiniu-file-backup&amp;t=备份七牛的文件 | 殷东亮的博客"><i class="icon-facebook-official"></i></a>
+  <a id="gplus" target="_blank" title="Share to Google+" href="https://plus.google.com/share?url=http://127.0.0.1:4000/qiniu-file-backup"><i class="icon-gplus-squared"></i></a>
+</span>
+
+
+    <span class='like'><a href="javascript:void(0)" title=""><i class="icon-heart-empty"></i> <span class="disqus-like-count"></span></a></span>
+    <span class='view-code'><a href="javascript:void(0)" data-md="https://raw.githubusercontent.com/fooleap/fooleap.github.io/master/_posts/2015-09-26-qiniu-file-backup.md" title="在正文中查看源码"><i class="icon-file-code"></i>源码</a></span>
+    <span class="number-of-word"><i class="icon-calc"></i>457 字</span>
+    <span class="page-tags"><i class="icon-tags"></i><ul class="tags"> <li class="tag"><a href="/tags.html#七牛" target="_blank" title="查看“七牛”的相关文章">七牛</a></li><li class="tag"><a href="/tags.html#备份" target="_blank" title="查看“备份”的相关文章">备份</a></li><li class="tag"><a href="/tags.html#qrsb" target="_blank" title="查看“qrsb”的相关文章">qrsb</a></li></ul></span>
+  </div>
+
+</article>
+
+<div class="comment" id="disqus_thread">
+    <a class="show-comments" href="http://127.0.0.1:4000/qiniu-file-backup#disqus_thread" data-disqus-identifier="/qiniu-file-backup"><span class="has-comment"><i class="icon-chat-empty"></i> 留下</span>评论 <span class="disqus-comment-count" data-disqus-url="http://127.0.0.1:4000/qiniu-file-backup"></span></a>
+</div>
+
+  
+      <footer class="site-footer">
+        <small>&copy; 2012-2016 by Jekyll Theme</small>
+      </footer>
+  
+    </main>
+
+  </div>
+  <div id="backtotop">
+    <i class="icon-up-big"></i>
+  </div>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  </body>
+</html>

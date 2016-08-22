@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html class="ie lte8"><![endif]-->
+<!--[if IE]><html class="ie"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>科学使用 Google Earth Pro | 殷东亮的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.3, user-scalable=no" />
+    <meta name="description" content="那些年，一张地图，一辆买菜车，狂奔的车轮下映射的便是我那美好周末。如今，我已忘记买了几张本地地图，几本地图册，地图程序的出现，或许他们大多数的命运就只有吃灰。" />
+    <meta name="keywords" content="Google Earth, hosts, 科学上网" />
+    <meta name="author" content="fooleap" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="canonical" href="http://127.0.0.1:4000/google-earth-hosts" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="alternate" type="application/atom+xml" title="殷东亮的博客 Atom Feed" href="http://blog.fooleap.org/atom.xml" />
+    <script type="text/javascript" src="/assets/js/modernizr.js"></script>
+    <!--[if lte IE 9]>
+      <script src="/assets/js/html5shiv.min.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+      <script src="/assets/js/classList.min.js"></script>
+      <script type="text/javascript">
+        document.createElement('main');
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+  <nav id="navigation">
+      <ul class="navigation-list hide">
+          <li><a href="/" class="navigation-item"><i class="icon-home"></i>首页</a></li>
+          <li><a href="/archive.html" class="navigation-item"><i class="icon-box"></i>归档</a></li>
+          <li><a href="/about.html" class="navigation-item"><i class="icon-user"></i>关于</a></li>
+      </ul>
+      <i id="menu" class="icon icon-menu"></i>
+  </nav>
+  
+  <div class="container">
+    <main class="wrapper">
+      <header class="site-header">
+        <h1>
+          科学使用 Google Earth Pro
+        </h1>
+        <h2 class="sub-heading">
+            <i class="icon-calendar"></i><time datetime="2015-06-07">2015 年 06 月 07 日</time>
+        </h2>
+      </header>
+  <article class="post-content">
+    
+  <div class="main-content">
+<ul id="toc">
+  <li><a href="#id-google-earth" id="markdown-toc-id-google-earth">Google Earth</a></li>
+  <li><a href="#id-section" id="markdown-toc-id-section">对相片进行地理标记</a></li>
+  <li><a href="#id-section-1" id="markdown-toc-id-section-1">尝试解决连接问题</a></li>
+  <li><a href="#id-google-earth-1" id="markdown-toc-id-google-earth-1">科学使用 Google Earth</a></li>
+</ul>
+
+<p>那些年，一张地图，一辆买菜车，狂奔的车轮下映射的便是我那美好周末。如今，我已忘记买了几张本地地图，几本地图册，地图程序的出现，或许他们大多数的命运就只有吃灰。</p>
+
+<h2 id="id-google-earth">Google Earth</h2>
+
+<p>当我第一次打开 Google Earth 时，就被它狠狠地吸引，西北戈壁，一览无余；江南水乡，尽收眼底。不费吹灰之力找到我家屋顶，通过广大网友分享在 Panoramio 的相片，便可轻松了解地球上任何区域的建筑特色及自然风光，Google 街景更是有身临其境的感觉。</p>
+
+<p>说多了都是泪，不知何时开始，Google Earth 无法正常访问，打开 Google Earth 就是一片漆黑，许久之后弹出如下对话框，鄙人偶尔想看看家乡的谷歌卫星地图有没更新，就只能科学上网。</p>
+
+<p>更新，是 Google Earth Pro，Google Earth 不需要科学上网似乎还能使用。</p>
+
+<p><img src="http://source.fooleap.org/google-earth-hosts-01.png" alt="无法连接对话框" />
+▲Google 地球无法连接对话框</p>
+
+<h2 id="id-section">对相片进行地理标记</h2>
+
+<p>有时候想对无地理标记功能相机拍出的相片进行地理标记，Google Picasa 不失为最佳工具，Picasa 自身的功能偏弱，结合 Google Earth 进行批量标记最好不过。</p>
+
+<p><img src="http://source.fooleap.org/google-earth-hosts-02.png" alt="无法连接对话框" />
+▲利用使用 Google Earth 进行地理标记</p>
+
+<h2 id="id-section-1">尝试解决连接问题</h2>
+
+<p>可是在编辑过程中，我并不想使用全局代理，根据 Google Earth Pro的警告框，进入了<a href="https://support.google.com/earth/troubleshooter/3058364">连接诊断测试页面</a>。</p>
+
+<p>根据引导，最后可以看到 Google Earth Pro使用的相关服务器网址，</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>maps.google.com
+geoauth.google.com
+kh.google.com
+mw1.google.com
+mw2.google.com
+</code></pre>
+</div>
+
+<p>也就是说只要以上网址能够正常访问，Google Earth Pro 便可正常使用，我尝试更改 <a href="http://zh.wikipedia.org/zh/ 代理自动配置">PAC</a> 文件，但是结果没能成功。</p>
+
+<h2 id="id-google-earth-1">科学使用 Google Earth</h2>
+
+<p>国内大多数 Google Earth Pro 用户采用修改 <code class="highlighter-rouge">hosts</code> 文件进行使用，简单的说修改 <code class="highlighter-rouge">hosts</code> 文件可指定域名映射的 IP 地址，Google 服务器众多，总有一部分尚能使用，那么应该如何查找可用的 Google 服务器 IP 地址呢？在这也不扯那么多，网上有无数“雷锋”在默默贡献着，最简便的方法即是在 GitHub 搜“<a href="https://github.com/search?q=hosts">hosts</a>”便可。</p>
+
+<p>随便找个 <code class="highlighter-rouge">hosts</code> 文件，替换本机的原文件便可轻松免翻墙使用 Google、Twitter 等的服务。</p>
+
+<p>不过鄙人只想在 Google Erath Pro 中采用这种方法，那么可以通过 <a href="https://github.com/yinqiwen/gscan">gscan</a> 找个可用的 Google IP，修改本机 <code class="highlighter-rouge">hosts</code> 文件，将上面提到的几个域名指向可用的 IP 地址便可，如下。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>64.233.162.83 maps.google.com
+64.233.162.83 geoauth.google.com
+64.233.162.83 kh.google.com
+64.233.162.83 mw1.google.com
+64.233.162.83 mw2.google.com
+</code></pre>
+</div>
+
+<p>前段时间 Google 说要关闭 Panoramio 服务，但目前它尚在 Google Earth 中，自然不能落下。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>64.233.162.83 panoramio.com
+64.233.162.83 www.panoramio.com
+64.233.162.83 static.panoramio.com
+</code></pre>
+</div>
+
+<p>这方法虽然有时效性，但这样便可不用代理也能正常使用 Google Earth Pro，需要注意的是，首次登录需要的并不仅仅这几个域名。</p>
+
+<p><strong>本文历史</strong></p>
+
+<ul>
+  <li>2015 年 06 月 07 日 完成初稿</li>
+  <li>2015 年 07 月 07 日 更新</li>
+</ul>
+
+  </div>
+
+  <div id="posts">
+    <div id="random-posts" class="posts">
+      <strong>猜你喜欢</strong>
+      <ul>
+      </ul>
+    </div>
+  
+    <div id="recent-posts" class="posts">
+      <strong>最近更新</strong>
+      <ul>
+      
+        <li><a href="/configuring-ip-address-by-specifying-gateway" title="配置特定 IP 地址走指定网关">配置特定 IP 地址走指定网关 </a></li>
+      
+        <li><a href="/add-google-satellite-layer-in-amap" title="高德地图 API 叠加谷歌地图图层">高德地图 API 叠加谷歌地图图层 </a></li>
+      
+        <li><a href="/from-codoon-to-nikeplus" title="将咕咚的数据导入到 Nike+">将咕咚的数据导入到 Nike+ </a></li>
+      
+        <li><a href="/the-influence-of-sports-apps" title="运动 APP 的作用">运动 APP 的作用 </a></li>
+      
+        <li><a href="/the-last-run-of-june" title="今年 6 月的最后一次跑步">今年 6 月的最后一次跑步 </a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div id="info" class="tech">
+
+    <span id="share">
+  <div id="qrcode"></div>
+  <a id="wechat" title="分享到微信" data-wechat-url="http://127.0.0.1:4000/google-earth-hosts" href="javascript:void(0);"><i class="icon-wechat"></i></a>
+  <a id="weibo" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=科学使用 Google Earth Pro | 殷东亮的博客 via @&amp;url=http://127.0.0.1:4000/google-earth-hosts&amp;type=3&amp;searchPic=1"><i class="icon-weibo"></i></a>
+  <a id="qzone" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://127.0.0.1:4000/google-earth-hosts&amp;title=科学使用 Google Earth Pro | 殷东亮的博客&amp;summary=那些年，一张地图，一辆买菜车，狂奔的车轮下映射的便是我那美好周末。如今，我已忘记买了几张本地地图，几本地图册，地图程序的出现，或许他们大多数的命运就只有吃灰。&amp;site=http://127.0.0.1:4000"><i class="icon-qzone"></i></a>
+  <a id="twitter" target="_blank" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=http://127.0.0.1:4000/google-earth-hosts&amp;text=科学使用 Google Earth Pro｜殷东亮的博客&amp;via="><i class="icon-twitter"></i></a>
+  <a id="facebook" target="_blank" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=http://127.0.0.1:4000/google-earth-hosts&amp;t=科学使用 Google Earth Pro | 殷东亮的博客"><i class="icon-facebook-official"></i></a>
+  <a id="gplus" target="_blank" title="Share to Google+" href="https://plus.google.com/share?url=http://127.0.0.1:4000/google-earth-hosts"><i class="icon-gplus-squared"></i></a>
+</span>
+
+
+    <span class='like'><a href="javascript:void(0)" title=""><i class="icon-heart-empty"></i> <span class="disqus-like-count"></span></a></span>
+    <span class='view-code'><a href="javascript:void(0)" data-md="https://raw.githubusercontent.com/fooleap/fooleap.github.io/master/_posts/2015-06-07-google-earth-hosts.md" title="在正文中查看源码"><i class="icon-file-code"></i>源码</a></span>
+    <span class="number-of-word"><i class="icon-calc"></i>1567 字</span>
+    <span class="page-tags"><i class="icon-tags"></i><ul class="tags"> <li class="tag"><a href="/tags.html#Google Earth" target="_blank" title="查看“Google Earth”的相关文章">Google Earth</a></li><li class="tag"><a href="/tags.html#hosts" target="_blank" title="查看“hosts”的相关文章">hosts</a></li><li class="tag"><a href="/tags.html#科学上网" target="_blank" title="查看“科学上网”的相关文章">科学上网</a></li></ul></span>
+  </div>
+
+</article>
+
+<div class="comment" id="disqus_thread">
+    <a class="show-comments" href="http://127.0.0.1:4000/google-earth-hosts#disqus_thread" data-disqus-identifier="/google-earth-hosts"><span class="has-comment"><i class="icon-chat-empty"></i> 留下</span>评论 <span class="disqus-comment-count" data-disqus-url="http://127.0.0.1:4000/google-earth-hosts"></span></a>
+</div>
+
+  
+      <footer class="site-footer">
+        <small>&copy; 2012-2016 by Jekyll Theme</small>
+      </footer>
+  
+    </main>
+
+  </div>
+  <div id="backtotop">
+    <i class="icon-up-big"></i>
+  </div>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  </body>
+</html>

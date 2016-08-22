@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html class="ie lte8"><![endif]-->
+<!--[if IE]><html class="ie"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>服务器对百度收录的影响 | 殷东亮的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.3, user-scalable=no" />
+    <meta name="description" content="我的博客采用 Jekyll 搭建，刚开始一直托管于 GitHub。有时 push 速度有点慢，网页访问也相对慢，但并不影响我对 GitHub 的印象。后来我发现我博客在百度的收录一直不大好，收录很少，有时候直接被清空。" />
+    <meta name="keywords" content="收录, 百度, SEO, Jekyll, FTP, LFTP" />
+    <meta name="author" content="fooleap" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="canonical" href="http://127.0.0.1:4000/server-and-baidu-seo" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="alternate" type="application/atom+xml" title="殷东亮的博客 Atom Feed" href="http://blog.fooleap.org/atom.xml" />
+    <script type="text/javascript" src="/assets/js/modernizr.js"></script>
+    <!--[if lte IE 9]>
+      <script src="/assets/js/html5shiv.min.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+      <script src="/assets/js/classList.min.js"></script>
+      <script type="text/javascript">
+        document.createElement('main');
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+  <nav id="navigation">
+      <ul class="navigation-list hide">
+          <li><a href="/" class="navigation-item"><i class="icon-home"></i>首页</a></li>
+          <li><a href="/archive.html" class="navigation-item"><i class="icon-box"></i>归档</a></li>
+          <li><a href="/about.html" class="navigation-item"><i class="icon-user"></i>关于</a></li>
+      </ul>
+      <i id="menu" class="icon icon-menu"></i>
+  </nav>
+  
+  <div class="container">
+    <main class="wrapper">
+      <header class="site-header">
+        <h1>
+          服务器对百度收录的影响
+        </h1>
+        <h2 class="sub-heading">
+            <i class="icon-calendar"></i><time datetime="2015-11-25">2015 年 11 月 25 日</time>
+        </h2>
+      </header>
+  <article class="post-content">
+    
+  <div class="main-content">
+<p>我的博客采用 Jekyll 搭建，刚开始一直托管于 GitHub。有时 push 速度有点慢，网页访问也相对慢，但并不影响我对 GitHub 的印象。后来我发现我博客在百度的收录一直不大好，收录很少，有时候直接被清空。</p>
+
+<p>GitHub 使用的是 Fastly 提供的 CDN 服务，国内有时候会抽风，有些网络甚至访问不了，可能这就是百度收录不乐观的原因吧。GitCafe Pages 使用的是香港的 VPS，既能保证速度又不用备案，若将博客托管于 GitCafe Pages，应该不会有这样的情况。我也发现 DNSPOD 支持细分线路指定不同的 DNS 解析，于是将国内 IP 及国外 IP 分开，国内 IP 访问会解析到 GitCafe Pages 所提供的服务。一段时间后，百度收录情况就完全正常化了。</p>
+
+<p>不过相对于 GitHub Pages，GitCafe 的服务相对要差一点，主要体现在，将数据 push 上去的时候：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>服务</th>
+      <th>做法</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GitHub Pages</td>
+      <td>无缝生成</td>
+    </tr>
+    <tr>
+      <td>GitCafe Pages</td>
+      <td>先清空目录，后生成</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>这样一来，每次更新内容，使用 GitCafe Pages 的网站都会有一段时间是 404 无法访问，这个时间长短取决于其 Jekyll 生成文件的时间。</p>
+
+<p>而前几天，GitCafe 的 Pages 服务器出现问题，push 上去 404 后便再也不生成，我只能临时将国内 IP 访问也解析到 GitHub Pages 上，几天后没想到问题还没解决。国内 IP 解析到 GitHub Pages 后，百度的收录量正在逐渐下降，我应该想个办法让收录不降下来，无非就是转移到香港或内地的服务器上。</p>
+
+<p>我自己有个香港 VPS，可是现在真的懒得自己搞 Git 服务器，也不知道那个 VPS 稳定不稳定，会不会哪天也出现问题。国内的 Coding 演示平台也可以部署 Jekyll 博客<a href="https://ruby-china.org/topics/23329" title="在 coding.net 上部署 Jekyll 博客 &raquo; Topics &raquo; Ruby China">[1]</a>，好像 24 小时内无人访问就会被自动 Down 掉，虽不大可能没人访问，但我还是不喜欢这样的。</p>
+
+<p>此时，我想到利用刚领取不久的阿里云免费虚拟主机来做存储，岂不更好？它并不是 VPS，没有 Git，也没有 Jekyll，因此也只能通过 FTP put Jekyll 所生成的静态文件上去。传输文件时，总不能每次都打开 FileZilla 将文件传过去吧，还得写个脚本。</p>
+
+<p>若使用 ftp，可以结合 find、awk 写个脚本批量上传文件夹<a href="http://segmentfault.com/a/1190000000777713" title="用二句Shell命令实现FTP批量上传文件夹 - SegmentFault">[2]</a>。显然有更好的办法，可以采用 LFTP，就没有那么麻烦了<a href="https://lug.ustc.edu.cn/wiki/linux_digest/lftp#奇巧淫技-使用lftp同步个人主页" title="奇巧淫技-使用lftp同步个人主页">[3]</a>。Windows 可以安装 Cygwin<a href="https://cygwin.com/" title="Cygwin">[4]</a>，并下载 LFTP for Windows<a href="https://nwgat.ninja/lftp-for-windows/" title="LFTP for Windows">[5]</a>。</p>
+
+<p>写个脚本 <code class="highlighter-rouge">update.lftp</code>，扔到 Jekyll 创建的博客根目录下：</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">connect fooleap.org
+user 帐号 <span class="o">(</span>密码<span class="o">)</span>
+mirror -R --delete _site htdocs --exclude logreport</code></pre></figure>
+
+<p>注：密码可选，不填密码则运行提示填写。</p>
+
+<p>每次完成修改后，只需要：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>lftp -f update.lftp
+</code></pre>
+</div>
+
+<p>这样便可完成文件的传输覆盖，<code class="highlighter-rouge">mirror</code> 具体可用参数可见 <code class="highlighter-rouge">man lftp</code>。</p>
+
+<p>使用阿里云的免费虚拟主机做存储之后，收录量确实又回来了。</p>
+
+<p>写到这感觉有点文不对题了，不过服务器对百度收录的影响，无非也就两点：</p>
+
+<ol>
+  <li>服务器访问速度太慢，不稳定</li>
+  <li>服务器上其他网站有问题被百度降权，导致整个服务器上的网站均受影响</li>
+</ol>
+
+<p>虽然鄙人不喜欢度娘，但也不希望百度收录不正常。对了，知乎最近有个问题“有哪些被产品经理毁掉的产品？<a href="http://www.zhihu.com/question/36842186" title="有哪些被产品经理毁掉的产品？ - 知乎">[6]</a>”，答案里面没少提到百度的相关产品。</p>
+
+<h2 id="id-section">参考资料</h2>
+
+<p><strong>本文历史</strong></p>
+
+<ul>
+  <li>2015 年 10 月 28 日 完成初稿</li>
+  <li>2015 年 10 月 29 日 更正为“服务器对百度收录的影响”</li>
+  <li>2015 年 11 月 25 日 更新 LFTP for Windows 部分</li>
+</ul>
+
+  </div>
+
+  <div id="posts">
+    <div id="random-posts" class="posts">
+      <strong>猜你喜欢</strong>
+      <ul>
+      </ul>
+    </div>
+  
+    <div id="recent-posts" class="posts">
+      <strong>最近更新</strong>
+      <ul>
+      
+        <li><a href="/configuring-ip-address-by-specifying-gateway" title="配置特定 IP 地址走指定网关">配置特定 IP 地址走指定网关 </a></li>
+      
+        <li><a href="/add-google-satellite-layer-in-amap" title="高德地图 API 叠加谷歌地图图层">高德地图 API 叠加谷歌地图图层 </a></li>
+      
+        <li><a href="/from-codoon-to-nikeplus" title="将咕咚的数据导入到 Nike+">将咕咚的数据导入到 Nike+ </a></li>
+      
+        <li><a href="/the-influence-of-sports-apps" title="运动 APP 的作用">运动 APP 的作用 </a></li>
+      
+        <li><a href="/the-last-run-of-june" title="今年 6 月的最后一次跑步">今年 6 月的最后一次跑步 </a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div id="info" class="tech">
+
+    <span id="share">
+  <div id="qrcode"></div>
+  <a id="wechat" title="分享到微信" data-wechat-url="http://127.0.0.1:4000/server-and-baidu-seo" href="javascript:void(0);"><i class="icon-wechat"></i></a>
+  <a id="weibo" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=服务器对百度收录的影响 | 殷东亮的博客 via @&amp;url=http://127.0.0.1:4000/server-and-baidu-seo&amp;type=3&amp;searchPic=1"><i class="icon-weibo"></i></a>
+  <a id="qzone" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://127.0.0.1:4000/server-and-baidu-seo&amp;title=服务器对百度收录的影响 | 殷东亮的博客&amp;summary=我的博客采用 Jekyll 搭建，刚开始一直托管于 GitHub。有时 push 速度有点慢，网页访问也相对慢，但并不影响我对 GitHub 的印象。后来我发现我博客在百度的收录一直不大好，收录很少，有时候直接被清空。&amp;site=http://127.0.0.1:4000"><i class="icon-qzone"></i></a>
+  <a id="twitter" target="_blank" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=http://127.0.0.1:4000/server-and-baidu-seo&amp;text=服务器对百度收录的影响｜殷东亮的博客&amp;via="><i class="icon-twitter"></i></a>
+  <a id="facebook" target="_blank" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=http://127.0.0.1:4000/server-and-baidu-seo&amp;t=服务器对百度收录的影响 | 殷东亮的博客"><i class="icon-facebook-official"></i></a>
+  <a id="gplus" target="_blank" title="Share to Google+" href="https://plus.google.com/share?url=http://127.0.0.1:4000/server-and-baidu-seo"><i class="icon-gplus-squared"></i></a>
+</span>
+
+
+    <span class='like'><a href="javascript:void(0)" title=""><i class="icon-heart-empty"></i> <span class="disqus-like-count"></span></a></span>
+    <span class='view-code'><a href="javascript:void(0)" data-md="https://raw.githubusercontent.com/fooleap/fooleap.github.io/master/_posts/2015-11-25-server-and-baidu-seo.md" title="在正文中查看源码"><i class="icon-file-code"></i>源码</a></span>
+    <span class="number-of-word"><i class="icon-calc"></i>1648 字</span>
+    <span class="page-tags"><i class="icon-tags"></i><ul class="tags"> <li class="tag"><a href="/tags.html#收录" target="_blank" title="查看“收录”的相关文章">收录</a></li><li class="tag"><a href="/tags.html#百度" target="_blank" title="查看“百度”的相关文章">百度</a></li><li class="tag"><a href="/tags.html#SEO" target="_blank" title="查看“SEO”的相关文章">SEO</a></li><li class="tag"><a href="/tags.html#Jekyll" target="_blank" title="查看“Jekyll”的相关文章">Jekyll</a></li><li class="tag"><a href="/tags.html#FTP" target="_blank" title="查看“FTP”的相关文章">FTP</a></li><li class="tag"><a href="/tags.html#LFTP" target="_blank" title="查看“LFTP”的相关文章">LFTP</a></li></ul></span>
+  </div>
+
+</article>
+
+<div class="comment" id="disqus_thread">
+    <a class="show-comments" href="http://127.0.0.1:4000/server-and-baidu-seo#disqus_thread" data-disqus-identifier="/server-and-baidu-seo"><span class="has-comment"><i class="icon-chat-empty"></i> 留下</span>评论 <span class="disqus-comment-count" data-disqus-url="http://127.0.0.1:4000/server-and-baidu-seo"></span></a>
+</div>
+
+  
+      <footer class="site-footer">
+        <small>&copy; 2012-2016 by Jekyll Theme</small>
+      </footer>
+  
+    </main>
+
+  </div>
+  <div id="backtotop">
+    <i class="icon-up-big"></i>
+  </div>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  </body>
+</html>

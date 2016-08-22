@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html class="ie lte8"><![endif]-->
+<!--[if IE]><html class="ie"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Vim 与系统剪切板交互 | 殷东亮的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.3, user-scalable=no" />
+    <meta name="description" content="很多时候使用 Vim 编辑文本，总需要复制里面的东西出来，粘贴到其他地方，比如说网页，聊天窗口等等，而有些时候有需要从网页等地方复制文字过来粘贴到 Vim 正在编辑的文件里。" />
+    <meta name="keywords" content="Vim, 剪切板, Arch Linux" />
+    <meta name="author" content="fooleap" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="canonical" href="http://127.0.0.1:4000/using-vim-with-clipboard-on-archlinux" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="alternate" type="application/atom+xml" title="殷东亮的博客 Atom Feed" href="http://blog.fooleap.org/atom.xml" />
+    <script type="text/javascript" src="/assets/js/modernizr.js"></script>
+    <!--[if lte IE 9]>
+      <script src="/assets/js/html5shiv.min.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+      <script src="/assets/js/classList.min.js"></script>
+      <script type="text/javascript">
+        document.createElement('main');
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+  <nav id="navigation">
+      <ul class="navigation-list hide">
+          <li><a href="/" class="navigation-item"><i class="icon-home"></i>首页</a></li>
+          <li><a href="/archive.html" class="navigation-item"><i class="icon-box"></i>归档</a></li>
+          <li><a href="/about.html" class="navigation-item"><i class="icon-user"></i>关于</a></li>
+      </ul>
+      <i id="menu" class="icon icon-menu"></i>
+  </nav>
+  
+  <div class="container">
+    <main class="wrapper">
+      <header class="site-header">
+        <h1>
+          Vim 与系统剪切板交互
+        </h1>
+        <h2 class="sub-heading">
+            <i class="icon-calendar"></i><time datetime="2013-01-24">2013 年 01 月 24 日</time>
+        </h2>
+      </header>
+  <article class="post-content">
+    
+  <div class="main-content">
+<ul id="toc">
+  <li><a href="#id-section" id="markdown-toc-id-section">一般的解决方法</a>    <ul>
+      <li><a href="#id-section-1" id="markdown-toc-id-section-1">复制文本</a></li>
+      <li><a href="#id-section-2" id="markdown-toc-id-section-2">粘贴文本</a></li>
+    </ul>
+  </li>
+  <li><a href="#id-vim-" id="markdown-toc-id-vim-">比较 Vim 的方法</a></li>
+  <li><a href="#id-section-3" id="markdown-toc-id-section-3">注意事项</a></li>
+  <li><a href="#id-section-4" id="markdown-toc-id-section-4">参考资料</a></li>
+</ul>
+
+<p>很多时候使用 Vim 编辑文本，总需要复制里面的东西出来，粘贴到其他地方，比如说网页，聊天窗口等等，而有些时候有需要从网页等地方复制文字过来粘贴到 Vim 正在编辑的文件里。这个两个过程应该怎么完成呢？</p>
+
+<h2 id="id-section">一般的解决方法</h2>
+
+<h3 id="id-section-1">复制文本</h3>
+
+<p>当我们要将 Vim 里面的文本复制出来，往往会用鼠标选中，然后到需要粘贴的地方小点下鼠标中键或 <code class="highlighter-rouge">Shift</code> + <code class="highlighter-rouge">Insert</code>，完成复制粘贴的过程。</p>
+
+<p>但 Vim 设置显示行号，多窗口使用，或者使用 Tmux 这类有利于提高效率的工具的时候，这样选择未必行的通。</p>
+
+<p>这时候，需要鼠标可以选中 Vim 单个窗口且不包含行号的文本，可以使用 <code class="highlighter-rouge">:set mouse=a</code>，让 Vim 支持鼠标选择，大概事情就可以解决，这样的感觉也挺爽的，赶紧把 <code class="highlighter-rouge">set mouse=a</code> 加入你的 <code class="highlighter-rouge">.vimrc</code> 文件：)</p>
+
+<h3 id="id-section-2">粘贴文本</h3>
+
+<p>当我们在其他地方选择文本后，想粘贴到 Vim，一般都会切换到插入模式点鼠标中键或 <code class="highlighter-rouge">Shift</code> + <code class="highlighter-rouge">Insert</code>，完成复制粘贴的过程。</p>
+
+<p>但有些时候，比如说复制在网页一些代码，粘贴时有时会出现不对齐，前面未加注释代码却被加上注释，这样一些恼人的问题。</p>
+
+<p>这时候，可以通过 <code class="highlighter-rouge">:set paste</code> 将 Vim 设置为粘贴模式后再进行粘贴，既然是两种模式，肯定是有区别的，<code class="highlighter-rouge">:set nopaste</code> 是返回正常模式。这么干毕竟不方便，可以通过 <code class="highlighter-rouge">.vimrc</code> 添加映射来解决这个问题，更是有 <code class="highlighter-rouge">set pastetoggle=</code> 这个方便的选项，若在 <code class="highlighter-rouge">.vimrc</code> 文件里添加 <code class="highlighter-rouge">set pastetoggle=&lt;F11&gt;</code>，则 <code class="highlighter-rouge">F11</code> 为粘贴模式的切换键。</p>
+
+<h2 id="id-vim-">比较 Vim 的方法</h2>
+
+<p>上述方法，大致可以解决问题，但很多同学并不喜欢用这种方式来复制粘贴，或是喜欢键盘操作的爽快，或是习惯了 Windows 下那套 <code class="highlighter-rouge">Ctrl</code> + <code class="highlighter-rouge">c</code>, <code class="highlighter-rouge">Ctrl</code> + <code class="highlighter-rouge">v</code>，通过系统剪切板来实现。还有，使用 VirtualBox 的时候，若设置剪切板互通，也是用到系统剪切板。</p>
+
+<p>Vim 不是通过 <code class="highlighter-rouge">Ctrl</code> + <code class="highlighter-rouge">c</code>, <code class="highlighter-rouge">Ctrl</code> + <code class="highlighter-rouge">x</code>, <code class="highlighter-rouge">Ctrl</code>  + <code class="highlighter-rouge">v</code> 来实现复制、剪切、粘贴的，而是通过 <code class="highlighter-rouge">y</code>, <code class="highlighter-rouge">d</code>, <code class="highlighter-rouge">p</code> 这些更为方便的键来实现各种复杂的文本操作。</p>
+
+<p>对于和系统剪贴板的交互，又应该怎么用呢？遇到问题一般第一个寻找的是帮助文档，剪切板即是 Clipboard。</p>
+
+<p>通过 <code class="highlighter-rouge">:h clipboard</code> 查看帮助，发现里面有一句这样的话</p>
+
+<blockquote>
+  <p>When using this register under X11, also see x11-selection.</p>
+
+  <p>若在 X11 中使用该寄存器，另见 x11-selection。</p>
+</blockquote>
+
+<p>顺着思路 <code class="highlighter-rouge">:h x11-selection</code>，里面详细地介绍了 Vim 提供的使用 X11 主选择缓冲区和剪切板的方法，它们是通过 <code class="highlighter-rouge">"*</code> 和 <code class="highlighter-rouge">"+</code> 两个寄存器来实现。</p>
+
+<p>大致可以明白，在 Windows 上只能通过 Clipboard，而可爱的 X11 却还给了我们 Primary，所以有了选中即复制，鼠标中间即粘贴这么神奇的粘贴操作。</p>
+
+<p>在 Vim 里，正常模式下，复制文本到 Clipboard，基本只是在前面加上 <code class="highlighter-rouge">"+</code>，其他一样，例如</p>
+
+<p>复制当前行</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>"+yy 或 "+Y
+</code></pre>
+</div>
+
+<p>复制当前行及向下二行</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>"+y2j
+</code></pre>
+</div>
+
+<p>选择后复制</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Vjj"+y
+</code></pre>
+</div>
+
+<p>复制到 Primary 和复制到 Clipboard 差不多，这里就不再详述，而粘贴则是加 <code class="highlighter-rouge">p</code>，自然还有剪切 <code class="highlighter-rouge">d</code>。</p>
+
+<h2 id="id-section-3">注意事项</h2>
+
+<p>需要注意的是，Arch Linux 官方仓库中的 Vim 并不支持以上操作</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ vim --version | grep clipboard
+</code></pre>
+</div>
+
+<p>返回显示 <code class="highlighter-rouge">clipboard</code> 及 <code class="highlighter-rouge">xterm_clipboard</code> 前面是减，我们可以安装 gVim 来使 Vim 支持 X</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -S gvim
+</code></pre>
+</div>
+
+<p>也可通过 ABS 这种方便的编译系统，重新编译 Vim</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -S abs
+# abs extra/vim
+# cp -r /var/abs/extra/vim ~/ &amp;&amp; cd ~/vim
+</code></pre>
+</div>
+
+<p>修改 PKGBUILD 文件</p>
+
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:8px;"><code>PKGBUILD</code></pre>
+<pre style="margin-top: 0; border-top: 1px dashed #ddd; padding-top:8px;"><code>...
+pkgname=('vim'<del> 'gvim' 'vim-runtime'</del>)
+# 去除不需要编译的包
+# 至于编译依赖，不了解可以像我一样选择不取消
+...
+--with-x=<del>no</del>yes \
+# 把 Vim 编译选项中 --with-x 的 no 改为 yes
+...
+</code></pre>
+
+<p>编译并创建包</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ makepkg -s
+</code></pre>
+</div>
+
+<p>安装 Vim</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -U vim-7.3.754-1-x86_64.pkg.tar.xz
+</code></pre>
+</div>
+
+<p>重新进行验证，果然生效</p>
+
+<h2 id="id-section-4">参考资料</h2>
+
+<ul>
+  <li><a href="http://maxolasersquad.blogspot.com/2012/01/copy-and-paste-from-system-clipboard.html">Copy and paste from the system clipboard with vim</a></li>
+  <li><a href="http://www.jwz.org/doc/x-cut-and-paste.html">X Selections, Cut Buffers, and Kill Rings.</a></li>
+  <li><a href="https://wiki.archlinux.org/index.php/Arch_Build_System">Arch Build System</a></li>
+</ul>
+
+<p><strong>本文历史</strong></p>
+
+<ul>
+  <li>2013 年 01 月 24 日 完成初稿</li>
+</ul>
+
+  </div>
+
+  <div id="posts">
+    <div id="random-posts" class="posts">
+      <strong>猜你喜欢</strong>
+      <ul>
+      </ul>
+    </div>
+  
+    <div id="recent-posts" class="posts">
+      <strong>最近更新</strong>
+      <ul>
+      
+        <li><a href="/configuring-ip-address-by-specifying-gateway" title="配置特定 IP 地址走指定网关">配置特定 IP 地址走指定网关 </a></li>
+      
+        <li><a href="/add-google-satellite-layer-in-amap" title="高德地图 API 叠加谷歌地图图层">高德地图 API 叠加谷歌地图图层 </a></li>
+      
+        <li><a href="/from-codoon-to-nikeplus" title="将咕咚的数据导入到 Nike+">将咕咚的数据导入到 Nike+ </a></li>
+      
+        <li><a href="/the-influence-of-sports-apps" title="运动 APP 的作用">运动 APP 的作用 </a></li>
+      
+        <li><a href="/the-last-run-of-june" title="今年 6 月的最后一次跑步">今年 6 月的最后一次跑步 </a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div id="info" class="tech">
+
+    <span id="share">
+  <div id="qrcode"></div>
+  <a id="wechat" title="分享到微信" data-wechat-url="http://127.0.0.1:4000/using-vim-with-clipboard-on-archlinux" href="javascript:void(0);"><i class="icon-wechat"></i></a>
+  <a id="weibo" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=Vim 与系统剪切板交互 | 殷东亮的博客 via @&amp;url=http://127.0.0.1:4000/using-vim-with-clipboard-on-archlinux&amp;type=3&amp;searchPic=1"><i class="icon-weibo"></i></a>
+  <a id="qzone" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://127.0.0.1:4000/using-vim-with-clipboard-on-archlinux&amp;title=Vim 与系统剪切板交互 | 殷东亮的博客&amp;summary=很多时候使用 Vim 编辑文本，总需要复制里面的东西出来，粘贴到其他地方，比如说网页，聊天窗口等等，而有些时候有需要从网页等地方复制文字过来粘贴到 Vim 正在编辑的文件里。&amp;site=http://127.0.0.1:4000"><i class="icon-qzone"></i></a>
+  <a id="twitter" target="_blank" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=http://127.0.0.1:4000/using-vim-with-clipboard-on-archlinux&amp;text=Vim 与系统剪切板交互｜殷东亮的博客&amp;via="><i class="icon-twitter"></i></a>
+  <a id="facebook" target="_blank" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=http://127.0.0.1:4000/using-vim-with-clipboard-on-archlinux&amp;t=Vim 与系统剪切板交互 | 殷东亮的博客"><i class="icon-facebook-official"></i></a>
+  <a id="gplus" target="_blank" title="Share to Google+" href="https://plus.google.com/share?url=http://127.0.0.1:4000/using-vim-with-clipboard-on-archlinux"><i class="icon-gplus-squared"></i></a>
+</span>
+
+
+    <span class='like'><a href="javascript:void(0)" title=""><i class="icon-heart-empty"></i> <span class="disqus-like-count"></span></a></span>
+    <span class='view-code'><a href="javascript:void(0)" data-md="https://raw.githubusercontent.com/fooleap/fooleap.github.io/master/_posts/2013-01-24-using-vim-with-clipboard-on-archlinux.md" title="在正文中查看源码"><i class="icon-file-code"></i>源码</a></span>
+    <span class="number-of-word"><i class="icon-calc"></i>2097 字</span>
+    <span class="page-tags"><i class="icon-tags"></i><ul class="tags"> <li class="tag"><a href="/tags.html#Vim" target="_blank" title="查看“Vim”的相关文章">Vim</a></li><li class="tag"><a href="/tags.html#剪切板" target="_blank" title="查看“剪切板”的相关文章">剪切板</a></li><li class="tag"><a href="/tags.html#Arch Linux" target="_blank" title="查看“Arch Linux”的相关文章">Arch Linux</a></li></ul></span>
+  </div>
+
+</article>
+
+<div class="comment" id="disqus_thread">
+    <a class="show-comments" href="http://127.0.0.1:4000/using-vim-with-clipboard-on-archlinux#disqus_thread" data-disqus-identifier="/using-vim-with-clipboard-on-archlinux"><span class="has-comment"><i class="icon-chat-empty"></i> 留下</span>评论 <span class="disqus-comment-count" data-disqus-url="http://127.0.0.1:4000/using-vim-with-clipboard-on-archlinux"></span></a>
+</div>
+
+  
+      <footer class="site-footer">
+        <small>&copy; 2012-2016 by Jekyll Theme</small>
+      </footer>
+  
+    </main>
+
+  </div>
+  <div id="backtotop">
+    <i class="icon-up-big"></i>
+  </div>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  </body>
+</html>

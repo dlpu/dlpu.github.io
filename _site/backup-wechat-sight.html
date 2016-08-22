@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html class="ie lte8"><![endif]-->
+<!--[if IE]><html class="ie"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>备份 iOS 版微信小视频 | 殷东亮的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.3, user-scalable=no" />
+    <meta name="description" content="微信很好很强大，还让几乎没上过网的长辈们开始触网，动不动就发图片、小视频过来，说到小视频，iPhone 的微信小视频应该如何备份呢？" />
+    <meta name="keywords" content="微信, iPhone, WeChat, 小视频" />
+    <meta name="author" content="fooleap" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="canonical" href="http://127.0.0.1:4000/backup-wechat-sight" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="alternate" type="application/atom+xml" title="殷东亮的博客 Atom Feed" href="http://blog.fooleap.org/atom.xml" />
+    <script type="text/javascript" src="/assets/js/modernizr.js"></script>
+    <!--[if lte IE 9]>
+      <script src="/assets/js/html5shiv.min.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+      <script src="/assets/js/classList.min.js"></script>
+      <script type="text/javascript">
+        document.createElement('main');
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+  <nav id="navigation">
+      <ul class="navigation-list hide">
+          <li><a href="/" class="navigation-item"><i class="icon-home"></i>首页</a></li>
+          <li><a href="/archive.html" class="navigation-item"><i class="icon-box"></i>归档</a></li>
+          <li><a href="/about.html" class="navigation-item"><i class="icon-user"></i>关于</a></li>
+      </ul>
+      <i id="menu" class="icon icon-menu"></i>
+  </nav>
+  
+  <div class="container">
+    <main class="wrapper">
+      <header class="site-header">
+        <h1>
+          备份 iOS 版微信小视频
+        </h1>
+        <h2 class="sub-heading">
+            <i class="icon-calendar"></i><time datetime="2015-10-10">2015 年 10 月 10 日</time>
+        </h2>
+      </header>
+  <article class="post-content">
+    
+  <div class="main-content">
+<p>微信很好很强大，还让几乎没上过网的长辈们开始触网，动不动就发图片、小视频过来，说到小视频，iPhone 的微信小视频应该如何备份呢？</p>
+
+<p>如果想收藏小视频，最简单的是长按小视频并点击 <code class="highlighter-rouge">收藏</code>，这样就不用怕清缓存的时候会把喜欢的小视频给删除掉。</p>
+
+<p>有时候想要用到小视频的文件，可是微信并不支持将小视频保存到本地的相册，这该如何是好？</p>
+
+<h2 id="id-windows-">通过 Windows 版本微信</h2>
+
+<p>这时候可以借用微信的 Windows 客户端，将小视频发给 <code class="highlighter-rouge">文件传输助手</code>，电脑接收后便会保存在电脑上，在以下目录便可找到你想要的小视频 MP4 文件以及缩略图。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>（我的）文档\WeChat Files\微信号\Video\
+</code></pre>
+</div>
+
+<p>若引导分区是 C 盘，那么具体目录如下：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>系统</th>
+      <th>目录</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Windows XP</td>
+      <td>C:\Documents and Settings\用户名\My Documents\WeChat Files\微信号\Video\</td>
+    </tr>
+    <tr>
+      <td>Windows Vista +</td>
+      <td>C:\Users\用户名\Documents\WeChat Files\微信号\Video\</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="id-pc-">通过 PC 第三方管理器</h2>
+
+<p>如果觉得这样太麻烦，或者想批量备份小视频，那么可以直接通过 PC 第三方管理器来保存所需要的小视频。</p>
+
+<p>在此鄙人推荐 iFunbox，正常连接之后只要在 <code class="highlighter-rouge">管理 App 数据</code> 标签页找到 <code class="highlighter-rouge">所有应用程序</code> 并点击 <code class="highlighter-rouge">显示所有</code>，随后点击微信图标 - <code class="highlighter-rouge">打开沙盒</code>，找到以下目录：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Documents/2e69ade238c7b7e8f308fe5d25a41a24/Video/
+</code></pre>
+</div>
+
+<p>中间的目录名因人而异，不过皆是字母和数字组成的 32 位字符串，看起来像是经过 md5 加密的。进入目录便可看到很多名字类似那个的目录，目录名经过加密所以无法识别，可以直接将整个 <code class="highlighter-rouge">Video</code> 目录导出备份起来即可。</p>
+
+<p>导出后，再看便可知道区分那些目录的是不同的微信聊天窗口，也就是同一个联系人或微信群会保存到同一个目录，里面有 MP4 文件的小视频或视频，还有没有后缀的是缩略图文件，可以直接删掉，也可以改成 JPG 后缀便可。</p>
+
+<p>同样的方法，你还可以找到聊天记录里的语音、图片等等，分别对应 <code class="highlighter-rouge">Audio</code> 目录及 <code class="highlighter-rouge">Img</code> 目录，文件后缀可能不对，自己改呗。</p>
+
+<p>另外，在以下目录可以找到自己拍的小视频：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Library/WechatPrivate/2e69ade238c7b7e8f308fe5d25a41a24/Sight/draft/
+</code></pre>
+</div>
+
+<p>对了，以上方法的依赖是你的 iOS 版本低于 8.3，或者已越狱。</p>
+
+<p><img src="http://source.fooleap.org/backup-wechat-sight.png" alt="高版本 iOS 无法访问沙盒提醒" />
+▲高版本 iOS 无法访问沙盒提醒</p>
+
+<p>越狱后推荐微信小视频相关插件 <a href="http://bbs.feng.com/read-htm-tid-8881387-page-1.html">微信无限小视频</a>。</p>
+
+<p>当然 PC 第三方管理器使用 iTools 也可，其他的暂时没啥推荐的，远离 XX 助手。</p>
+
+<p><strong>本文历史</strong></p>
+
+<ul>
+  <li>2015 年 10 月 10 日 完成初稿</li>
+</ul>
+
+  </div>
+
+  <div id="posts">
+    <div id="random-posts" class="posts">
+      <strong>猜你喜欢</strong>
+      <ul>
+      </ul>
+    </div>
+  
+    <div id="recent-posts" class="posts">
+      <strong>最近更新</strong>
+      <ul>
+      
+        <li><a href="/configuring-ip-address-by-specifying-gateway" title="配置特定 IP 地址走指定网关">配置特定 IP 地址走指定网关 </a></li>
+      
+        <li><a href="/add-google-satellite-layer-in-amap" title="高德地图 API 叠加谷歌地图图层">高德地图 API 叠加谷歌地图图层 </a></li>
+      
+        <li><a href="/from-codoon-to-nikeplus" title="将咕咚的数据导入到 Nike+">将咕咚的数据导入到 Nike+ </a></li>
+      
+        <li><a href="/the-influence-of-sports-apps" title="运动 APP 的作用">运动 APP 的作用 </a></li>
+      
+        <li><a href="/the-last-run-of-june" title="今年 6 月的最后一次跑步">今年 6 月的最后一次跑步 </a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div id="info" class="tech">
+
+    <span id="share">
+  <div id="qrcode"></div>
+  <a id="wechat" title="分享到微信" data-wechat-url="http://127.0.0.1:4000/backup-wechat-sight" href="javascript:void(0);"><i class="icon-wechat"></i></a>
+  <a id="weibo" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=备份 iOS 版微信小视频 | 殷东亮的博客 via @&amp;url=http://127.0.0.1:4000/backup-wechat-sight&amp;type=3&amp;searchPic=1"><i class="icon-weibo"></i></a>
+  <a id="qzone" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://127.0.0.1:4000/backup-wechat-sight&amp;title=备份 iOS 版微信小视频 | 殷东亮的博客&amp;summary=微信很好很强大，还让几乎没上过网的长辈们开始触网，动不动就发图片、小视频过来，说到小视频，iPhone 的微信小视频应该如何备份呢？&amp;site=http://127.0.0.1:4000"><i class="icon-qzone"></i></a>
+  <a id="twitter" target="_blank" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=http://127.0.0.1:4000/backup-wechat-sight&amp;text=备份 iOS 版微信小视频｜殷东亮的博客&amp;via="><i class="icon-twitter"></i></a>
+  <a id="facebook" target="_blank" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=http://127.0.0.1:4000/backup-wechat-sight&amp;t=备份 iOS 版微信小视频 | 殷东亮的博客"><i class="icon-facebook-official"></i></a>
+  <a id="gplus" target="_blank" title="Share to Google+" href="https://plus.google.com/share?url=http://127.0.0.1:4000/backup-wechat-sight"><i class="icon-gplus-squared"></i></a>
+</span>
+
+
+    <span class='like'><a href="javascript:void(0)" title=""><i class="icon-heart-empty"></i> <span class="disqus-like-count"></span></a></span>
+    <span class='view-code'><a href="javascript:void(0)" data-md="https://raw.githubusercontent.com/fooleap/fooleap.github.io/master/_posts/2015-10-10-backup-wechat-sight.md" title="在正文中查看源码"><i class="icon-file-code"></i>源码</a></span>
+    <span class="number-of-word"><i class="icon-calc"></i>1210 字</span>
+    <span class="page-tags"><i class="icon-tags"></i><ul class="tags"> <li class="tag"><a href="/tags.html#微信" target="_blank" title="查看“微信”的相关文章">微信</a></li><li class="tag"><a href="/tags.html#iPhone" target="_blank" title="查看“iPhone”的相关文章">iPhone</a></li><li class="tag"><a href="/tags.html#WeChat" target="_blank" title="查看“WeChat”的相关文章">WeChat</a></li><li class="tag"><a href="/tags.html#小视频" target="_blank" title="查看“小视频”的相关文章">小视频</a></li></ul></span>
+  </div>
+
+</article>
+
+<div class="comment" id="disqus_thread">
+    <a class="show-comments" href="http://127.0.0.1:4000/backup-wechat-sight#disqus_thread" data-disqus-identifier="/backup-wechat-sight"><span class="has-comment"><i class="icon-chat-empty"></i> 留下</span>评论 <span class="disqus-comment-count" data-disqus-url="http://127.0.0.1:4000/backup-wechat-sight"></span></a>
+</div>
+
+  
+      <footer class="site-footer">
+        <small>&copy; 2012-2016 by Jekyll Theme</small>
+      </footer>
+  
+    </main>
+
+  </div>
+  <div id="backtotop">
+    <i class="icon-up-big"></i>
+  </div>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  </body>
+</html>

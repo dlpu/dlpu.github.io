@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html class="ie lte8"><![endif]-->
+<!--[if IE]><html class="ie"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Jekyll 的 emoji 插件 | 殷东亮的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.3, user-scalable=no" />
+    <meta name="description" content="从 iOS 支持 emoji 之后，支持 emoji 的 app、网站数不胜数，如今 emoji 可算是风靡全球，那么，Jekyll 是否也能拥有一样的功能？答案是肯定的。" />
+    <meta name="keywords" content="emoji, jekyll, jemoji" />
+    <meta name="author" content="fooleap" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="canonical" href="http://127.0.0.1:4000/jemoji" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="alternate" type="application/atom+xml" title="殷东亮的博客 Atom Feed" href="http://blog.fooleap.org/atom.xml" />
+    <script type="text/javascript" src="/assets/js/modernizr.js"></script>
+    <!--[if lte IE 9]>
+      <script src="/assets/js/html5shiv.min.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+      <script src="/assets/js/classList.min.js"></script>
+      <script type="text/javascript">
+        document.createElement('main');
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+  <nav id="navigation">
+      <ul class="navigation-list hide">
+          <li><a href="/" class="navigation-item"><i class="icon-home"></i>首页</a></li>
+          <li><a href="/archive.html" class="navigation-item"><i class="icon-box"></i>归档</a></li>
+          <li><a href="/about.html" class="navigation-item"><i class="icon-user"></i>关于</a></li>
+      </ul>
+      <i id="menu" class="icon icon-menu"></i>
+  </nav>
+  
+  <div class="container">
+    <main class="wrapper">
+      <header class="site-header">
+        <h1>
+          Jekyll 的 emoji 插件
+        </h1>
+        <h2 class="sub-heading">
+            <i class="icon-calendar"></i><time datetime="2015-06-03">2015 年 06 月 03 日</time>
+        </h2>
+      </header>
+  <article class="post-content">
+    
+  <div class="main-content">
+<ul id="toc">
+  <li><a href="#id-jemoji" id="markdown-toc-id-jemoji">安装配置 jemoji</a></li>
+  <li><a href="#id-emoji" id="markdown-toc-id-emoji">如何使用 emoji</a></li>
+  <li><a href="#id-section" id="markdown-toc-id-section">托管平台的支持</a></li>
+  <li><a href="#id-windows-" id="markdown-toc-id-windows-">在 Windows 上的问题</a></li>
+</ul>
+
+<p>从 iOS 支持 emoji 之后，支持 emoji 的 app、网站数不胜数，如今 emoji 可算是风靡全球，那么，Jekyll 是否也能拥有一样的功能？答案是肯定的。</p>
+
+<p><img src="http://source.fooleap.org/jemoji-01.png" alt="微信的 emoji" />
+▲微信的 emoji 表情</p>
+
+<p>Jekyll 本身不支持 emoji，不过有个插件可以使它支持 emoji 表情，那就是 jemoji(<a href="https://github.com/jekyll/jemoji">jekyll/jemoji</a>)，显然这是官方提供的插件。</p>
+
+<h2 id="id-jemoji">安装配置 jemoji</h2>
+
+<p>安装</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gem install jemoji
+</code></pre>
+</div>
+
+<p>配置 <code class="highlighter-rouge">_config.yml</code> 添加</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">gems:</span><span class="err">
+</span>
+  <span class="s">- jemoji</span></code></pre></figure>
+
+<h2 id="id-emoji">如何使用 emoji</h2>
+
+<p><a href="http://www.emoji-cheat-sheet.com/">Emoji cheat sheet</a> 提供了 GitHub、Ruby China 等网站支持的 emoji 表情使用方法，看起来都是简单的英文单词，前后加上冒号即可，记住几个常用表情还是比较方便的。</p>
+
+<p>如 <code>&#58;smile&#58;</code> 则会显示成 <img class="emoji" title=":smile:" alt=":smile:" src="https://assets.github.com/images/icons/emoji/unicode/1f604.png" width="20" height="20" style="display:inline!important" /></p>
+
+<h2 id="id-section">托管平台的支持</h2>
+
+<p>据<a href="https://pages.github.com/versions/">此页面</a> 我们可以看到 Github Pages 上也带 jemoji，官方也提供了<a href="https://help.github.com/articles/emoji-on-github-pages/">帮助文档</a>。</p>
+
+<p>而据 <a href="https://gitcafe.com/GitCafe/Help/wiki/Pages-%E7%9B%B8%E5%85%B3%E5%B8%AE%E5%8A%A9">GitCafe Pages 相关帮助</a> 得知，GitCafé Pages 似乎并没有提供插件的支持。</p>
+
+<h2 id="id-windows-">在 Windows 上的问题</h2>
+
+<p>jemoji 依赖于 <code class="highlighter-rouge">nokogiri</code>，而 <code class="highlighter-rouge">nokogiri</code> 最新版本并<a href="https://github.com/sparklemotion/nokogiri/issues/1256">不支持 Ruby 2.2 的 Windows 版本</a>，解决方法可以降级 Ruby 为 2.1 版。</p>
+
+<p><strong>本文历史</strong></p>
+
+<ul>
+  <li>2015 年 06 月 03 日 完成初稿</li>
+</ul>
+
+  </div>
+
+  <div id="posts">
+    <div id="random-posts" class="posts">
+      <strong>猜你喜欢</strong>
+      <ul>
+      </ul>
+    </div>
+  
+    <div id="recent-posts" class="posts">
+      <strong>最近更新</strong>
+      <ul>
+      
+        <li><a href="/configuring-ip-address-by-specifying-gateway" title="配置特定 IP 地址走指定网关">配置特定 IP 地址走指定网关 </a></li>
+      
+        <li><a href="/add-google-satellite-layer-in-amap" title="高德地图 API 叠加谷歌地图图层">高德地图 API 叠加谷歌地图图层 </a></li>
+      
+        <li><a href="/from-codoon-to-nikeplus" title="将咕咚的数据导入到 Nike+">将咕咚的数据导入到 Nike+ </a></li>
+      
+        <li><a href="/the-influence-of-sports-apps" title="运动 APP 的作用">运动 APP 的作用 </a></li>
+      
+        <li><a href="/the-last-run-of-june" title="今年 6 月的最后一次跑步">今年 6 月的最后一次跑步 </a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div id="info" class="tech">
+
+    <span id="share">
+  <div id="qrcode"></div>
+  <a id="wechat" title="分享到微信" data-wechat-url="http://127.0.0.1:4000/jemoji" href="javascript:void(0);"><i class="icon-wechat"></i></a>
+  <a id="weibo" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=Jekyll 的 emoji 插件 | 殷东亮的博客 via @&amp;url=http://127.0.0.1:4000/jemoji&amp;type=3&amp;searchPic=1"><i class="icon-weibo"></i></a>
+  <a id="qzone" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://127.0.0.1:4000/jemoji&amp;title=Jekyll 的 emoji 插件 | 殷东亮的博客&amp;summary=从 iOS 支持 emoji 之后，支持 emoji 的 app、网站数不胜数，如今 emoji 可算是风靡全球，那么，Jekyll 是否也能拥有一样的功能？答案是肯定的。&amp;site=http://127.0.0.1:4000"><i class="icon-qzone"></i></a>
+  <a id="twitter" target="_blank" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=http://127.0.0.1:4000/jemoji&amp;text=Jekyll 的 emoji 插件｜殷东亮的博客&amp;via="><i class="icon-twitter"></i></a>
+  <a id="facebook" target="_blank" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=http://127.0.0.1:4000/jemoji&amp;t=Jekyll 的 emoji 插件 | 殷东亮的博客"><i class="icon-facebook-official"></i></a>
+  <a id="gplus" target="_blank" title="Share to Google+" href="https://plus.google.com/share?url=http://127.0.0.1:4000/jemoji"><i class="icon-gplus-squared"></i></a>
+</span>
+
+
+    <span class='like'><a href="javascript:void(0)" title=""><i class="icon-heart-empty"></i> <span class="disqus-like-count"></span></a></span>
+    <span class='view-code'><a href="javascript:void(0)" data-md="https://raw.githubusercontent.com/fooleap/fooleap.github.io/master/_posts/2015-06-03-jemoji.md" title="在正文中查看源码"><i class="icon-file-code"></i>源码</a></span>
+    <span class="number-of-word"><i class="icon-calc"></i>654 字</span>
+    <span class="page-tags"><i class="icon-tags"></i><ul class="tags"> <li class="tag"><a href="/tags.html#emoji" target="_blank" title="查看“emoji”的相关文章">emoji</a></li><li class="tag"><a href="/tags.html#jekyll" target="_blank" title="查看“jekyll”的相关文章">jekyll</a></li><li class="tag"><a href="/tags.html#jemoji" target="_blank" title="查看“jemoji”的相关文章">jemoji</a></li></ul></span>
+  </div>
+
+</article>
+
+<div class="comment" id="disqus_thread">
+    <a class="show-comments" href="http://127.0.0.1:4000/jemoji#disqus_thread" data-disqus-identifier="/jemoji"><span class="has-comment"><i class="icon-chat-empty"></i> 留下</span>评论 <span class="disqus-comment-count" data-disqus-url="http://127.0.0.1:4000/jemoji"></span></a>
+</div>
+
+  
+      <footer class="site-footer">
+        <small>&copy; 2012-2016 by Jekyll Theme</small>
+      </footer>
+  
+    </main>
+
+  </div>
+  <div id="backtotop">
+    <i class="icon-up-big"></i>
+  </div>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  </body>
+</html>

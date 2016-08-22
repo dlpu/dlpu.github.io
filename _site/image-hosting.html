@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html class="ie lte8"><![endif]-->
+<!--[if IE]><html class="ie"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>图床的那些事儿 | 殷东亮的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.3, user-scalable=no" />
+    <meta name="description" content="博客写得不多，但从 08 年开始到现在，也有大概 7 年左右的时间，这期间，自从使用博客大巴开始便使用图床，到现在也有 5 年左右时间，那么就聊聊图床的那些事吧。" />
+    <meta name="keywords" content="图床, 七牛" />
+    <meta name="author" content="fooleap" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="canonical" href="http://127.0.0.1:4000/image-hosting" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="alternate" type="application/atom+xml" title="殷东亮的博客 Atom Feed" href="http://blog.fooleap.org/atom.xml" />
+    <script type="text/javascript" src="/assets/js/modernizr.js"></script>
+    <!--[if lte IE 9]>
+      <script src="/assets/js/html5shiv.min.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+      <script src="/assets/js/classList.min.js"></script>
+      <script type="text/javascript">
+        document.createElement('main');
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+  <nav id="navigation">
+      <ul class="navigation-list hide">
+          <li><a href="/" class="navigation-item"><i class="icon-home"></i>首页</a></li>
+          <li><a href="/archive.html" class="navigation-item"><i class="icon-box"></i>归档</a></li>
+          <li><a href="/about.html" class="navigation-item"><i class="icon-user"></i>关于</a></li>
+      </ul>
+      <i id="menu" class="icon icon-menu"></i>
+  </nav>
+  
+  <div class="container">
+    <main class="wrapper">
+      <header class="site-header">
+        <h1>
+          图床的那些事儿
+        </h1>
+        <h2 class="sub-heading">
+            <i class="icon-calendar"></i><time datetime="2015-07-06">2015 年 07 月 06 日</time>
+        </h2>
+      </header>
+  <article class="post-content">
+    
+  <div class="main-content">
+<ul id="toc">
+  <li><a href="#id-section" id="markdown-toc-id-section">使用过的图床</a></li>
+  <li><a href="#id-section-1" id="markdown-toc-id-section-1">正在使用的图床</a></li>
+</ul>
+
+<p>博客写得不多，但从 08 年开始到现在，也有大概 7 年左右的时间，这期间，自从使用博客大巴开始便使用图床，到现在也有 5 年左右时间，那么就聊聊图床的那些事吧。</p>
+
+<h2 id="id-section">使用过的图床</h2>
+
+<p>1、SkyDrive，微软旗下的网盘，现在已改名“OneDrive”。优点在于可以在本地编辑以同步，支持外链，我是直接点击“查看原件”复制其 URL。</p>
+
+<p><img src="https://b7x4rg.by3302.livefilestore.com/y3p6j2KbLqm8ekbQ4GskI0agfyuSzcwnopP2q267krb_rl7D30ar-ERXV9CXRLTJDGgjSJplRm1YWSpQNjvbzG2rIqItgR0ZxJk7DytGDPd85clmeDri8D8MGeAOW4nVPr9EGA9-rj_XpMTSJOqHJoXZd8uKieZGyL62SEJOg8BAsA/image-hosting.jpg" alt="例图一" />
+▲例图一</p>
+
+<p>是的，文件名保留了，但是 URL 太丑太长，只能链接原文件，弃用。</p>
+
+<p>2、Photobucket，这个网络相册我特别喜欢，在使用 WordPress 的时候一直用着它，URL 不丑，保留原文件名，特别是支持嵌入相册，要分享较多图片的时候很好用。</p>
+
+<p><img src="http://i951.photobucket.com/albums/ad353/Fooleap/image-hosting.jpg" alt="例图二" />
+▲例图二</p>
+
+<p>这个图床不足之处在于只能外链原文件，这些年抽风也逐渐严重，弃用。</p>
+
+<p>3、又拍图片管家，免费用户空间仅有 100 M，虽然不大，却已够用，只要图片裁剪即可。URL 不长，优点在于可选择外链的图像大小，还可以随时替换图片。</p>
+
+<p><img src="http://pic.yupoo.com/fooleap_v/EMtGuxQJ/vwvWz.jpg" alt="例图三" />
+▲例图三</p>
+
+<p>缺点也很明显，URL 非以原文件名命名，有流量限制，也并不是很稳定，弃用。</p>
+
+<h2 id="id-section-1">正在使用的图床</h2>
+
+<p>现在用的是七牛云存储，改大小都不是事，剪裁、加滤镜、图片质量，甚至是加水印，几乎无所不能，具体可以参考 <a href="http://developer.qiniu.com/docs/v6/api/reference/fop/image/">图片处理文档</a>，还可以定义常用的图片处理样式。</p>
+
+<p><img src="http://source.fooleap.org/image-hosting.jpg_640" alt="例图四" />
+▲例图四</p>
+
+<p>网站的操作体验也很棒，如果用 WordPress 也可使用 <a href="https://wordpress.org/plugins/wpjam-qiniu/">七牛镜像存储插件</a>，实现一键加速静态文件。</p>
+
+<p>关键是免费拥有，存储空间有 10 G，每月下载流量 10 G，PUT 请求 10 万次，GET 请求 100 万次。</p>
+
+<p>我的 <a href="https://portal.qiniu.com/signup?code=3lmtscszx8zf4">七牛邀请链接</a>。</p>
+
+<p><strong>本文历史</strong></p>
+
+<ul>
+  <li>2015 年 07 月 06 日 完成初稿</li>
+</ul>
+
+  </div>
+
+  <div id="posts">
+    <div id="random-posts" class="posts">
+      <strong>猜你喜欢</strong>
+      <ul>
+      </ul>
+    </div>
+  
+    <div id="recent-posts" class="posts">
+      <strong>最近更新</strong>
+      <ul>
+      
+        <li><a href="/configuring-ip-address-by-specifying-gateway" title="配置特定 IP 地址走指定网关">配置特定 IP 地址走指定网关 </a></li>
+      
+        <li><a href="/add-google-satellite-layer-in-amap" title="高德地图 API 叠加谷歌地图图层">高德地图 API 叠加谷歌地图图层 </a></li>
+      
+        <li><a href="/from-codoon-to-nikeplus" title="将咕咚的数据导入到 Nike+">将咕咚的数据导入到 Nike+ </a></li>
+      
+        <li><a href="/the-influence-of-sports-apps" title="运动 APP 的作用">运动 APP 的作用 </a></li>
+      
+        <li><a href="/the-last-run-of-june" title="今年 6 月的最后一次跑步">今年 6 月的最后一次跑步 </a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div id="info" class="tech">
+
+    <span id="share">
+  <div id="qrcode"></div>
+  <a id="wechat" title="分享到微信" data-wechat-url="http://127.0.0.1:4000/image-hosting" href="javascript:void(0);"><i class="icon-wechat"></i></a>
+  <a id="weibo" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=图床的那些事儿 | 殷东亮的博客 via @&amp;url=http://127.0.0.1:4000/image-hosting&amp;type=3&amp;searchPic=1"><i class="icon-weibo"></i></a>
+  <a id="qzone" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://127.0.0.1:4000/image-hosting&amp;title=图床的那些事儿 | 殷东亮的博客&amp;summary=博客写得不多，但从 08 年开始到现在，也有大概 7 年左右的时间，这期间，自从使用博客大巴开始便使用图床，到现在也有 5 年左右时间，那么就聊聊图床的那些事吧。&amp;site=http://127.0.0.1:4000"><i class="icon-qzone"></i></a>
+  <a id="twitter" target="_blank" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=http://127.0.0.1:4000/image-hosting&amp;text=图床的那些事儿｜殷东亮的博客&amp;via="><i class="icon-twitter"></i></a>
+  <a id="facebook" target="_blank" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=http://127.0.0.1:4000/image-hosting&amp;t=图床的那些事儿 | 殷东亮的博客"><i class="icon-facebook-official"></i></a>
+  <a id="gplus" target="_blank" title="Share to Google+" href="https://plus.google.com/share?url=http://127.0.0.1:4000/image-hosting"><i class="icon-gplus-squared"></i></a>
+</span>
+
+
+    <span class='like'><a href="javascript:void(0)" title=""><i class="icon-heart-empty"></i> <span class="disqus-like-count"></span></a></span>
+    <span class='view-code'><a href="javascript:void(0)" data-md="https://raw.githubusercontent.com/fooleap/fooleap.github.io/master/_posts/2015-07-06-image-hosting.md" title="在正文中查看源码"><i class="icon-file-code"></i>源码</a></span>
+    <span class="number-of-word"><i class="icon-calc"></i>685 字</span>
+    <span class="page-tags"><i class="icon-tags"></i><ul class="tags"> <li class="tag"><a href="/tags.html#图床" target="_blank" title="查看“图床”的相关文章">图床</a></li><li class="tag"><a href="/tags.html#七牛" target="_blank" title="查看“七牛”的相关文章">七牛</a></li></ul></span>
+  </div>
+
+</article>
+
+<div class="comment" id="disqus_thread">
+    <a class="show-comments" href="http://127.0.0.1:4000/image-hosting#disqus_thread" data-disqus-identifier="/image-hosting"><span class="has-comment"><i class="icon-chat-empty"></i> 留下</span>评论 <span class="disqus-comment-count" data-disqus-url="http://127.0.0.1:4000/image-hosting"></span></a>
+</div>
+
+  
+      <footer class="site-footer">
+        <small>&copy; 2012-2016 by Jekyll Theme</small>
+      </footer>
+  
+    </main>
+
+  </div>
+  <div id="backtotop">
+    <i class="icon-up-big"></i>
+  </div>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  </body>
+</html>

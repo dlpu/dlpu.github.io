@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html class="ie lte8"><![endif]-->
+<!--[if IE]><html class="ie"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Firefox 的查看源代码功能 | 殷东亮的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.3, user-scalable=no" />
+    <meta name="description" content="Firefox 的查看源代码功能的总总" />
+    <meta name="keywords" content="Firefox, view-source, 源代码, 新标签页" />
+    <meta name="author" content="fooleap" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="canonical" href="http://127.0.0.1:4000/view-source-in-firefox" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="alternate" type="application/atom+xml" title="殷东亮的博客 Atom Feed" href="http://blog.fooleap.org/atom.xml" />
+    <script type="text/javascript" src="/assets/js/modernizr.js"></script>
+    <!--[if lte IE 9]>
+      <script src="/assets/js/html5shiv.min.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+      <script src="/assets/js/classList.min.js"></script>
+      <script type="text/javascript">
+        document.createElement('main');
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+  <nav id="navigation">
+      <ul class="navigation-list hide">
+          <li><a href="/" class="navigation-item"><i class="icon-home"></i>首页</a></li>
+          <li><a href="/archive.html" class="navigation-item"><i class="icon-box"></i>归档</a></li>
+          <li><a href="/about.html" class="navigation-item"><i class="icon-user"></i>关于</a></li>
+      </ul>
+      <i id="menu" class="icon icon-menu"></i>
+  </nav>
+  
+  <div class="container">
+    <main class="wrapper">
+      <header class="site-header">
+        <h1>
+          Firefox 的查看源代码功能
+        </h1>
+        <h2 class="sub-heading">
+            <i class="icon-calendar"></i><time datetime="2015-05-27">2015 年 05 月 27 日</time>
+        </h2>
+      </header>
+  <article class="post-content">
+    
+  <div class="main-content">
+
+<p>在<a href="firefox.html" title="小熊猫 Firefox">小熊猫 Firefox</a> 中，我提到了 Firefox 查看源代码功能。</p>
+
+<p>Firefox 查看源码最简单的办法就是右键点击“查看页面源代码（View Page Source）”，你还可以使用快捷键 <code class="highlighter-rouge">Ctrl</code>+<code class="highlighter-rouge">u</code> 以快速查看。</p>
+
+<p>##特色功能</p>
+
+<p>相比较其他浏览器，Firefox 查看源码功能有过而无不及，特色功能主要有以下两个。</p>
+
+<p>1、查看页面源代码时，Firefox 会在 HTML 语法错误的地方以显眼的红色标记。</p>
+
+<p><img src="http://source.fooleap.org/view-source-in-firefox-01.png" alt="源代码红色标记错误" />
+▲源代码红色标记错误</p>
+
+<p>2、选中网页的部分元素，右键可查看选中部分的源代码（View Selection Source）。</p>
+
+<p><img src="http://source.fooleap.org/view-source-in-firefox-02.png" alt="右键查看选中部分源代码" />
+▲右键查看选中部分源代码</p>
+
+<p>在此需要提醒的是，查看选中部分源码时，显示的是浏览器解析页面完毕后的代码，包括通过 JavaScript 进行加载的一些元素，也就是说和“查看元素（<code class="highlighter-rouge">Shift</code>+<code class="highlighter-rouge">Ctrl</code>+<code class="highlighter-rouge">i</code>）”显示的代码是一样的。</p>
+
+<p>##新标签页查看源码</p>
+
+<p><strong style="color:red">Firefox 最新版本已有变化 ，查看源码、选中源码均为新标签页打开。</strong></p>
+
+<p>Chrome 等浏览器查看源代码是在新的标签页中显示的（如图），实践发现 Firefox 也是通过 <code class="highlighter-rouge">view-source:</code>+<code class="highlighter-rouge">URL</code> 这个地址即可查看源代码。</p>
+
+<p><img src="http://source.fooleap.org/view-source-in-firefox-03.png" alt="Chrome 新标签页显示源代码" />
+▲Chrome 新标签页显示源代码</p>
+
+<p>可是 Firefox 默认弹出一个窗口显示，这个窗口甚至可以替换成第三方编辑器，这种体验鄙人感觉不如 Chrome，不过强大的 Firefox 肯定也是能实现一样的功能，随便一搜就有第三方扩展支持，比如 <a href="https://addons.mozilla.org/en-US/firefox/addon/source-viewer-tab/">Source Viewer Tab</a>。</p>
+
+<p>为实现一个简单的功能去安装一个扩展诚然有些不值，还是另寻它径吧，书签支持 JavaScript，那么可以获取当前页面的地址，采用 <code class="highlighter-rouge">window.open()</code> 方法即可实现新标签页打开。</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">javascript</span><span class="err">:</span><span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"view-source:"</span><span class="o">+</span><span class="nx">top</span><span class="p">.</span><span class="nx">location</span><span class="p">);</span></code></pre></figure>
+
+<p>若是 Chrome 这样即可，但 Firefox 还需在后面加上 <code class="highlighter-rouge">void(0)</code>，否则当前页面将被重定向。</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">javascript</span><span class="err">:</span><span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"view-source:"</span><span class="o">+</span><span class="nx">top</span><span class="p">.</span><span class="nx">location</span><span class="p">);</span><span class="k">void</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span></code></pre></figure>
+
+<p>或是</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">javascript</span><span class="err">:</span><span class="k">void</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"view-source:"</span><span class="o">+</span><span class="nx">top</span><span class="p">.</span><span class="nx">location</span><span class="p">));</span></code></pre></figure>
+
+<p>鄙人用 Pentadactyl，习惯了快捷键操作，那么如何配置 Pentadactyl 使 FF 可快捷键新标签页显示源码呢？一样可通过 JavaScript 获取当前页面网址。在 <code class="highlighter-rouge">_pentadactylrc</code> （非 Windows 则是 <code class="highlighter-rouge">.pentadactylrc</code>） 中添加如下。</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">com</span><span class="o">!</span> <span class="nx">view</span><span class="o">-</span><span class="nx">source</span> <span class="nx">exe</span> <span class="s2">"t view-source:"</span> <span class="o">+</span> <span class="nx">top</span><span class="p">.</span><span class="nx">content</span><span class="p">.</span><span class="nx">location</span><span class="p">;</span>
+<span class="nx">map</span> <span class="nx">vs</span> <span class="err">:</span><span class="nx">view</span><span class="o">-</span><span class="nx">source</span><span class="o">&lt;</span><span class="nx">Return</span><span class="o">&gt;</span></code></pre></figure>
+
+<p>别问我为什么要加 <code class="highlighter-rouge">content</code>，Firefox 扩展们需要这么干。<code class="highlighter-rouge">:rehash</code> 之后，<code class="highlighter-rouge">v</code> <code class="highlighter-rouge">s</code> 便是新标签查看源码的快捷键。</p>
+
+<p>另外，Pentadactyl 自身也提供一个命令 <code class="highlighter-rouge">:viewsource</code> 可当前页面查看源码，<code class="highlighter-rouge">:dia[log] selectionsource</code> 则是查看选中部分源码，不妨也给其绑定一快捷键 <code class="highlighter-rouge">s</code> <code class="highlighter-rouge">s</code>。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>map ss :dia selectionsource&lt;Return&gt;
+</code></pre>
+</div>
+
+<p>##源码页面字体？</p>
+
+<p>在此，也扯一下 Firefox 查看源码页面的字体。相比其他浏览器，Firefox 源码页面更加良心，各部分都精心设计，例如元素名被加粗亮色显示。可是，同是使用新宋体，为何显示效果感觉比 Chrome 丑？</p>
+
+<p>利用“查看元素”得知，样式是 <code class="highlighter-rouge">viewsource.css</code> 文件定义的，不过鄙人找不到这个文件。</p>
+
+<p><img src="http://source.fooleap.org/view-source-in-firefox-04.png" alt="viewsource.css" />
+▲viewsource.css</p>
+
+<p>事实上这个页面的字体定义继承于等宽字体，即在<code class="highlighter-rouge">选项</code>-<code class="highlighter-rouge">内容</code>-<code class="highlighter-rouge">字体和颜色</code>-<code class="highlighter-rouge">高级</code>里面设置。</p>
+
+<p><img src="http://source.fooleap.org/view-source-in-firefox-05.png" alt="设置等宽字体" />
+▲设置等宽字体</p>
+
+<p>如果你觉得这样改还不过瘾，可以直接跑 <code class="highlighter-rouge">about:config</code> 里面更改 <code class="highlighter-rouge">font.name.monospace.zh-CN</code> 选项（中文版本），就可以 CSS 一样的指定字体优先级（说白了就是指定中英文字体），例如 <code class="highlighter-rouge">Consolas, Microsoft Yahei</code>，字体大小则可更改 <code class="highlighter-rouge">font.size.fixed.zh-CN</code> 选项。</p>
+
+<p>##参考资料</p>
+
+<ul>
+  <li><a href="http://www.aburad.com/blog/2008/04/view-page-source-trick-in-firefox-flock.html">View page source trick in firefox, flock : Burad’s Blog</a></li>
+  <li><a href="http://lifehacker.com/5784781/set-bookmarks-to-open-in-a-new-tab-in-chrome">Set Bookmarks to Open in a New Tab</a></li>
+  <li><a href="http://stackoverflow.com/questions/5164964/document-url-vs-location-href-no-results">javascript - document.URL vs location.href &gt; no results - Stack Overflow</a></li>
+  <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/content">window.content - Web API 接口 | MDN</a></li>
+</ul>
+
+<p><strong>本文历史</strong></p>
+
+<ul>
+  <li>2015 年 05 月 27 日 完成初稿</li>
+  <li>2015 年 09 月 05 日 更新，新版本变化</li>
+</ul>
+
+  </div>
+
+  <div id="posts">
+    <div id="random-posts" class="posts">
+      <strong>猜你喜欢</strong>
+      <ul>
+      </ul>
+    </div>
+  
+    <div id="recent-posts" class="posts">
+      <strong>最近更新</strong>
+      <ul>
+      
+        <li><a href="/configuring-ip-address-by-specifying-gateway" title="配置特定 IP 地址走指定网关">配置特定 IP 地址走指定网关 </a></li>
+      
+        <li><a href="/add-google-satellite-layer-in-amap" title="高德地图 API 叠加谷歌地图图层">高德地图 API 叠加谷歌地图图层 </a></li>
+      
+        <li><a href="/from-codoon-to-nikeplus" title="将咕咚的数据导入到 Nike+">将咕咚的数据导入到 Nike+ </a></li>
+      
+        <li><a href="/the-influence-of-sports-apps" title="运动 APP 的作用">运动 APP 的作用 </a></li>
+      
+        <li><a href="/the-last-run-of-june" title="今年 6 月的最后一次跑步">今年 6 月的最后一次跑步 </a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div id="info" class="tech">
+
+    <span id="share">
+  <div id="qrcode"></div>
+  <a id="wechat" title="分享到微信" data-wechat-url="http://127.0.0.1:4000/view-source-in-firefox" href="javascript:void(0);"><i class="icon-wechat"></i></a>
+  <a id="weibo" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=Firefox 的查看源代码功能 | 殷东亮的博客 via @&amp;url=http://127.0.0.1:4000/view-source-in-firefox&amp;type=3&amp;searchPic=1"><i class="icon-weibo"></i></a>
+  <a id="qzone" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://127.0.0.1:4000/view-source-in-firefox&amp;title=Firefox 的查看源代码功能 | 殷东亮的博客&amp;summary=Firefox 的查看源代码功能的总总&amp;site=http://127.0.0.1:4000"><i class="icon-qzone"></i></a>
+  <a id="twitter" target="_blank" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=http://127.0.0.1:4000/view-source-in-firefox&amp;text=Firefox 的查看源代码功能｜殷东亮的博客&amp;via="><i class="icon-twitter"></i></a>
+  <a id="facebook" target="_blank" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=http://127.0.0.1:4000/view-source-in-firefox&amp;t=Firefox 的查看源代码功能 | 殷东亮的博客"><i class="icon-facebook-official"></i></a>
+  <a id="gplus" target="_blank" title="Share to Google+" href="https://plus.google.com/share?url=http://127.0.0.1:4000/view-source-in-firefox"><i class="icon-gplus-squared"></i></a>
+</span>
+
+
+    <span class='like'><a href="javascript:void(0)" title=""><i class="icon-heart-empty"></i> <span class="disqus-like-count"></span></a></span>
+    <span class='view-code'><a href="javascript:void(0)" data-md="https://raw.githubusercontent.com/fooleap/fooleap.github.io/master/_posts/2015-05-27-view-source-in-firefox.md" title="在正文中查看源码"><i class="icon-file-code"></i>源码</a></span>
+    <span class="number-of-word"><i class="icon-calc"></i>2046 字</span>
+    <span class="page-tags"><i class="icon-tags"></i><ul class="tags"> <li class="tag"><a href="/tags.html#Firefox" target="_blank" title="查看“Firefox”的相关文章">Firefox</a></li><li class="tag"><a href="/tags.html#view-source" target="_blank" title="查看“view-source”的相关文章">view-source</a></li><li class="tag"><a href="/tags.html#源代码" target="_blank" title="查看“源代码”的相关文章">源代码</a></li><li class="tag"><a href="/tags.html#新标签页" target="_blank" title="查看“新标签页”的相关文章">新标签页</a></li></ul></span>
+  </div>
+
+</article>
+
+<div class="comment" id="disqus_thread">
+    <a class="show-comments" href="http://127.0.0.1:4000/view-source-in-firefox#disqus_thread" data-disqus-identifier="/view-source-in-firefox"><span class="has-comment"><i class="icon-chat-empty"></i> 留下</span>评论 <span class="disqus-comment-count" data-disqus-url="http://127.0.0.1:4000/view-source-in-firefox"></span></a>
+</div>
+
+  
+      <footer class="site-footer">
+        <small>&copy; 2012-2016 by Jekyll Theme</small>
+      </footer>
+  
+    </main>
+
+  </div>
+  <div id="backtotop">
+    <i class="icon-up-big"></i>
+  </div>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html class="ie lte8"><![endif]-->
+<!--[if IE]><html class="ie"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>百度地图 API 制作路书 | 殷东亮的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.3, user-scalable=no" />
+    <meta name="description" content="很久以前，Google Maps 还能使用，要分享一些去徒步、骑行的线路地图十分方便，里面插上一些图片啥的也是毫无压力，鼠标点点就可以将线路图搞得有声有色，例如在这篇博文中所嵌入的地图。" />
+    <meta name="keywords" content="百度地图 API, 路书, 潮汕" />
+    <meta name="author" content="fooleap" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="canonical" href="http://127.0.0.1:4000/bmaps-lushu" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <style type="text/css">
+  .map{max-width:640px;width:100%;height:384px}
+  </style>
+    <link rel="icon" href="/favicon.png" />
+    <link rel="alternate" type="application/atom+xml" title="殷东亮的博客 Atom Feed" href="http://blog.fooleap.org/atom.xml" />
+    <script type="text/javascript" src="/assets/js/modernizr.js"></script>
+    <!--[if lte IE 9]>
+      <script src="/assets/js/html5shiv.min.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+      <script src="/assets/js/classList.min.js"></script>
+      <script type="text/javascript">
+        document.createElement('main');
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+  <nav id="navigation">
+      <ul class="navigation-list hide">
+          <li><a href="/" class="navigation-item"><i class="icon-home"></i>首页</a></li>
+          <li><a href="/archive.html" class="navigation-item"><i class="icon-box"></i>归档</a></li>
+          <li><a href="/about.html" class="navigation-item"><i class="icon-user"></i>关于</a></li>
+      </ul>
+      <i id="menu" class="icon icon-menu"></i>
+  </nav>
+  
+  <div class="container">
+    <main class="wrapper">
+      <header class="site-header">
+        <h1>
+          百度地图 API 制作路书
+        </h1>
+        <h2 class="sub-heading">
+            <i class="icon-calendar"></i><time datetime="2015-08-24">2015 年 08 月 24 日</time>
+        </h2>
+      </header>
+  
+  
+  
+  <article class="post-content">
+    
+  <div class="main-content">
+<ul id="toc">
+  <li><a href="#id-section" id="markdown-toc-id-section">地图分享</a></li>
+  <li><a href="#id-section-1" id="markdown-toc-id-section-1">百度路书</a></li>
+  <li><a href="#id-section-2" id="markdown-toc-id-section-2">制作路书</a></li>
+</ul>
+
+<h2 id="id-section">地图分享</h2>
+
+<p>很久以前，Google Maps 还能使用，要分享一些去徒步、骑行的线路地图十分方便，里面插上一些图片啥的也是毫无压力，鼠标点点就可以将线路图搞得有声有色，例如在 <a href="/walking-in-guilin-1.html">这篇博文</a> 中所嵌入的地图。</p>
+
+<p>近几年，Google Maps 逐渐无法打开，偶尔抽风但尚能打开的 <a href="http://ditu.google.cn">Google 地图</a> 已没有我的地图编辑分享功能。</p>
+
+<p><img src="http://source.fooleap.org/bmaps-lushu.png" alt="通过 Google Maps 分享的地图" />
+▲通过 Google Maps 分享的地图</p>
+
+<p>现在要分享一些地图便变得不那么方便，鄙人并没有找到能够简单编辑线路，插上文字图片并在站外分享嵌入的地图服务代替品。</p>
+
+<ul>
+  <li><a href="http://map.sogou.com/lushu/">搜狗路书</a> 观其网站风格，似乎还停留在上个十年，已不开放，估计已经放弃</li>
+  <li><a href="http://www.imxingzhe.com/lushu/">行者路书</a> 功能比较简单，看起来像阉割版的 Google Maps 我的地图</li>
+  <li><a href="https://lushu.com/">路书</a> 感觉好文艺，旅行专用？还在内测中</li>
+</ul>
+
+<p>形形色色各种所谓的路书，我也不知道干嘛用的，旅行、运动偏多（掩面，自己不也是）。可是我想要的只是分享线路地图，简简单单只要能将地图嵌入到网站中。看了下路书的概念，大概就是记录旅行的一种流水帐，就是为旅行而准备的，而在这里，我的需求是骑行或者徒步完记录过程，虽然目的不一样，但需求是相同的。</p>
+
+<h2 id="id-section-1">百度路书</h2>
+
+<p>找来找去真没找到更合适的代替品，看来得用一些地图 API 自定义展示地图才行，选择上没有怎么考虑，用户量比较多应该是百度地图，好吧就它，之前做企业站也用百度地图 API 展示过企业地址。</p>
+
+<p>按理说想展示更多的东西就需要学习更多，就鄙人而言，地点标注、信息说明、路线，基本上就足够了，而骑行徒步等运动，还真可以使用路书来展示。</p>
+
+<p>百度地图的路书功能可以是由百度提供的一个函数库来完成， 详细可以看百度地图 <a href="http://developer.baidu.com/map/index.php?title=open/library">JavaScript 开源库</a> 的路书部分，可以自己修改其 JS 文件，获得更多自定义的功能。就不折腾太多，鄙人感觉使用这个已经足够地图的展示。</p>
+
+<h2 id="id-section-2">制作路书</h2>
+
+<p>此前，在 <a href="/bmaps-polyline.html">百度地图 API 绘制折线</a> 说过怎么绘制折线（路线），而百度路书的也和折线一样需要用到的点坐标数组。</p>
+
+<p>下面还以原地图为例，制作一个路书，展示动车自北向南横穿潮汕。路书的相关设置可以参考 <a href="http://api.map.baidu.com/library/LuShu/1.2/docs/symbols/BMapLib.LuShu.html">BMapLib.LuShu 类</a>，除却 <a href="/bmaps-polyline.html">百度地图 API 绘制折线</a> 所提到的，此实例还用到另外的 <a href="http://developer.baidu.com/map/reference/index.php?title=Class:%E8%A6%86%E7%9B%96%E7%89%A9%E7%B1%BB/Marker">Marker 类</a>、<a href="http://developer.baidu.com/map/reference/index.php?title=Class:%E8%A6%86%E7%9B%96%E7%89%A9%E7%B1%BB/Icon">Icon 类</a> 及 <a href="http://developer.baidu.com/map/reference/index.php?title=Class:%E5%9F%BA%E7%A1%80%E7%B1%BB/Size">Size 类</a>。</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"http://api.map.baidu.com/api?v=2.0&amp;ak=您的密钥"</span><span class="o">&gt;&lt;</span><span class="sr">/script&gt;</span><span class="err">
+</span><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"http://api.map.baidu.com/library/LuShu/1.2/src/LuShu_min.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script&gt;</span><span class="err">
+</span><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"map"</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;</span><span class="err">
+</span><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+<span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Map</span><span class="p">(</span><span class="s2">"map"</span><span class="p">);</span><span class="c1">//创建地图实例
+</span>
+<span class="kd">var</span> <span class="nx">point</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.43</span><span class="p">,</span><span class="mf">23.43</span><span class="p">);</span><span class="c1">//创建坐标点
+</span>
+<span class="kd">var</span> <span class="nx">points</span> <span class="o">=</span> <span class="p">[</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">117.270591</span><span class="p">,</span><span class="mf">23.812975</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">117.227819</span><span class="p">,</span><span class="mf">23.814327</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">117.171452</span><span class="p">,</span><span class="mf">23.800036</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">117.132368</span><span class="p">,</span><span class="mf">23.791609</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">117.076919</span><span class="p">,</span><span class="mf">23.764658</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">117.024827</span><span class="p">,</span><span class="mf">23.754510</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.981047</span><span class="p">,</span><span class="mf">23.739533</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.939091</span><span class="p">,</span><span class="mf">23.717617</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.900199</span><span class="p">,</span><span class="mf">23.699399</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.885031</span><span class="p">,</span><span class="mf">23.689196</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.874584</span><span class="p">,</span><span class="mf">23.679668</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.811841</span><span class="p">,</span><span class="mf">23.626940</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.759632</span><span class="p">,</span><span class="mf">23.604713</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.725061</span><span class="p">,</span><span class="mf">23.587160</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.651402</span><span class="p">,</span><span class="mf">23.566650</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.595323</span><span class="p">,</span><span class="mf">23.545934</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.565463</span><span class="p">,</span><span class="mf">23.533553</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.552337</span><span class="p">,</span><span class="mf">23.519046</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.544596</span><span class="p">,</span><span class="mf">23.508704</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.537630</span><span class="p">,</span><span class="mf">23.464337</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.528264</span><span class="p">,</span><span class="mf">23.443634</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.518571</span><span class="p">,</span><span class="mf">23.425543</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.502256</span><span class="p">,</span><span class="mf">23.414608</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.429954</span><span class="p">,</span><span class="mf">23.388459</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.388039</span><span class="p">,</span><span class="mf">23.368854</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.352537</span><span class="p">,</span><span class="mf">23.347284</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.281605</span><span class="p">,</span><span class="mf">23.327247</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.227800</span><span class="p">,</span><span class="mf">23.293717</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.214108</span><span class="p">,</span><span class="mf">23.280499</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.180527</span><span class="p">,</span><span class="mf">23.247139</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.107918</span><span class="p">,</span><span class="mf">23.134458</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.040802</span><span class="p">,</span><span class="mf">23.102683</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.005375</span><span class="p">,</span><span class="mf">23.071510</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">115.979189</span><span class="p">,</span><span class="mf">23.052335</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">115.874687</span><span class="p">,</span><span class="mf">23.017842</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">115.732058</span><span class="p">,</span><span class="mf">22.949055</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">115.650940</span><span class="p">,</span><span class="mf">22.903134</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">115.559445</span><span class="p">,</span><span class="mf">22.859811</span><span class="p">),</span> 
+<span class="p">];</span><span class="c1">//设置坐标数组
+</span>
+<span class="kd">var</span> <span class="nx">markers</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="nx">points</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span><span class="c1">//饶平站
+</span>
+  <span class="nx">points</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span><span class="c1">//潮汕站
+</span>
+  <span class="nx">points</span><span class="p">[</span><span class="mi">23</span><span class="p">],</span><span class="c1">//潮阳站
+</span>
+  <span class="nx">points</span><span class="p">[</span><span class="mi">28</span><span class="p">],</span><span class="c1">//普宁站
+</span>
+  <span class="nx">points</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span><span class="c1">//葵潭站
+</span>
+<span class="p">];</span>
+<span class="kd">var</span> <span class="nx">icon1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Icon</span><span class="p">(</span><span class="s1">'http://source.fooleap.org/marker.png'</span><span class="p">,</span> <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Size</span><span class="p">(</span><span class="mi">19</span><span class="p">,</span><span class="mi">25</span><span class="p">),{</span><span class="na">anchor</span><span class="p">:</span> <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Size</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">25</span><span class="p">)});</span><span class="c1">//地点
+</span>
+<span class="kd">var</span> <span class="nx">icon2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Icon</span><span class="p">(</span><span class="s1">'http://source.fooleap.org/power-car.png'</span><span class="p">,</span> <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Size</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="p">{</span><span class="na">anchor</span><span class="p">:</span> <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Size</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">)});</span><span class="c1">//动车
+</span>
+<span class="kd">var</span> <span class="nx">polyline</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Polyline</span><span class="p">(</span><span class="nx">points</span><span class="p">);</span><span class="c1">//创建折线
+</span>
+<span class="kd">var</span> <span class="nx">lushu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BMapLib</span><span class="p">.</span><span class="nx">LuShu</span><span class="p">(</span><span class="nx">map</span><span class="p">,</span> <span class="nx">points</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">landmarkPois</span><span class="p">:[</span>
+    <span class="p">{</span><span class="na">lng</span><span class="p">:</span><span class="nx">markers</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">lng</span><span class="p">,</span><span class="na">lat</span><span class="p">:</span><span class="nx">markers</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">lat</span><span class="p">,</span><span class="na">html</span><span class="p">:</span><span class="s1">'饶平站到了'</span><span class="p">,</span><span class="na">pauseTime</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">lng</span><span class="p">:</span><span class="nx">markers</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">lng</span><span class="p">,</span><span class="na">lat</span><span class="p">:</span><span class="nx">markers</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">lat</span><span class="p">,</span><span class="na">html</span><span class="p">:</span><span class="s1">'&lt;img src="http://source.fooleap.org/chaoshan.jpg?imageView2/2/w/150" /&gt;潮汕站到了'</span><span class="p">,</span><span class="na">pauseTime</span><span class="p">:</span><span class="mi">2</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">lng</span><span class="p">:</span><span class="nx">markers</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nx">lng</span><span class="p">,</span><span class="na">lat</span><span class="p">:</span><span class="nx">markers</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nx">lat</span><span class="p">,</span><span class="na">html</span><span class="p">:</span><span class="s1">'潮阳站到了'</span><span class="p">,</span><span class="na">pauseTime</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">lng</span><span class="p">:</span><span class="nx">markers</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="nx">lng</span><span class="p">,</span><span class="na">lat</span><span class="p">:</span><span class="nx">markers</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="nx">lat</span><span class="p">,</span><span class="na">html</span><span class="p">:</span><span class="s1">'普宁站到了'</span><span class="p">,</span><span class="na">pauseTime</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">lng</span><span class="p">:</span><span class="nx">markers</span><span class="p">[</span><span class="mi">4</span><span class="p">].</span><span class="nx">lng</span><span class="p">,</span><span class="na">lat</span><span class="p">:</span><span class="nx">markers</span><span class="p">[</span><span class="mi">4</span><span class="p">].</span><span class="nx">lat</span><span class="p">,</span><span class="na">html</span><span class="p">:</span><span class="s1">'葵潭站到了'</span><span class="p">,</span><span class="na">pauseTime</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+  <span class="p">],</span><span class="c1">//显示的特殊点，似乎是必选参数，可以留空，据说要和距原线路10米内才会暂停，这里就用原线的点
+</span>
+  <span class="na">defaultContent</span><span class="p">:</span> <span class="s1">'动车继续前行'</span><span class="p">,</span><span class="c1">//覆盖物内容，这个填上面的特殊点文字才会显示
+</span>
+  <span class="na">speed</span><span class="p">:</span> <span class="mi">20000</span><span class="p">,</span><span class="c1">//路书速度
+</span>
+  <span class="na">icon</span><span class="p">:</span> <span class="nx">icon2</span><span class="p">,</span><span class="c1">//覆盖物图标，默认是百度的红色地点标注
+</span>
+  <span class="na">autoView</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span><span class="c1">//自动调整路线视野
+</span>
+  <span class="na">enableRotation</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span><span class="c1">//覆盖物随路线走向
+</span>
+<span class="p">});</span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">addOverlay</span><span class="p">(</span><span class="nx">polyline</span><span class="p">);</span><span class="c1">//覆盖折线到地图上
+</span>
+<span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+  <span class="nx">map</span><span class="p">.</span><span class="nx">addOverlay</span><span class="p">(</span><span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Marker</span><span class="p">(</span><span class="nx">markers</span><span class="p">[</span><span class="nx">i</span><span class="p">],{</span><span class="na">icon</span><span class="p">:</span><span class="nx">icon1</span><span class="p">}));</span><span class="c1">//覆盖动车站标注到地图上
+</span>
+<span class="p">}</span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">centerAndZoom</span><span class="p">(</span><span class="nx">point</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span><span class="c1">//设置中心坐标及默认缩放级别
+</span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span><span class="nx">startlushu</span><span class="p">);</span><span class="c1">//给地图注册点击事件
+</span>
+<span class="kd">function</span> <span class="nx">startlushu</span><span class="p">(){</span>
+  <span class="nx">lushu</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span><span class="c1">//启动路书函数
+</span>
+<span class="p">}</span>
+<span class="o">&lt;</span><span class="sr">/script&gt;</span></code></pre></figure>
+
+<div id="map" class="map"></div>
+
+<p>点击地图可启动路书。</p>
+
+<p><strong>本文历史</strong></p>
+
+<ul>
+  <li>2015 年 08 月 24 日 完成初稿</li>
+</ul>
+
+
+
+  </div>
+
+  <div id="posts">
+    <div id="random-posts" class="posts">
+      <strong>猜你喜欢</strong>
+      <ul>
+      </ul>
+    </div>
+  
+    <div id="recent-posts" class="posts">
+      <strong>最近更新</strong>
+      <ul>
+      
+        <li><a href="/configuring-ip-address-by-specifying-gateway" title="配置特定 IP 地址走指定网关">配置特定 IP 地址走指定网关 </a></li>
+      
+        <li><a href="/add-google-satellite-layer-in-amap" title="高德地图 API 叠加谷歌地图图层">高德地图 API 叠加谷歌地图图层 </a></li>
+      
+        <li><a href="/from-codoon-to-nikeplus" title="将咕咚的数据导入到 Nike+">将咕咚的数据导入到 Nike+ </a></li>
+      
+        <li><a href="/the-influence-of-sports-apps" title="运动 APP 的作用">运动 APP 的作用 </a></li>
+      
+        <li><a href="/the-last-run-of-june" title="今年 6 月的最后一次跑步">今年 6 月的最后一次跑步 </a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div id="info" class="tech">
+
+    <span id="share">
+  <div id="qrcode"></div>
+  <a id="wechat" title="分享到微信" data-wechat-url="http://127.0.0.1:4000/bmaps-lushu" href="javascript:void(0);"><i class="icon-wechat"></i></a>
+  <a id="weibo" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=百度地图 API 制作路书 | 殷东亮的博客 via @&amp;url=http://127.0.0.1:4000/bmaps-lushu&amp;type=3&amp;searchPic=1"><i class="icon-weibo"></i></a>
+  <a id="qzone" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://127.0.0.1:4000/bmaps-lushu&amp;title=百度地图 API 制作路书 | 殷东亮的博客&amp;summary=很久以前，Google Maps 还能使用，要分享一些去徒步、骑行的线路地图十分方便，里面插上一些图片啥的也是毫无压力，鼠标点点就可以将线路图搞得有声有色，例如在这篇博文中所嵌入的地图。&amp;site=http://127.0.0.1:4000"><i class="icon-qzone"></i></a>
+  <a id="twitter" target="_blank" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=http://127.0.0.1:4000/bmaps-lushu&amp;text=百度地图 API 制作路书｜殷东亮的博客&amp;via="><i class="icon-twitter"></i></a>
+  <a id="facebook" target="_blank" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=http://127.0.0.1:4000/bmaps-lushu&amp;t=百度地图 API 制作路书 | 殷东亮的博客"><i class="icon-facebook-official"></i></a>
+  <a id="gplus" target="_blank" title="Share to Google+" href="https://plus.google.com/share?url=http://127.0.0.1:4000/bmaps-lushu"><i class="icon-gplus-squared"></i></a>
+</span>
+
+
+    <span class='like'><a href="javascript:void(0)" title=""><i class="icon-heart-empty"></i> <span class="disqus-like-count"></span></a></span>
+    <span class='view-code'><a href="javascript:void(0)" data-md="https://raw.githubusercontent.com/fooleap/fooleap.github.io/master/_posts/2015-08-24-bmaps-lushu.md" title="在正文中查看源码"><i class="icon-file-code"></i>源码</a></span>
+    <span class="number-of-word"><i class="icon-calc"></i>4293 字</span>
+    <span class="page-tags"><i class="icon-tags"></i><ul class="tags"> <li class="tag"><a href="/tags.html#百度地图 API" target="_blank" title="查看“百度地图 API”的相关文章">百度地图 API</a></li><li class="tag"><a href="/tags.html#路书" target="_blank" title="查看“路书”的相关文章">路书</a></li><li class="tag"><a href="/tags.html#潮汕" target="_blank" title="查看“潮汕”的相关文章">潮汕</a></li></ul></span>
+  </div>
+
+</article>
+
+<div class="comment" id="disqus_thread">
+    <a class="show-comments" href="http://127.0.0.1:4000/bmaps-lushu#disqus_thread" data-disqus-identifier="/bmaps-lushu"><span class="has-comment"><i class="icon-chat-empty"></i> 留下</span>评论 <span class="disqus-comment-count" data-disqus-url="http://127.0.0.1:4000/bmaps-lushu"></span></a>
+</div>
+
+  
+  
+      <footer class="site-footer">
+        <small>&copy; 2012-2016 by Jekyll Theme</small>
+      </footer>
+  
+    </main>
+
+  </div>
+  <div id="backtotop">
+    <i class="icon-up-big"></i>
+  </div>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=FCcc6261f101cd4ccefee22113a609de"></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/library/LuShu/1.2/src/LuShu_min.js"></script>
+  <script type="text/javascript">
+  
+  var bmap = document.getElementById('map');
+  var mapWidth = bmap.offsetWidth;
+  bmap.style.height = mapWidth*2/3 + 'px';
+  if (mapWidth < 500){
+    var zoom = 9;
+  } else {
+    var zoom = 10;
+  }
+  var map = new BMap.Map("map");
+  var point = new BMap.Point(116.43,23.43);
+  var points = [ 
+  new BMap.Point(117.270591,23.812975), 
+  new BMap.Point(117.227819,23.814327), 
+  new BMap.Point(117.171452,23.800036), 
+  new BMap.Point(117.132368,23.791609), 
+  new BMap.Point(117.076919,23.764658), 
+  new BMap.Point(117.024827,23.754510), 
+  new BMap.Point(116.981047,23.739533), 
+  new BMap.Point(116.939091,23.717617), 
+  new BMap.Point(116.900199,23.699399), 
+  new BMap.Point(116.885031,23.689196), 
+  new BMap.Point(116.874584,23.679668), 
+  new BMap.Point(116.811841,23.626940), 
+  new BMap.Point(116.759632,23.604713), 
+  new BMap.Point(116.725061,23.587160), 
+  new BMap.Point(116.651402,23.566650), 
+  new BMap.Point(116.595323,23.545934), 
+  new BMap.Point(116.565463,23.533553), 
+  new BMap.Point(116.552337,23.519046), 
+  new BMap.Point(116.544596,23.508704), 
+  new BMap.Point(116.537630,23.464337), 
+  new BMap.Point(116.528264,23.443634), 
+  new BMap.Point(116.518571,23.425543), 
+  new BMap.Point(116.502256,23.414608), 
+  new BMap.Point(116.429954,23.388459), 
+  new BMap.Point(116.388039,23.368854), 
+  new BMap.Point(116.352537,23.347284), 
+  new BMap.Point(116.281605,23.327247), 
+  new BMap.Point(116.227800,23.293717), 
+  new BMap.Point(116.214108,23.280499), 
+  new BMap.Point(116.180527,23.247139), 
+  new BMap.Point(116.107918,23.134458), 
+  new BMap.Point(116.040802,23.102683), 
+  new BMap.Point(116.005375,23.071510), 
+  new BMap.Point(115.979189,23.052335), 
+  new BMap.Point(115.874687,23.017842), 
+  new BMap.Point(115.732058,22.949055), 
+  new BMap.Point(115.650940,22.903134), 
+  new BMap.Point(115.559445,22.859811), 
+  ];
+  var markers = [
+    points[7],//饶平站
+    points[15],//潮汕站
+    points[23],//潮阳站
+    points[28],//普宁站
+    points[32]//葵潭站
+  ];
+  var icon1 = new BMap.Icon('http://source.fooleap.org/marker.png', new BMap.Size(23,25),{anchor: new BMap.Size(11, 25)});
+  var icon2 = new BMap.Icon('http://source.fooleap.org/power-car.png', new BMap.Size(30, 30), {anchor: new BMap.Size(15, 15)});
+  var polyline = new BMap.Polyline(points);
+  var lushu = new BMapLib.LuShu(map, points, {
+    landmarkPois:[
+      {lng:markers[0].lng,lat:markers[0].lat,html:'饶平站到了',pauseTime:1},
+      {lng:markers[1].lng,lat:markers[1].lat,html:'<img src="http://source.fooleap.org/chaoshan.jpg?imageView2/2/w/150" />潮汕站到了',pauseTime:2},
+      {lng:markers[2].lng,lat:markers[2].lat,html:'潮阳站到了',pauseTime:1},
+      {lng:markers[3].lng,lat:markers[3].lat,html:'普宁站到了',pauseTime:1},
+      {lng:markers[4].lng,lat:markers[4].lat,html:'葵潭站到了',pauseTime:1}
+    ],
+    defaultContent: '动车继续前行',
+    speed: 20000,
+    icon: icon2,
+    autoView: false,
+    enableRotation: false
+  });
+  map.addOverlay(polyline);
+  for (i=0;i<5;i++){
+    map.addOverlay(new BMap.Marker(markers[i],{icon:icon1}));
+  }
+  map.centerAndZoom(point, zoom);
+  map.addEventListener("click",startlushu);
+  function startlushu(){
+    lushu.start();
+  }
+  </script>
+  </body>
+</html>

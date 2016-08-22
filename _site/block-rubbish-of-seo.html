@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html class="ie lte8"><![endif]-->
+<!--[if IE]><html class="ie"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>屏蔽 SEO 垃圾网站 | 殷东亮的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.3, user-scalable=no" />
+    <meta name="description" content="现在用谷歌搜索的时候，若没掌握好技巧，很容易搜出 SEO 垃圾网站。就算把握好技巧，也难免会出现那样的网站。" />
+    <meta name="keywords" content="Google, 谷歌, SEO, Firefox" />
+    <meta name="author" content="fooleap" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="canonical" href="http://127.0.0.1:4000/block-rubbish-of-seo" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="alternate" type="application/atom+xml" title="殷东亮的博客 Atom Feed" href="http://blog.fooleap.org/atom.xml" />
+    <script type="text/javascript" src="/assets/js/modernizr.js"></script>
+    <!--[if lte IE 9]>
+      <script src="/assets/js/html5shiv.min.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+      <script src="/assets/js/classList.min.js"></script>
+      <script type="text/javascript">
+        document.createElement('main');
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+  <nav id="navigation">
+      <ul class="navigation-list hide">
+          <li><a href="/" class="navigation-item"><i class="icon-home"></i>首页</a></li>
+          <li><a href="/archive.html" class="navigation-item"><i class="icon-box"></i>归档</a></li>
+          <li><a href="/about.html" class="navigation-item"><i class="icon-user"></i>关于</a></li>
+      </ul>
+      <i id="menu" class="icon icon-menu"></i>
+  </nav>
+  
+  <div class="container">
+    <main class="wrapper">
+      <header class="site-header">
+        <h1>
+          屏蔽 SEO 垃圾网站
+        </h1>
+        <h2 class="sub-heading">
+            <i class="icon-calendar"></i><time datetime="2016-01-23">2016 年 01 月 23 日</time>
+        </h2>
+      </header>
+  <article class="post-content">
+    
+  <div class="main-content">
+<p>现在用谷歌搜索的时候，若没掌握好技巧，很容易搜出 SEO 垃圾网站。就算把握好技巧，也难免会出现那样的网站。</p>
+
+<p>SEO 垃圾网站特点如下，比如说关键词“清理微信存储空间”所检索到的结果其中一项。</p>
+
+<p><img src="http://source.fooleap.org/block-rubbish-of-seo-01.png" alt="检索结果中的 SEO 垃圾网站" />
+▲检索结果中的 SEO 垃圾网站</p>
+
+<p>很容易看到，一般其 URL 中会有搜索的关键词，点开之后是关键词扎堆的一些问答，看起来似乎抓取百度知道的。先不管是怎么做到的，总之这类网站都是垃圾，找不到你想要的答案。</p>
+
+<p><img src="http://source.fooleap.org/block-rubbish-of-seo-02.png" alt="SEO 垃圾网站内容" />
+▲SEO 垃圾网站内容</p>
+
+<p>相信大多数人和鄙人一样讨厌这类网站，而鄙人不止讨厌这种网站，就连脚本之家那种毫不计较版权的，似是全站都是到处抓取技术文章的网站也很厌恶，真的不想在检索结果中看到这类网站。</p>
+
+<p>前段时间，在 V2EX 看到一帖子<a href="https://www.v2ex.com/t/245055" title="一些网站太无耻了">[1]</a>，说的便是这个问题，里面有人也给出了解决问题的相关扩展。</p>
+
+<p>鄙人常用 Firefox，根据 useless-websites<a href="https://github.com/Feiox/useless-websites/" title="Feiox/useless-websites">[2]</a> 提供的说明，简单说一下 Firefox 的扩展 Hide Unwanted Results of Google Search<a href="https://addons.mozilla.org/zh-CN/firefox/addon/hide-unwanted-results-of-go/" title="Hide Unwanted Results of Google Search">[3]</a>。</p>
+
+<p>安装之后，随便设置屏蔽一个网站，然后导出文件，可以看到这个扩展的配置文件格式。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Hide Unwanted Results Data v1.0
+1,morobat.com
+</code></pre>
+</div>
+
+<p>首行加声明，每一行域名前面加上 <code class="highlighter-rouge">1,</code>，大概就是这样的文件格式，回过头来将那个列表拉下来，并简单修改下再导入即可。</p>
+
+<h2 id="id-section">参考资料</h2>
+
+<p><strong>本文历史</strong></p>
+
+<ul>
+  <li>2016 年 01 月 23 日 完成初稿</li>
+</ul>
+
+  </div>
+
+  <div id="posts">
+    <div id="random-posts" class="posts">
+      <strong>猜你喜欢</strong>
+      <ul>
+      </ul>
+    </div>
+  
+    <div id="recent-posts" class="posts">
+      <strong>最近更新</strong>
+      <ul>
+      
+        <li><a href="/configuring-ip-address-by-specifying-gateway" title="配置特定 IP 地址走指定网关">配置特定 IP 地址走指定网关 </a></li>
+      
+        <li><a href="/add-google-satellite-layer-in-amap" title="高德地图 API 叠加谷歌地图图层">高德地图 API 叠加谷歌地图图层 </a></li>
+      
+        <li><a href="/from-codoon-to-nikeplus" title="将咕咚的数据导入到 Nike+">将咕咚的数据导入到 Nike+ </a></li>
+      
+        <li><a href="/the-influence-of-sports-apps" title="运动 APP 的作用">运动 APP 的作用 </a></li>
+      
+        <li><a href="/the-last-run-of-june" title="今年 6 月的最后一次跑步">今年 6 月的最后一次跑步 </a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div id="info" class="tech">
+
+    <span id="share">
+  <div id="qrcode"></div>
+  <a id="wechat" title="分享到微信" data-wechat-url="http://127.0.0.1:4000/block-rubbish-of-seo" href="javascript:void(0);"><i class="icon-wechat"></i></a>
+  <a id="weibo" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=屏蔽 SEO 垃圾网站 | 殷东亮的博客 via @&amp;url=http://127.0.0.1:4000/block-rubbish-of-seo&amp;type=3&amp;searchPic=1"><i class="icon-weibo"></i></a>
+  <a id="qzone" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://127.0.0.1:4000/block-rubbish-of-seo&amp;title=屏蔽 SEO 垃圾网站 | 殷东亮的博客&amp;summary=现在用谷歌搜索的时候，若没掌握好技巧，很容易搜出 SEO 垃圾网站。就算把握好技巧，也难免会出现那样的网站。&amp;site=http://127.0.0.1:4000"><i class="icon-qzone"></i></a>
+  <a id="twitter" target="_blank" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=http://127.0.0.1:4000/block-rubbish-of-seo&amp;text=屏蔽 SEO 垃圾网站｜殷东亮的博客&amp;via="><i class="icon-twitter"></i></a>
+  <a id="facebook" target="_blank" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=http://127.0.0.1:4000/block-rubbish-of-seo&amp;t=屏蔽 SEO 垃圾网站 | 殷东亮的博客"><i class="icon-facebook-official"></i></a>
+  <a id="gplus" target="_blank" title="Share to Google+" href="https://plus.google.com/share?url=http://127.0.0.1:4000/block-rubbish-of-seo"><i class="icon-gplus-squared"></i></a>
+</span>
+
+
+    <span class='like'><a href="javascript:void(0)" title=""><i class="icon-heart-empty"></i> <span class="disqus-like-count"></span></a></span>
+    <span class='view-code'><a href="javascript:void(0)" data-md="https://raw.githubusercontent.com/fooleap/fooleap.github.io/master/_posts/2016-01-23-block-rubbish-of-seo.md" title="在正文中查看源码"><i class="icon-file-code"></i>源码</a></span>
+    <span class="number-of-word"><i class="icon-calc"></i>611 字</span>
+    <span class="page-tags"><i class="icon-tags"></i><ul class="tags"> <li class="tag"><a href="/tags.html#Google" target="_blank" title="查看“Google”的相关文章">Google</a></li><li class="tag"><a href="/tags.html#谷歌" target="_blank" title="查看“谷歌”的相关文章">谷歌</a></li><li class="tag"><a href="/tags.html#SEO" target="_blank" title="查看“SEO”的相关文章">SEO</a></li><li class="tag"><a href="/tags.html#Firefox" target="_blank" title="查看“Firefox”的相关文章">Firefox</a></li></ul></span>
+  </div>
+
+</article>
+
+<div class="comment" id="disqus_thread">
+    <a class="show-comments" href="http://127.0.0.1:4000/block-rubbish-of-seo#disqus_thread" data-disqus-identifier="/block-rubbish-of-seo"><span class="has-comment"><i class="icon-chat-empty"></i> 留下</span>评论 <span class="disqus-comment-count" data-disqus-url="http://127.0.0.1:4000/block-rubbish-of-seo"></span></a>
+</div>
+
+  
+      <footer class="site-footer">
+        <small>&copy; 2012-2016 by Jekyll Theme</small>
+      </footer>
+  
+    </main>
+
+  </div>
+  <div id="backtotop">
+    <i class="icon-up-big"></i>
+  </div>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html class="ie lte8"><![endif]-->
+<!--[if IE]><html class="ie"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Linux 学习笔记 (2) | 殷东亮的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.3, user-scalable=no" />
+    <meta name="description" content="用了十天左右的 Fedora 14 Lxde ，感觉比 Ubuntu 要更加舒服，只不过它在我这小机子上表现不是很好。某天不觉进了一下 XP，感觉它比 Fedora 14 要轻巧得多，于是又想起了 Debian。" />
+    <meta name="keywords" content="Linux, Pidgin, 初学, 学习, 小小输入法, 小鹤, 笔记, 超级玛莉" />
+    <meta name="author" content="fooleap" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="canonical" href="http://127.0.0.1:4000/linux-study-2" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="alternate" type="application/atom+xml" title="殷东亮的博客 Atom Feed" href="http://blog.fooleap.org/atom.xml" />
+    <script type="text/javascript" src="/assets/js/modernizr.js"></script>
+    <!--[if lte IE 9]>
+      <script src="/assets/js/html5shiv.min.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+      <script src="/assets/js/classList.min.js"></script>
+      <script type="text/javascript">
+        document.createElement('main');
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+  <nav id="navigation">
+      <ul class="navigation-list hide">
+          <li><a href="/" class="navigation-item"><i class="icon-home"></i>首页</a></li>
+          <li><a href="/archive.html" class="navigation-item"><i class="icon-box"></i>归档</a></li>
+          <li><a href="/about.html" class="navigation-item"><i class="icon-user"></i>关于</a></li>
+      </ul>
+      <i id="menu" class="icon icon-menu"></i>
+  </nav>
+  
+  <div class="container">
+    <main class="wrapper">
+      <header class="site-header">
+        <h1>
+          Linux 学习笔记 (2)
+        </h1>
+        <h2 class="sub-heading">
+            <i class="icon-calendar"></i><time datetime="2011-04-19">2011 年 04 月 19 日</time>
+        </h2>
+      </header>
+  <article class="post-content">
+    
+  <div class="main-content">
+<p>用了十天左右的 Fedora 14 Lxde ，感觉比 Ubuntu 要更加舒服，只不过它在我这小机子上表现不是很好。某天不觉进了一下 XP，感觉它比 Fedora 14 要轻巧得多，于是又想起了 Debian。装了下 Debian，Debian 自带的东西很少，要装的很多，没想到配置好了一半重启进入图形界面的时候花屏了，我在想，这机子如果要正常使用 Linux 的话，不想麻烦应该还是 Lubuntu 比较适合，于是乎，又装了个 Lubuntu。确实，比 Fedora 轻巧了好多，不过 Fedora 的使用还是挺有帮助的，现在已经可以感觉到码命令的速度越来越快了，起码比前段时间使用 Lubuntu 快。</p>
+
+<p>下面把自己装 Lubuntu 之后所安装配置的软件等大致说一遍。</p>
+
+<p><strong>神器在手，天下任我走</strong></p>
+
+<p>自带 Vi，还没有 Vim，于是</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install vim
+</code></pre>
+</div>
+
+<p>中文乱码解决：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>~/.vimrc
+set encoding=utf-8
+set termencoding=utf-8
+set fencs=ucs-bom,utf-8,gb18030,gbk,gb2312,big5,euc-jp,euc-kr,latin1,cp936
+</code></pre>
+</div>
+
+<p>源于 http://www.nonozone.net/solve-vim-chinese-garbled.html</p>
+
+<p>关于神器的配置，更多请 Google</p>
+
+<p><strong>输入法，作为一个中国人，必须的</strong></p>
+
+<p>由于安装使用英文，所以先在 Preferences-Language Support 添加语言 Chinese(simplified)</p>
+
+<p>然后安装输入法，我使用的是 <a href="http://yong.uueasy.com">小小输入法</a>，并挂载小鹤双拼配置</p>
+
+<p>下载后发现是 7z 压缩包，于是</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install p7zip-full
+</code></pre>
+</div>
+
+<p>解压</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>7za e * yong
+</code></pre>
+</div>
+
+<p>解压后把文件夹复制到 /opt 目录</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo cp -r yong /opt
+</code></pre>
+</div>
+
+<p>进入目录</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cd /opt/yong
+</code></pre>
+</div>
+
+<p>安装</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo ./yong-tool.sh --install      // 安装需要 root 权限
+</code></pre>
+</div>
+
+<p>设置默认</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>./yong-tool.sh --select            // 平时使用还是普通权限
+</code></pre>
+</div>
+
+<p>配置小鹤双拼，这里只配置音码部分
+.yong 目录如果没有 mb 文件夹</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo cp -r /opt/yong/mb home/yourname/.yong
+</code></pre>
+</div>
+
+<p>记得第一次安装的时候我是在这一步出错的，因为使用的是 root 管理员账户，复制后文件夹属于 root 的，我们登录的用户无权访问此文件夹的配置文件，所以输入法会出错。可以使用 chown 命令来修改此文件夹的主人：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo chown -R fooleap:fooleap /home/fooleap/.yong/mb
+</code></pre>
+</div>
+
+<p>亦可以复制先前解压的得到的 mb 文件夹而不使用已复制到 /opt 目录下的文件夹。</p>
+
+<p>在 ~/.yong 下创建文件 xiaohe.sp，内容可参考 <a href="http://yong.uueasy.com/read-htm-tid-1475.html">这里</a></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>vim ~/.yong/yong.ini
+......
+[IM]
+default=8
+0=yong
+1=wubi
+2=zhengma
+3=erbi
+4=english
+5=gbk
+6=pinyin
+7=wbpy
+8=xiaohe
+.......
+[xiaohe]
+name= 小鹤
+engine=libmb.so
+arg=mb/pinyin.txt
+overlay=mb/sp.ini
+sp=xiaohe
+</code></pre>
+</div>
+
+<p>如果 overlay=mb/pinyin.ini 而不是 sp.ini 的话，必须修改 pinyin.ini，屏蔽掉 u,v 快捷键，即在其前加 “!” 就可以了。
+ 配置完毕注销即可，即重启进程生效。</p>
+
+<p><strong>安装 LibreOffice</strong></p>
+
+<p>此前先安装 Java，下载 <a href="http://javadl.sun.com/webapps/download/AutoDL?BundleId=47143">Linux
+ （自解压文件）</a>，<a href="http://www.java.com/zh_CN/download/help/linux_install.xml#selfextracting">安装说明</a></p>
+
+<p>然后在 <a href="http://www.libreoffice.org/">LibreOffice 官网</a> 下载相关的安装包，语言包，sudo
+dpkg -i .deb 进行安装</p>
+
+<p><strong>安装 Pidgin 插件</strong></p>
+
+<p>使其支持 QQ，飞信，新浪微博，对应的插件为 <a href="http://code.google.com/p/libqq-pidgin/">libqq</a>，<a href="http://code.google.com/p/ofetion/">libopenfetion</a>，<a href="http://code.google.com/p/libpurple-microblog-sina/">libtsina</a>，还有发送图片的插件 <a href="http://code.google.com/p/pidgin-sendscreenshot/">Send Srceenshot</a>，显示视频图片的插件 Pidgin Embedded Video</p>
+
+<p>提供 libqq，openfetion，tsina 的 so 文件 <a href="http://dl.dbank.com/c0oxhxdivc">下载点我</a></p>
+
+<p>复制至 /usr/lib/purple-2 或 ~/.purple/plugins 即可，没有文件夹请新建</p>
+
+<p><strong>使用下载工具</strong></p>
+
+<p>现在一般的下载我用 Firefox 自带的下载（自用的 Firefox 有两个插件，一个是 Pentadactyl，用上就离不开了，一个是 ABP)，还有 Axel 备用，BT 用 rtorrent， benliud，相对来说 benliud 的下载速度快且稳定</p>
+
+<p>附上 benliud 的 DEB 包（<a href="http://dl.dbank.com/c0167dei9g">下载</a>），中文语言文件不全，有些地方显示 Fail，可往 /usr/local/share/benliud/language 删除语言文件以回归英文界面</p>
+
+<p><strong>在英文环境下要配置 Gimp 显示中文，则可运行</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>LANGUAGE=zh\_CN.utf8 gimp
+</code></pre>
+</div>
+
+<p>可新建个 Shell 脚本，扩展名为 sh，内容为</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="nv">LANGUAGE</span><span class="o">=</span>zh_CN.utf8 gimp
+</code></pre>
+</div>
+
+<p>并往 /usr/share/applications 修改菜单的快捷方式指向它就可以了，类似的软件亦可通过此方法解决</p>
+
+<p>**影音我用 Mplayer **</p>
+
+<p>没什么追求，能放即可有时候想家也可</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mplayer mms://chdt.hepan.net.cn/chdt
+</code></pre>
+</div>
+
+<p>个人配置文件为 ~/.mplayer/config</p>
+
+<p><strong>关于游戏</strong></p>
+
+<p>有时候放松一下也没什么不可，于是</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install gfceu
+</code></pre>
+</div>
+
+<p>再下个 SuperMario.nes（<a href="http://dl.dbank.com/c0ubzkgcib">下载</a>）</p>
+
+<p><img src="http://source.fooleap.org/linux-study-2.png" alt="SuperMario" /></p>
+
+<p>啊哈，小霸王其乐无穷啊~</p>
+
+<p>嘘，“小霸王”可是敏感词 =。=</p>
+
+<p>作为一个新手，让我感觉最深刻的还是 chown 和 chmod 这两个命令，没有了权限，什么都是扯淡。</p>
+
+<p>就先说到这里吧，相信大多数新手都和鄙人一样，学习 Linux 的也是其乐无穷的~</p>
+
+<p><strong>解决问题三步走</strong></p>
+
+<ol>
+  <li>根据提示自己解决</li>
+  <li>Google</li>
+  <li>论坛发帖求助</li>
+</ol>
+
+<p>一般问题到第二步的时候已经解决了</p>
+
+<p><strong>本文历史</strong></p>
+
+<ul>
+  <li>2011 年 04 月 19 日 创建文章</li>
+  <li>2015 年 05 月 10 日 换图床</li>
+</ul>
+
+  </div>
+
+  <div id="posts">
+    <div id="random-posts" class="posts">
+      <strong>猜你喜欢</strong>
+      <ul>
+      </ul>
+    </div>
+  
+    <div id="recent-posts" class="posts">
+      <strong>最近更新</strong>
+      <ul>
+      
+        <li><a href="/configuring-ip-address-by-specifying-gateway" title="配置特定 IP 地址走指定网关">配置特定 IP 地址走指定网关 </a></li>
+      
+        <li><a href="/add-google-satellite-layer-in-amap" title="高德地图 API 叠加谷歌地图图层">高德地图 API 叠加谷歌地图图层 </a></li>
+      
+        <li><a href="/from-codoon-to-nikeplus" title="将咕咚的数据导入到 Nike+">将咕咚的数据导入到 Nike+ </a></li>
+      
+        <li><a href="/the-influence-of-sports-apps" title="运动 APP 的作用">运动 APP 的作用 </a></li>
+      
+        <li><a href="/the-last-run-of-june" title="今年 6 月的最后一次跑步">今年 6 月的最后一次跑步 </a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div id="info" class="tech">
+
+    <span id="share">
+  <div id="qrcode"></div>
+  <a id="wechat" title="分享到微信" data-wechat-url="http://127.0.0.1:4000/linux-study-2" href="javascript:void(0);"><i class="icon-wechat"></i></a>
+  <a id="weibo" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=Linux 学习笔记 (2) | 殷东亮的博客 via @&amp;url=http://127.0.0.1:4000/linux-study-2&amp;type=3&amp;searchPic=1"><i class="icon-weibo"></i></a>
+  <a id="qzone" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://127.0.0.1:4000/linux-study-2&amp;title=Linux 学习笔记 (2) | 殷东亮的博客&amp;summary=用了十天左右的 Fedora 14 Lxde ，感觉比 Ubuntu 要更加舒服，只不过它在我这小机子上表现不是很好。某天不觉进了一下 XP，感觉它比 Fedora 14 要轻巧得多，于是又想起了 Debian。&amp;site=http://127.0.0.1:4000"><i class="icon-qzone"></i></a>
+  <a id="twitter" target="_blank" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=http://127.0.0.1:4000/linux-study-2&amp;text=Linux 学习笔记 (2)｜殷东亮的博客&amp;via="><i class="icon-twitter"></i></a>
+  <a id="facebook" target="_blank" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=http://127.0.0.1:4000/linux-study-2&amp;t=Linux 学习笔记 (2) | 殷东亮的博客"><i class="icon-facebook-official"></i></a>
+  <a id="gplus" target="_blank" title="Share to Google+" href="https://plus.google.com/share?url=http://127.0.0.1:4000/linux-study-2"><i class="icon-gplus-squared"></i></a>
+</span>
+
+
+    <span class='like'><a href="javascript:void(0)" title=""><i class="icon-heart-empty"></i> <span class="disqus-like-count"></span></a></span>
+    <span class='view-code'><a href="javascript:void(0)" data-md="https://raw.githubusercontent.com/fooleap/fooleap.github.io/master/_posts/2011-04-19-linux-study-2.md" title="在正文中查看源码"><i class="icon-file-code"></i>源码</a></span>
+    <span class="number-of-word"><i class="icon-calc"></i>2607 字</span>
+    <span class="page-tags"><i class="icon-tags"></i><ul class="tags"> <li class="tag"><a href="/tags.html#Linux" target="_blank" title="查看“Linux”的相关文章">Linux</a></li><li class="tag"><a href="/tags.html#Pidgin" target="_blank" title="查看“Pidgin”的相关文章">Pidgin</a></li><li class="tag"><a href="/tags.html#初学" target="_blank" title="查看“初学”的相关文章">初学</a></li><li class="tag"><a href="/tags.html#学习" target="_blank" title="查看“学习”的相关文章">学习</a></li><li class="tag"><a href="/tags.html#小小输入法" target="_blank" title="查看“小小输入法”的相关文章">小小输入法</a></li><li class="tag"><a href="/tags.html#小鹤" target="_blank" title="查看“小鹤”的相关文章">小鹤</a></li><li class="tag"><a href="/tags.html#笔记" target="_blank" title="查看“笔记”的相关文章">笔记</a></li><li class="tag"><a href="/tags.html#超级玛莉" target="_blank" title="查看“超级玛莉”的相关文章">超级玛莉</a></li></ul></span>
+  </div>
+
+</article>
+
+<div class="comment" id="disqus_thread">
+    <a class="show-comments" href="http://127.0.0.1:4000/linux-study-2#disqus_thread" data-disqus-identifier="/linux-study-2"><span class="has-comment"><i class="icon-chat-empty"></i> 留下</span>评论 <span class="disqus-comment-count" data-disqus-url="http://127.0.0.1:4000/linux-study-2"></span></a>
+</div>
+
+  
+      <footer class="site-footer">
+        <small>&copy; 2012-2016 by Jekyll Theme</small>
+      </footer>
+  
+    </main>
+
+  </div>
+  <div id="backtotop">
+    <i class="icon-up-big"></i>
+  </div>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  </body>
+</html>

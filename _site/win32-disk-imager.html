@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html class="ie lte8"><![endif]-->
+<!--[if IE]><html class="ie"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>善用 Win32 Disk Imager | 殷东亮的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.3, user-scalable=no" />
+    <meta name="description" content="很久以前，那时年轻不懂事，没完没了折腾 Linux 的各种发行版，刚开始捣鼓的时身上没有光盘，所以安装系统时常常采用硬盘安装的方式。" />
+    <meta name="keywords" content="Linux, 硬盘安装, U 盘安装" />
+    <meta name="author" content="fooleap" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="canonical" href="http://127.0.0.1:4000/win32-disk-imager" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="alternate" type="application/atom+xml" title="殷东亮的博客 Atom Feed" href="http://blog.fooleap.org/atom.xml" />
+    <script type="text/javascript" src="/assets/js/modernizr.js"></script>
+    <!--[if lte IE 9]>
+      <script src="/assets/js/html5shiv.min.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+      <script src="/assets/js/classList.min.js"></script>
+      <script type="text/javascript">
+        document.createElement('main');
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+  <nav id="navigation">
+      <ul class="navigation-list hide">
+          <li><a href="/" class="navigation-item"><i class="icon-home"></i>首页</a></li>
+          <li><a href="/archive.html" class="navigation-item"><i class="icon-box"></i>归档</a></li>
+          <li><a href="/about.html" class="navigation-item"><i class="icon-user"></i>关于</a></li>
+      </ul>
+      <i id="menu" class="icon icon-menu"></i>
+  </nav>
+  
+  <div class="container">
+    <main class="wrapper">
+      <header class="site-header">
+        <h1>
+          善用 Win32 Disk Imager
+        </h1>
+        <h2 class="sub-heading">
+            <i class="icon-calendar"></i><time datetime="2015-10-18">2015 年 10 月 18 日</time>
+        </h2>
+      </header>
+  <article class="post-content">
+    
+  <div class="main-content">
+<p>很久以前，那时年轻不懂事，没完没了折腾 Linux 的各种发行版，刚开始捣鼓时身上没有光盘，所以安装系统时常常采用硬盘安装的方式。</p>
+
+<p>虽然一般采用 Google 搜索一下就可以轻松解决，但事实上如果操作有些许失误就得重试，这个过程真够费时间的。折腾的过程便是学习，慢慢学会使用 GRUB，正确引导电脑进入安装界面或者 Live 环境。</p>
+
+<p>折腾期间也记录了一些笔记，例如：</p>
+
+<ul>
+  <li><a href="/linux-study-4.html">Linux 学习笔记 (4)</a></li>
+  <li><a href="/hard-disk-installation-for-archlinux.html">硬盘安装 Arch Linux</a></li>
+</ul>
+
+<p>而事实上，在已安装 Windows 的系统安装一个 Linux 系统，Ubuntu，Fedora 或 Arch Linux 等，并不需要那么麻烦的去硬盘安装，或许采用 U 盘安装更加方便。</p>
+
+<p>跟硬盘安装一般，网上也充斥着无数 U 盘安装的相关教程，有些会让采用 UltraISO<a href="http://cn.ezbsystems.com/ultraiso/" title="UltraISO - EZB Systems, Inc">[1]</a> 写入镜像到 U 盘，有些则是说用 Universal USB Installer<a href="http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/" title="Universal USB Installer &#8211; Easy as 1 2 3 | USB Pen Drive Linux">[2]</a>，还有些介绍 UNetbootin<a href="http://unetbootin.github.io/" title="UNetbootin - Homepage and Downloads">[3]</a> 这款软件，也不知道是不是自己操作错误，这几款软件似乎无法成功制作有些发行版的安装盘。</p>
+
+<p>前几年有一段时间没使用 Linux 之后，重新再使用 Linux 时，我发现 Win32 Disk Imager<a href="http://sourceforge.net/projects/win32diskimager/" title="Win32 Disk Imager download | SourceForge.net">[4]</a> 这款软件兼容性很好，它能让 U 盘（内存卡）都能像安装光盘一样。</p>
+
+<p>使用需注意在选择镜像的时候，需将文件类型切换成任意类型（默认是 <code class="highlighter-rouge">*.img</code> ），便能看到相关的镜像文件，具体可看官方的视频演示。</p>
+
+<p><img src="http://source.fooleap.org/win32-disk-imager.png" alt="选择镜像" />
+▲选择镜像</p>
+
+<h2 id="id-section">参考资料</h2>
+
+<p><strong>本文历史</strong></p>
+
+<ul>
+  <li>2015 年 10 月 18 日 完成初稿</li>
+</ul>
+
+  </div>
+
+  <div id="posts">
+    <div id="random-posts" class="posts">
+      <strong>猜你喜欢</strong>
+      <ul>
+      </ul>
+    </div>
+  
+    <div id="recent-posts" class="posts">
+      <strong>最近更新</strong>
+      <ul>
+      
+        <li><a href="/configuring-ip-address-by-specifying-gateway" title="配置特定 IP 地址走指定网关">配置特定 IP 地址走指定网关 </a></li>
+      
+        <li><a href="/add-google-satellite-layer-in-amap" title="高德地图 API 叠加谷歌地图图层">高德地图 API 叠加谷歌地图图层 </a></li>
+      
+        <li><a href="/from-codoon-to-nikeplus" title="将咕咚的数据导入到 Nike+">将咕咚的数据导入到 Nike+ </a></li>
+      
+        <li><a href="/the-influence-of-sports-apps" title="运动 APP 的作用">运动 APP 的作用 </a></li>
+      
+        <li><a href="/the-last-run-of-june" title="今年 6 月的最后一次跑步">今年 6 月的最后一次跑步 </a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div id="info" class="tech">
+
+    <span id="share">
+  <div id="qrcode"></div>
+  <a id="wechat" title="分享到微信" data-wechat-url="http://127.0.0.1:4000/win32-disk-imager" href="javascript:void(0);"><i class="icon-wechat"></i></a>
+  <a id="weibo" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=善用 Win32 Disk Imager | 殷东亮的博客 via @&amp;url=http://127.0.0.1:4000/win32-disk-imager&amp;type=3&amp;searchPic=1"><i class="icon-weibo"></i></a>
+  <a id="qzone" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://127.0.0.1:4000/win32-disk-imager&amp;title=善用 Win32 Disk Imager | 殷东亮的博客&amp;summary=很久以前，那时年轻不懂事，没完没了折腾 Linux 的各种发行版，刚开始捣鼓的时身上没有光盘，所以安装系统时常常采用硬盘安装的方式。&amp;site=http://127.0.0.1:4000"><i class="icon-qzone"></i></a>
+  <a id="twitter" target="_blank" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=http://127.0.0.1:4000/win32-disk-imager&amp;text=善用 Win32 Disk Imager｜殷东亮的博客&amp;via="><i class="icon-twitter"></i></a>
+  <a id="facebook" target="_blank" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=http://127.0.0.1:4000/win32-disk-imager&amp;t=善用 Win32 Disk Imager | 殷东亮的博客"><i class="icon-facebook-official"></i></a>
+  <a id="gplus" target="_blank" title="Share to Google+" href="https://plus.google.com/share?url=http://127.0.0.1:4000/win32-disk-imager"><i class="icon-gplus-squared"></i></a>
+</span>
+
+
+    <span class='like'><a href="javascript:void(0)" title=""><i class="icon-heart-empty"></i> <span class="disqus-like-count"></span></a></span>
+    <span class='view-code'><a href="javascript:void(0)" data-md="https://raw.githubusercontent.com/fooleap/fooleap.github.io/master/_posts/2015-10-18-win32-disk-imager.md" title="在正文中查看源码"><i class="icon-file-code"></i>源码</a></span>
+    <span class="number-of-word"><i class="icon-calc"></i>653 字</span>
+    <span class="page-tags"><i class="icon-tags"></i><ul class="tags"> <li class="tag"><a href="/tags.html#Linux" target="_blank" title="查看“Linux”的相关文章">Linux</a></li><li class="tag"><a href="/tags.html#硬盘安装" target="_blank" title="查看“硬盘安装”的相关文章">硬盘安装</a></li><li class="tag"><a href="/tags.html#U 盘安装" target="_blank" title="查看“U 盘安装”的相关文章">U 盘安装</a></li></ul></span>
+  </div>
+
+</article>
+
+<div class="comment" id="disqus_thread">
+    <a class="show-comments" href="http://127.0.0.1:4000/win32-disk-imager#disqus_thread" data-disqus-identifier="/win32-disk-imager"><span class="has-comment"><i class="icon-chat-empty"></i> 留下</span>评论 <span class="disqus-comment-count" data-disqus-url="http://127.0.0.1:4000/win32-disk-imager"></span></a>
+</div>
+
+  
+      <footer class="site-footer">
+        <small>&copy; 2012-2016 by Jekyll Theme</small>
+      </footer>
+  
+    </main>
+
+  </div>
+  <div id="backtotop">
+    <i class="icon-up-big"></i>
+  </div>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  </body>
+</html>

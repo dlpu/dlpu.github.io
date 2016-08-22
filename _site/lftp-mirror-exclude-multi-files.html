@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html class="ie lte8"><![endif]-->
+<!--[if IE]><html class="ie"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>LFTP 镜像功能排除多个文件 | 殷东亮的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.3, user-scalable=no" />
+    <meta name="description" content="昨天在老杨处得知 WordPress 最近更新版本，不过鄙人无意换用博客引擎。今天想想以前弃用 WordPress 时留下一个备份，刚好阿里云的免费虚拟主机，目前仅用于本站的存储，就想在上面再搭个 WordPress，看看以前的备份是否能成功恢复。" />
+    <meta name="keywords" content="LFTP, FTP, mirror" />
+    <meta name="author" content="fooleap" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="canonical" href="http://127.0.0.1:4000/lftp-mirror-exclude-multi-files" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="alternate" type="application/atom+xml" title="殷东亮的博客 Atom Feed" href="http://blog.fooleap.org/atom.xml" />
+    <script type="text/javascript" src="/assets/js/modernizr.js"></script>
+    <!--[if lte IE 9]>
+      <script src="/assets/js/html5shiv.min.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+      <script src="/assets/js/classList.min.js"></script>
+      <script type="text/javascript">
+        document.createElement('main');
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+  <nav id="navigation">
+      <ul class="navigation-list hide">
+          <li><a href="/" class="navigation-item"><i class="icon-home"></i>首页</a></li>
+          <li><a href="/archive.html" class="navigation-item"><i class="icon-box"></i>归档</a></li>
+          <li><a href="/about.html" class="navigation-item"><i class="icon-user"></i>关于</a></li>
+      </ul>
+      <i id="menu" class="icon icon-menu"></i>
+  </nav>
+  
+  <div class="container">
+    <main class="wrapper">
+      <header class="site-header">
+        <h1>
+          LFTP 镜像功能排除多个文件
+        </h1>
+        <h2 class="sub-heading">
+            <i class="icon-calendar"></i><time datetime="2015-12-10">2015 年 12 月 10 日</time>
+        </h2>
+      </header>
+  <article class="post-content">
+    
+  <div class="main-content">
+<p>昨天在老杨处得知 WordPress 最近更新版本<a href="https://cyhour.com/330" title="WordPress 4.4“Clifford”&#038; PHP 7.0 | 常阳时光">[1]</a>，不过鄙人无意换用博客引擎。今天想想以前弃用 WordPress 时留下一个备份，刚好阿里云的免费虚拟主机，目前仅用于本站的存储，就想在上面再搭个 WordPress，看看以前的备份是否能成功恢复。</p>
+
+<p>以前的备份 <a href="/old/">内容完美恢复</a>，就是所用的主题没有跟着程序的更新而更新，需要修改。此前说过，我是 <a href="/server-and-baidu-seo.html">使用 LFTP 对博客的镜像进行同步</a>，这下问题来了，此前进行镜像同步的时候命令如下：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mirror -R --delete _site htdocs --exclude logreport/
+</code></pre>
+</div>
+
+<p>最后的 <code class="highlighter-rouge">--exclude</code> 是排除的参数，意思是 <code class="highlighter-rouge">logreport</code> 目录不包含在内。我搭在虚拟主机上的 WordPress 是放在一个名为 <code class="highlighter-rouge">old</code> 的目录里，如何再排除一个目录呢？我试着再后面加上 <code class="highlighter-rouge">old/</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mirror -R --delete _site htdocs --exclude logreport/ old/
+</code></pre>
+</div>
+
+<p>结果呢？执行命令时哗啦啦地将我的 <code class="highlighter-rouge">old</code> 目录下的文件直删，只好再改了。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mirror -R --delete _site htdocs --exclude logreport/ --exclude old/
+</code></pre>
+</div>
+
+<p>完美，虽然感觉有点多此一举，但完美排除了两个目录。</p>
+
+<p>至于更巧妙的用法，甚至采用正则来排除，还是得看 LFTP 的文档<a href="http://lftp.yar.ru/lftp-man.html" title="lftp.1">[2]</a>或者别人的例子<a href="http://www.cyberciti.biz/faq/lftp-command-mirror-x-exclude-files-sub-directory-syntax/" title="lftp Mirror Command Exclude Matching Files [ Regex ]">[3]</a>。</p>
+
+<p>此文颇为扯淡，也留下记录以备忘。</p>
+
+<h2 id="id-section">参考资料</h2>
+
+<p><strong>本文历史</strong></p>
+
+<ul>
+  <li>2015 年 12 月 10 日 完成初稿</li>
+</ul>
+
+  </div>
+
+  <div id="posts">
+    <div id="random-posts" class="posts">
+      <strong>猜你喜欢</strong>
+      <ul>
+      </ul>
+    </div>
+  
+    <div id="recent-posts" class="posts">
+      <strong>最近更新</strong>
+      <ul>
+      
+        <li><a href="/configuring-ip-address-by-specifying-gateway" title="配置特定 IP 地址走指定网关">配置特定 IP 地址走指定网关 </a></li>
+      
+        <li><a href="/add-google-satellite-layer-in-amap" title="高德地图 API 叠加谷歌地图图层">高德地图 API 叠加谷歌地图图层 </a></li>
+      
+        <li><a href="/from-codoon-to-nikeplus" title="将咕咚的数据导入到 Nike+">将咕咚的数据导入到 Nike+ </a></li>
+      
+        <li><a href="/the-influence-of-sports-apps" title="运动 APP 的作用">运动 APP 的作用 </a></li>
+      
+        <li><a href="/the-last-run-of-june" title="今年 6 月的最后一次跑步">今年 6 月的最后一次跑步 </a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div id="info" class="tech">
+
+    <span id="share">
+  <div id="qrcode"></div>
+  <a id="wechat" title="分享到微信" data-wechat-url="http://127.0.0.1:4000/lftp-mirror-exclude-multi-files" href="javascript:void(0);"><i class="icon-wechat"></i></a>
+  <a id="weibo" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=LFTP 镜像功能排除多个文件 | 殷东亮的博客 via @&amp;url=http://127.0.0.1:4000/lftp-mirror-exclude-multi-files&amp;type=3&amp;searchPic=1"><i class="icon-weibo"></i></a>
+  <a id="qzone" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://127.0.0.1:4000/lftp-mirror-exclude-multi-files&amp;title=LFTP 镜像功能排除多个文件 | 殷东亮的博客&amp;summary=昨天在老杨处得知 WordPress 最近更新版本，不过鄙人无意换用博客引擎。今天想想以前弃用 WordPress 时留下一个备份，刚好阿里云的免费虚拟主机，目前仅用于本站的存储，就想在上面再搭个 WordPress，看看以前的备份是否能成功恢复。&amp;site=http://127.0.0.1:4000"><i class="icon-qzone"></i></a>
+  <a id="twitter" target="_blank" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=http://127.0.0.1:4000/lftp-mirror-exclude-multi-files&amp;text=LFTP 镜像功能排除多个文件｜殷东亮的博客&amp;via="><i class="icon-twitter"></i></a>
+  <a id="facebook" target="_blank" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=http://127.0.0.1:4000/lftp-mirror-exclude-multi-files&amp;t=LFTP 镜像功能排除多个文件 | 殷东亮的博客"><i class="icon-facebook-official"></i></a>
+  <a id="gplus" target="_blank" title="Share to Google+" href="https://plus.google.com/share?url=http://127.0.0.1:4000/lftp-mirror-exclude-multi-files"><i class="icon-gplus-squared"></i></a>
+</span>
+
+
+    <span class='like'><a href="javascript:void(0)" title=""><i class="icon-heart-empty"></i> <span class="disqus-like-count"></span></a></span>
+    <span class='view-code'><a href="javascript:void(0)" data-md="https://raw.githubusercontent.com/fooleap/fooleap.github.io/master/_posts/2015-12-10-lftp-mirror-exclude-multi-files.md" title="在正文中查看源码"><i class="icon-file-code"></i>源码</a></span>
+    <span class="number-of-word"><i class="icon-calc"></i>649 字</span>
+    <span class="page-tags"><i class="icon-tags"></i><ul class="tags"> <li class="tag"><a href="/tags.html#LFTP" target="_blank" title="查看“LFTP”的相关文章">LFTP</a></li><li class="tag"><a href="/tags.html#FTP" target="_blank" title="查看“FTP”的相关文章">FTP</a></li><li class="tag"><a href="/tags.html#mirror" target="_blank" title="查看“mirror”的相关文章">mirror</a></li></ul></span>
+  </div>
+
+</article>
+
+<div class="comment" id="disqus_thread">
+    <a class="show-comments" href="http://127.0.0.1:4000/lftp-mirror-exclude-multi-files#disqus_thread" data-disqus-identifier="/lftp-mirror-exclude-multi-files"><span class="has-comment"><i class="icon-chat-empty"></i> 留下</span>评论 <span class="disqus-comment-count" data-disqus-url="http://127.0.0.1:4000/lftp-mirror-exclude-multi-files"></span></a>
+</div>
+
+  
+      <footer class="site-footer">
+        <small>&copy; 2012-2016 by Jekyll Theme</small>
+      </footer>
+  
+    </main>
+
+  </div>
+  <div id="backtotop">
+    <i class="icon-up-big"></i>
+  </div>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  </body>
+</html>

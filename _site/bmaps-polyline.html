@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html class="ie lte8"><![endif]-->
+<!--[if IE]><html class="ie"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>百度地图 API 绘制折线 | 殷东亮的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.3, user-scalable=no" />
+    <meta name="description" content="想要在百度地图上画一条自定义路线，路线说白了就是折线，使用百度地图 JS API 画折线可以使用 Polyline 类来实现。" />
+    <meta name="keywords" content="百度地图 API, 折线, 路线, JavaScript, 潮汕" />
+    <meta name="author" content="fooleap" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="canonical" href="http://127.0.0.1:4000/bmaps-polyline" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <style type="text/css">
+  .map{max-width:640px;width:100%;height:384px}
+  </style>
+    <link rel="icon" href="/favicon.png" />
+    <link rel="alternate" type="application/atom+xml" title="殷东亮的博客 Atom Feed" href="http://blog.fooleap.org/atom.xml" />
+    <script type="text/javascript" src="/assets/js/modernizr.js"></script>
+    <!--[if lte IE 9]>
+      <script src="/assets/js/html5shiv.min.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+      <script src="/assets/js/classList.min.js"></script>
+      <script type="text/javascript">
+        document.createElement('main');
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+  <nav id="navigation">
+      <ul class="navigation-list hide">
+          <li><a href="/" class="navigation-item"><i class="icon-home"></i>首页</a></li>
+          <li><a href="/archive.html" class="navigation-item"><i class="icon-box"></i>归档</a></li>
+          <li><a href="/about.html" class="navigation-item"><i class="icon-user"></i>关于</a></li>
+      </ul>
+      <i id="menu" class="icon icon-menu"></i>
+  </nav>
+  
+  <div class="container">
+    <main class="wrapper">
+      <header class="site-header">
+        <h1>
+          百度地图 API 绘制折线
+        </h1>
+        <h2 class="sub-heading">
+            <i class="icon-calendar"></i><time datetime="2015-08-23">2015 年 08 月 23 日</time>
+        </h2>
+      </header>
+  
+  
+  
+  <article class="post-content">
+    
+  <div class="main-content">
+<ul id="toc">
+  <li><a href="#id-section" id="markdown-toc-id-section">获取密钥</a></li>
+  <li><a href="#id-section-1" id="markdown-toc-id-section-1">创建地图</a></li>
+  <li><a href="#id-section-2" id="markdown-toc-id-section-2">创建坐标点</a></li>
+  <li><a href="#id-section-3" id="markdown-toc-id-section-3">绘制折线</a></li>
+</ul>
+
+<p>想要在百度地图上画一条自定义路线，路线说白了就是折线，使用百度地图 JS API 画折线可以使用 Polyline 类来实现。</p>
+
+<h2 id="id-section">获取密钥</h2>
+
+<p>首先在 <a href="http://developer.baidu.com/">百度开放服务平台</a> 注册百度开发者帐号（可以使用百度帐号直接登录）。</p>
+
+<p>然后在 <a href="http://lbsyun.baidu.com/apiconsole/key">百度地图 LBS 开放平台</a> 创建应用。</p>
+
+<p>根据所需要的设置并提交，便可以看到访问密钥 ak（AccessKey）。</p>
+
+<h2 id="id-section-1">创建地图</h2>
+
+<p>无论使用百度地图 API 做什么，首先都得显示地图，除去乱七八糟的东西，显示地图最主要的是中心点坐标以及缩放级别。</p>
+
+<p>以上可以通过 Map 类的 centerAndZoom 方法来实现，关于 Map 类具体可参考：<a href="http://developer.baidu.com/map/reference/index.php?title=Class:%E6%A0%B8%E5%BF%83%E7%B1%BB/Map">Map 类</a>。</p>
+
+<p>下面以潮汕为例，显示一个地图，除却 JS 代码，还需要设置地图所在 <code class="highlighter-rouge">DIV</code> 的宽高。</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"http://api.map.baidu.com/api?v=2.0&amp;ak=您的密钥"</span><span class="o">&gt;&lt;</span><span class="sr">/script&gt;</span><span class="err">
+</span><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"map"</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;</span><span class="err">
+</span><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+<span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Map</span><span class="p">(</span><span class="s2">"map"</span><span class="p">);</span><span class="c1">//创建地图实例
+</span>
+<span class="kd">var</span> <span class="nx">point</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.43</span><span class="p">,</span><span class="mf">23.4</span><span class="p">);</span><span class="c1">//创建坐标点
+</span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">centerAndZoom</span><span class="p">(</span><span class="nx">point</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span><span class="c1">//设置中心坐标及默认缩放级别
+</span>
+<span class="o">&lt;</span><span class="sr">/script&gt;</span></code></pre></figure>
+
+<div id="map01" class="map"></div>
+
+<h2 id="id-section-2">创建坐标点</h2>
+
+<p>其实这个在上面已经有过实例，点一般由经度和纬度确定。百度地图使用 Point 类实现，具体可看：<a href="http://developer.baidu.com/map/reference/index.php?title=Class:%E5%9F%BA%E7%A1%80%E7%B1%BB/Point">Point 类</a>。</p>
+
+<p>创建一个坐标点只需要指定一个经度及一个纬度即可，例如：</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">point</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.43</span><span class="p">,</span><span class="mf">23.4</span><span class="p">);</span></code></pre></figure>
+
+<h2 id="id-section-3">绘制折线</h2>
+
+<p>开头说到，百度地图的折线可以由 Polyline 类来实现，Polyline 类的具体文档可以看：<a href="http://developer.baidu.com/map/reference/index.php?title=Class:%E8%A6%86%E7%9B%96%E7%89%A9%E7%B1%BB/Polyline">Polyline 类</a>。</p>
+
+<p>折线有若干个折点，所以不可避免的要设置这些坐标点。根据文档，创建折线对象需要设置点的数组。折线属于覆盖物，需要用到 Map 类的 addOverlay 方法将其覆盖到地图上。</p>
+
+<p>下面以横穿潮汕大地的杭深线为例，获取坐标点可以使用 Google Earth 绘制路径，导出 KML 文件后使用百度坐标转换 API 进行批量转换。具体可参考这篇：<a href="/bmaps-changeposition.html">百度地图坐标转换</a>。</p>
+
+<p><img src="http://source.fooleap.org/bmaps-polyline.png?imageView2/2/w/640" alt="Google Earth 上的路径" />
+▲Google Earth 上的路径</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"http://api.map.baidu.com/api?v=2.0&amp;ak=您的密钥"</span><span class="o">&gt;&lt;</span><span class="sr">/script&gt;</span><span class="err">
+</span><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"map"</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;</span><span class="err">
+</span><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+<span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Map</span><span class="p">(</span><span class="s2">"map"</span><span class="p">);</span><span class="c1">//创建地图实例
+</span>
+<span class="kd">var</span> <span class="nx">point</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.43</span><span class="p">,</span><span class="mf">23.43</span><span class="p">);</span><span class="c1">//创建坐标点
+</span>
+<span class="kd">var</span> <span class="nx">points</span> <span class="o">=</span> <span class="p">[</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">117.270591</span><span class="p">,</span><span class="mf">23.812975</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">117.227819</span><span class="p">,</span><span class="mf">23.814327</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">117.171452</span><span class="p">,</span><span class="mf">23.800036</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">117.132368</span><span class="p">,</span><span class="mf">23.791609</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">117.076919</span><span class="p">,</span><span class="mf">23.764658</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">117.024827</span><span class="p">,</span><span class="mf">23.754510</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.981047</span><span class="p">,</span><span class="mf">23.739533</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.939091</span><span class="p">,</span><span class="mf">23.717617</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.900199</span><span class="p">,</span><span class="mf">23.699399</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.885031</span><span class="p">,</span><span class="mf">23.689196</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.874584</span><span class="p">,</span><span class="mf">23.679668</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.811841</span><span class="p">,</span><span class="mf">23.626940</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.759632</span><span class="p">,</span><span class="mf">23.604713</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.725061</span><span class="p">,</span><span class="mf">23.587160</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.651402</span><span class="p">,</span><span class="mf">23.566650</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.595323</span><span class="p">,</span><span class="mf">23.545934</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.565463</span><span class="p">,</span><span class="mf">23.533553</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.552337</span><span class="p">,</span><span class="mf">23.519046</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.544596</span><span class="p">,</span><span class="mf">23.508704</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.537630</span><span class="p">,</span><span class="mf">23.464337</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.528264</span><span class="p">,</span><span class="mf">23.443634</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.518571</span><span class="p">,</span><span class="mf">23.425543</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.502256</span><span class="p">,</span><span class="mf">23.414608</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.429954</span><span class="p">,</span><span class="mf">23.388459</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.388039</span><span class="p">,</span><span class="mf">23.368854</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.352537</span><span class="p">,</span><span class="mf">23.347284</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.281605</span><span class="p">,</span><span class="mf">23.327247</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.227800</span><span class="p">,</span><span class="mf">23.293717</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.214108</span><span class="p">,</span><span class="mf">23.280499</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.180527</span><span class="p">,</span><span class="mf">23.247139</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.107918</span><span class="p">,</span><span class="mf">23.134458</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.040802</span><span class="p">,</span><span class="mf">23.102683</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.005375</span><span class="p">,</span><span class="mf">23.071510</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">115.979189</span><span class="p">,</span><span class="mf">23.052335</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">115.874687</span><span class="p">,</span><span class="mf">23.017842</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">115.732058</span><span class="p">,</span><span class="mf">22.949055</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">115.650940</span><span class="p">,</span><span class="mf">22.903134</span><span class="p">),</span> 
+  <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">115.559445</span><span class="p">,</span><span class="mf">22.859811</span><span class="p">),</span> 
+<span class="p">];</span><span class="c1">//设置坐标数组
+</span>
+<span class="kd">var</span> <span class="nx">polyline</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Polyline</span><span class="p">(</span><span class="nx">points</span><span class="p">);</span><span class="c1">//创建折线
+</span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">centerAndZoom</span><span class="p">(</span><span class="nx">point</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span><span class="c1">//设置中心坐标及默认缩放级别
+</span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">addOverlay</span><span class="p">(</span><span class="nx">polyline</span><span class="p">);</span><span class="c1">//将折线覆盖到地图上
+</span>
+<span class="o">&lt;</span><span class="sr">/script&gt;</span></code></pre></figure>
+
+<div id="map02" class="map"></div>
+
+<p>本文仅仅介绍使用百度地图 API 如何创建折线，若想制作更多更有趣的地图，还请参考百度地图 <a href="http://developer.baidu.com/map/index.php?title=jspopular">JavaScript API 文档</a>。</p>
+
+<p><strong>本文历史</strong></p>
+
+<ul>
+  <li>2015 年 08 月 23 日 完成初稿
+</li>
+</ul>
+
+  </div>
+
+  <div id="posts">
+    <div id="random-posts" class="posts">
+      <strong>猜你喜欢</strong>
+      <ul>
+      </ul>
+    </div>
+  
+    <div id="recent-posts" class="posts">
+      <strong>最近更新</strong>
+      <ul>
+      
+        <li><a href="/configuring-ip-address-by-specifying-gateway" title="配置特定 IP 地址走指定网关">配置特定 IP 地址走指定网关 </a></li>
+      
+        <li><a href="/add-google-satellite-layer-in-amap" title="高德地图 API 叠加谷歌地图图层">高德地图 API 叠加谷歌地图图层 </a></li>
+      
+        <li><a href="/from-codoon-to-nikeplus" title="将咕咚的数据导入到 Nike+">将咕咚的数据导入到 Nike+ </a></li>
+      
+        <li><a href="/the-influence-of-sports-apps" title="运动 APP 的作用">运动 APP 的作用 </a></li>
+      
+        <li><a href="/the-last-run-of-june" title="今年 6 月的最后一次跑步">今年 6 月的最后一次跑步 </a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div id="info" class="tech">
+
+    <span id="share">
+  <div id="qrcode"></div>
+  <a id="wechat" title="分享到微信" data-wechat-url="http://127.0.0.1:4000/bmaps-polyline" href="javascript:void(0);"><i class="icon-wechat"></i></a>
+  <a id="weibo" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=百度地图 API 绘制折线 | 殷东亮的博客 via @&amp;url=http://127.0.0.1:4000/bmaps-polyline&amp;type=3&amp;searchPic=1"><i class="icon-weibo"></i></a>
+  <a id="qzone" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://127.0.0.1:4000/bmaps-polyline&amp;title=百度地图 API 绘制折线 | 殷东亮的博客&amp;summary=想要在百度地图上画一条自定义路线，路线说白了就是折线，使用百度地图 JS API 画折线可以使用 Polyline 类来实现。&amp;site=http://127.0.0.1:4000"><i class="icon-qzone"></i></a>
+  <a id="twitter" target="_blank" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=http://127.0.0.1:4000/bmaps-polyline&amp;text=百度地图 API 绘制折线｜殷东亮的博客&amp;via="><i class="icon-twitter"></i></a>
+  <a id="facebook" target="_blank" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=http://127.0.0.1:4000/bmaps-polyline&amp;t=百度地图 API 绘制折线 | 殷东亮的博客"><i class="icon-facebook-official"></i></a>
+  <a id="gplus" target="_blank" title="Share to Google+" href="https://plus.google.com/share?url=http://127.0.0.1:4000/bmaps-polyline"><i class="icon-gplus-squared"></i></a>
+</span>
+
+
+    <span class='like'><a href="javascript:void(0)" title=""><i class="icon-heart-empty"></i> <span class="disqus-like-count"></span></a></span>
+    <span class='view-code'><a href="javascript:void(0)" data-md="https://raw.githubusercontent.com/fooleap/fooleap.github.io/master/_posts/2015-08-23-bmaps-polyline.md" title="在正文中查看源码"><i class="icon-file-code"></i>源码</a></span>
+    <span class="number-of-word"><i class="icon-calc"></i>3089 字</span>
+    <span class="page-tags"><i class="icon-tags"></i><ul class="tags"> <li class="tag"><a href="/tags.html#百度地图 API" target="_blank" title="查看“百度地图 API”的相关文章">百度地图 API</a></li><li class="tag"><a href="/tags.html#折线" target="_blank" title="查看“折线”的相关文章">折线</a></li><li class="tag"><a href="/tags.html#路线" target="_blank" title="查看“路线”的相关文章">路线</a></li><li class="tag"><a href="/tags.html#JavaScript" target="_blank" title="查看“JavaScript”的相关文章">JavaScript</a></li><li class="tag"><a href="/tags.html#潮汕" target="_blank" title="查看“潮汕”的相关文章">潮汕</a></li></ul></span>
+  </div>
+
+</article>
+
+<div class="comment" id="disqus_thread">
+    <a class="show-comments" href="http://127.0.0.1:4000/bmaps-polyline#disqus_thread" data-disqus-identifier="/bmaps-polyline"><span class="has-comment"><i class="icon-chat-empty"></i> 留下</span>评论 <span class="disqus-comment-count" data-disqus-url="http://127.0.0.1:4000/bmaps-polyline"></span></a>
+</div>
+
+  
+  
+      <footer class="site-footer">
+        <small>&copy; 2012-2016 by Jekyll Theme</small>
+      </footer>
+  
+    </main>
+
+  </div>
+  <div id="backtotop">
+    <i class="icon-up-big"></i>
+  </div>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=FCcc6261f101cd4ccefee22113a609de"></script>
+  <script type="text/javascript">
+  
+  var bmap1 = document.getElementById('map01');
+  var bmap2 = document.getElementById('map02');
+  var mapWidth = bmap1.offsetWidth;
+  bmap1.style.height = mapWidth*2/3 + 'px';
+  bmap2.style.height = mapWidth*2/3 + 'px';
+  if (mapWidth < 500){
+    var zoom = 9;
+  } else {
+    var zoom = 10;
+  }
+  var map01 = new BMap.Map("map01");
+  var map02 = new BMap.Map("map02");
+  var point = new BMap.Point(116.43,23.4);
+  var points = [ 
+  new BMap.Point(117.270588,23.812967), 
+  new BMap.Point(117.227815,23.814331), 
+  new BMap.Point(117.171450,23.800042), 
+  new BMap.Point(117.150759,23.793515), 
+  new BMap.Point(117.132366,23.791615), 
+  new BMap.Point(117.076916,23.764662), 
+  new BMap.Point(117.025117,23.754470), 
+  new BMap.Point(116.977697,23.738077), 
+  new BMap.Point(116.900202,23.699401), 
+  new BMap.Point(116.885028,23.689195), 
+  new BMap.Point(116.874584,23.679663), 
+  new BMap.Point(116.819681,23.632414), 
+  new BMap.Point(116.808133,23.624896), 
+  new BMap.Point(116.759631,23.604708), 
+  new BMap.Point(116.737952,23.593357), 
+  new BMap.Point(116.725047,23.587241), 
+  new BMap.Point(116.569681,23.536185), 
+  new BMap.Point(116.528263,23.443635), 
+  new BMap.Point(116.518568,23.425542), 
+  new BMap.Point(116.502531,23.414523), 
+  new BMap.Point(116.387604,23.369746), 
+  new BMap.Point(116.352543,23.347282), 
+  new BMap.Point(116.281609,23.327249), 
+  new BMap.Point(116.227475,23.293805), 
+  new BMap.Point(116.181042,23.246917), 
+  new BMap.Point(116.109265,23.135226), 
+  new BMap.Point(115.984812,23.055625), 
+  new BMap.Point(115.855352,23.005498), 
+  new BMap.Point(115.706745,22.938802), 
+  ];
+  var polyline = new BMap.Polyline(points);
+  map01.centerAndZoom(point, zoom);
+  map02.centerAndZoom(point, zoom);
+  map02.addOverlay(polyline);   
+</script>
+  </body>
+</html>

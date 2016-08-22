@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html class="ie lte8"><![endif]-->
+<!--[if IE]><html class="ie"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>百度地图坐标转换 | 殷东亮的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.3, user-scalable=no" />
+    <meta name="description" content="关于地图坐标系统，百度的文档里面一句话就概括得很清楚，这里引用过来。" />
+    <meta name="keywords" content="百度地图 API, 坐标转换, WGS-84, GCJ-02, BD-09" />
+    <meta name="author" content="fooleap" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="canonical" href="http://127.0.0.1:4000/bmaps-changeposition" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="alternate" type="application/atom+xml" title="殷东亮的博客 Atom Feed" href="http://blog.fooleap.org/atom.xml" />
+    <script type="text/javascript" src="/assets/js/modernizr.js"></script>
+    <!--[if lte IE 9]>
+      <script src="/assets/js/html5shiv.min.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+      <script src="/assets/js/classList.min.js"></script>
+      <script type="text/javascript">
+        document.createElement('main');
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+  <nav id="navigation">
+      <ul class="navigation-list hide">
+          <li><a href="/" class="navigation-item"><i class="icon-home"></i>首页</a></li>
+          <li><a href="/archive.html" class="navigation-item"><i class="icon-box"></i>归档</a></li>
+          <li><a href="/about.html" class="navigation-item"><i class="icon-user"></i>关于</a></li>
+      </ul>
+      <i id="menu" class="icon icon-menu"></i>
+  </nav>
+  
+  <div class="container">
+    <main class="wrapper">
+      <header class="site-header">
+        <h1>
+          百度地图坐标转换
+        </h1>
+        <h2 class="sub-heading">
+            <i class="icon-calendar"></i><time datetime="2015-08-19">2015 年 08 月 19 日</time>
+        </h2>
+      </header>
+  <article class="post-content">
+    
+  <div class="main-content">
+<ul id="toc">
+  <li><a href="#id-section" id="markdown-toc-id-section">地图坐标系统</a></li>
+  <li><a href="#id-section-1" id="markdown-toc-id-section-1">百度坐标转换</a></li>
+  <li><a href="#id-section-2" id="markdown-toc-id-section-2">其他转换方法</a></li>
+</ul>
+
+<h2 id="id-section">地图坐标系统</h2>
+
+<p>关于地图坐标系统，百度的 <a href="http://developer.baidu.com/map/question.htm#qa002" title="百度坐标体系">文档</a> 里面一句话就概括得很清楚，这里引用过来。</p>
+
+<blockquote>
+  <p>国际经纬度坐标标准为 WGS-84，国内必须至少使用国测局制定的 GCJ-02，对地理位置进行首次加密。百度坐标在此基础上，进行了 BD-09 二次加密措施，更加保护了个人隐私。</p>
+</blockquote>
+
+<p>国内大部分电子地图所采用的坐标系统为火星坐标（GCJ-02），而百度做了自己的坐标系统（BD-09）。</p>
+
+<p>在英文维基百科的 <a href="https://en.wikipedia.org/wiki/Baidu_Maps#Coordinate_system">百度地图词条</a> 上，有张图就能很形象地说明这几个坐标偏移的幅度（<a href="http://output.jsbin.com/panomu/2">实例</a>）。</p>
+
+<p><img src="http://source.fooleap.org/bmaps-changeposition.png" alt="维基百科的图" />
+▲维基百科的图</p>
+
+<p>百度坐标（BD-09）、火星坐标（GCJ-02）、GPS 坐标（WGS-84）之间都存在一定的偏移，如果不做一些纠偏，一些地图软件或应用就会出问题，尤其是移动端 APP（获取 GPS 定位信息直接显示在地图上的）。关于这方面，印象比较深刻的是，使用一些国外的跑步 APP，运动轨迹会出现一定程度偏移，这是因为没有做偏移纠正（Nike+ Running 已纠正）。</p>
+
+<p>##百度坐标拾取</p>
+
+<p>罗嗦这么多，简单地说，若要使用百度地图 API，坐标就要用百度坐标。那么百度坐标如何获取？百度坐标的拾取可以用他家的 <a href="http://api.map.baidu.com/lbsapi/getpoint/">坐标拾取系统</a>。虽然使用起来挺方便，但一次只能拾取一个坐标，无法拾取多个坐标。</p>
+
+<p>个人使用地图 API 一般是制作一些路书，而在制作路线图时，鄙人习惯于使用 Google Earth 或 Google Maps 先画出路径，能够很方便地获取坐标。</p>
+
+<p>导出 KML 之后便能获取看到路径所有点的坐标数据，Google Earth 的 KML 坐标数据段如下</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">			<span class="nt">&lt;coordinates&gt;</span>
+				120.5757203332099,30.01647785364818,0 120.5737544460776,30.01686395900305,0 120.5738030367051,30.01661413285396,0 120.5741320514054,30.01664161571365,0 120.5740519362456,30.01612737042148,0 
+			<span class="nt">&lt;/coordinates&gt;</span></code></pre></figure>
+
+<p>Google Maps 则是</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">					<span class="nt">&lt;coordinates&gt;</span>110.28720000000001,25.28115,0.0 110.28684,25.27927,0.0 110.28506,25.27963,0.0 110.28331,25.27974,0.0 110.28192000000001,25.27734,0.0 110.28246,25.27706,0.0<span class="nt">&lt;/coordinates&gt;</span></code></pre></figure>
+
+<p>Google Earth 采用 WSG-84 坐标系统，而 Google Maps 中国部分采用的是 GCJ-02 坐标系统，获取到数据之后需要将其转换成百度坐标。</p>
+
+<h2 id="id-section-1">百度坐标转换</h2>
+
+<p>在百度地图 API DEMO 中，可以看到 <a href="http://developer.baidu.com/map/jsdemo.htm#a5_3">批量坐标转换的实例</a>，使用起来颇为麻烦，而且该限制一次只能转换 20 个，不过在网上可以找到 <a href="http://blog.csdn.net/cao478208248/article/details/38317951">修改过的 JS</a>，不限制点的数量。</p>
+
+<p>后来发现百度已经发布了 <a href="http://developer.baidu.com/map/changeposition.htm">新版本的坐标转换 API</a>，虽然百度没给出实例，但使用起来颇为方便，可以用它来批量转换上面 Google Earth 或 Google Maps 导出的 KML 的坐标数据。</p>
+
+<p>鄙人用 jQuery 做了一个页面，用于 Google 路径坐标数据转换成百度坐标：<a href="/wgs84-or-gcj02-to-bd09" target="_blank" title="GPS 坐标或火星坐标批量转换为百度坐标">/wgs84-or-gcj02-to-bd09</a>。</p>
+
+<p>具体怎么使用可看下面这个 GIF 动画：</p>
+
+<p><img src="http://source.fooleap.org/bmaps-changeposition.gif" alt="百度坐标转换器的使用" />
+▲百度坐标转换器的使用</p>
+
+<h2 id="id-section-2">其他转换方法</h2>
+
+<p>除此之外，网络上也流传这各种坐标之间的转换算法，具体可以参考这篇文章：<a href="http://dijkst.github.io/blog/2013/08/09/zhong-guo-di-tu-zuo-biao-pian-yi-suan-fa-zheng-li/">中国地图坐标偏移算法整理</a>。</p>
+
+<p>可以看到还有一些第三方的坐标转换接口，例如：<a href="http://ditujiupian.com/">地图纠偏</a>。</p>
+
+<p>由于暂时没有这个需求，关于其转换算法啥的这里就不深究。</p>
+
+<p><strong>本文历史</strong></p>
+
+<ul>
+  <li>2015 年 08 月 19 日 完成初稿</li>
+</ul>
+
+  </div>
+
+  <div id="posts">
+    <div id="random-posts" class="posts">
+      <strong>猜你喜欢</strong>
+      <ul>
+      </ul>
+    </div>
+  
+    <div id="recent-posts" class="posts">
+      <strong>最近更新</strong>
+      <ul>
+      
+        <li><a href="/configuring-ip-address-by-specifying-gateway" title="配置特定 IP 地址走指定网关">配置特定 IP 地址走指定网关 </a></li>
+      
+        <li><a href="/add-google-satellite-layer-in-amap" title="高德地图 API 叠加谷歌地图图层">高德地图 API 叠加谷歌地图图层 </a></li>
+      
+        <li><a href="/from-codoon-to-nikeplus" title="将咕咚的数据导入到 Nike+">将咕咚的数据导入到 Nike+ </a></li>
+      
+        <li><a href="/the-influence-of-sports-apps" title="运动 APP 的作用">运动 APP 的作用 </a></li>
+      
+        <li><a href="/the-last-run-of-june" title="今年 6 月的最后一次跑步">今年 6 月的最后一次跑步 </a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div id="info" class="tech">
+
+    <span id="share">
+  <div id="qrcode"></div>
+  <a id="wechat" title="分享到微信" data-wechat-url="http://127.0.0.1:4000/bmaps-changeposition" href="javascript:void(0);"><i class="icon-wechat"></i></a>
+  <a id="weibo" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=百度地图坐标转换 | 殷东亮的博客 via @&amp;url=http://127.0.0.1:4000/bmaps-changeposition&amp;type=3&amp;searchPic=1"><i class="icon-weibo"></i></a>
+  <a id="qzone" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://127.0.0.1:4000/bmaps-changeposition&amp;title=百度地图坐标转换 | 殷东亮的博客&amp;summary=关于地图坐标系统，百度的文档里面一句话就概括得很清楚，这里引用过来。&amp;site=http://127.0.0.1:4000"><i class="icon-qzone"></i></a>
+  <a id="twitter" target="_blank" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=http://127.0.0.1:4000/bmaps-changeposition&amp;text=百度地图坐标转换｜殷东亮的博客&amp;via="><i class="icon-twitter"></i></a>
+  <a id="facebook" target="_blank" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=http://127.0.0.1:4000/bmaps-changeposition&amp;t=百度地图坐标转换 | 殷东亮的博客"><i class="icon-facebook-official"></i></a>
+  <a id="gplus" target="_blank" title="Share to Google+" href="https://plus.google.com/share?url=http://127.0.0.1:4000/bmaps-changeposition"><i class="icon-gplus-squared"></i></a>
+</span>
+
+
+    <span class='like'><a href="javascript:void(0)" title=""><i class="icon-heart-empty"></i> <span class="disqus-like-count"></span></a></span>
+    <span class='view-code'><a href="javascript:void(0)" data-md="https://raw.githubusercontent.com/fooleap/fooleap.github.io/master/_posts/2015-08-19-bmaps-changeposition.md" title="在正文中查看源码"><i class="icon-file-code"></i>源码</a></span>
+    <span class="number-of-word"><i class="icon-calc"></i>1633 字</span>
+    <span class="page-tags"><i class="icon-tags"></i><ul class="tags"> <li class="tag"><a href="/tags.html#百度地图 API" target="_blank" title="查看“百度地图 API”的相关文章">百度地图 API</a></li><li class="tag"><a href="/tags.html#坐标转换" target="_blank" title="查看“坐标转换”的相关文章">坐标转换</a></li><li class="tag"><a href="/tags.html#WGS-84" target="_blank" title="查看“WGS-84”的相关文章">WGS-84</a></li><li class="tag"><a href="/tags.html#GCJ-02" target="_blank" title="查看“GCJ-02”的相关文章">GCJ-02</a></li><li class="tag"><a href="/tags.html#BD-09" target="_blank" title="查看“BD-09”的相关文章">BD-09</a></li></ul></span>
+  </div>
+
+</article>
+
+<div class="comment" id="disqus_thread">
+    <a class="show-comments" href="http://127.0.0.1:4000/bmaps-changeposition#disqus_thread" data-disqus-identifier="/bmaps-changeposition"><span class="has-comment"><i class="icon-chat-empty"></i> 留下</span>评论 <span class="disqus-comment-count" data-disqus-url="http://127.0.0.1:4000/bmaps-changeposition"></span></a>
+</div>
+
+  
+      <footer class="site-footer">
+        <small>&copy; 2012-2016 by Jekyll Theme</small>
+      </footer>
+  
+    </main>
+
+  </div>
+  <div id="backtotop">
+    <i class="icon-up-big"></i>
+  </div>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  </body>
+</html>

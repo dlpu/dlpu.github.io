@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html class="ie lte8"><![endif]-->
+<!--[if IE]><html class="ie"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>替换 iOS 版微信小视频 | 殷东亮的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.3, user-scalable=no" />
+    <meta name="description" content="昨日，看表弟在群里发一小视频，有几分钟时间长，而且还是原腾讯视频的。我认为那肯定不是用微信录制的，而是通过某些手段实现的。随便搜索了一下，点开了一个教程，却被误导，于是决定写一篇不大必要的教程。" />
+    <meta name="keywords" content="微信, 小视频, iPhone, iOS" />
+    <meta name="author" content="fooleap" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="canonical" href="http://127.0.0.1:4000/replace-wechat-sight" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="alternate" type="application/atom+xml" title="殷东亮的博客 Atom Feed" href="http://blog.fooleap.org/atom.xml" />
+    <script type="text/javascript" src="/assets/js/modernizr.js"></script>
+    <!--[if lte IE 9]>
+      <script src="/assets/js/html5shiv.min.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+      <script src="/assets/js/classList.min.js"></script>
+      <script type="text/javascript">
+        document.createElement('main');
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+  <nav id="navigation">
+      <ul class="navigation-list hide">
+          <li><a href="/" class="navigation-item"><i class="icon-home"></i>首页</a></li>
+          <li><a href="/archive.html" class="navigation-item"><i class="icon-box"></i>归档</a></li>
+          <li><a href="/about.html" class="navigation-item"><i class="icon-user"></i>关于</a></li>
+      </ul>
+      <i id="menu" class="icon icon-menu"></i>
+  </nav>
+  
+  <div class="container">
+    <main class="wrapper">
+      <header class="site-header">
+        <h1>
+          替换 iOS 版微信小视频
+        </h1>
+        <h2 class="sub-heading">
+            <i class="icon-calendar"></i><time datetime="2015-12-31">2015 年 12 月 31 日</time>
+        </h2>
+      </header>
+  <article class="post-content">
+    
+  <div class="main-content">
+<p>昨日，看表弟在群里发一小视频，有几分钟时间长，而且还是原腾讯视频的。我认为那肯定不是用微信录制的，而是通过某些手段实现的。随便搜索了一下，点开了一个教程，却被误导，于是决定写一篇不大必要的教程。</p>
+
+<p>为什么说不必要？似乎 iOS 版微信 6.2 以后，微信小视频模块有些变化，替换后可能会出现发送失败的情况。我用的微信版本是 6.1.5 版，以下的环境为已越狱 iOS 6、6.1.5 版微信。</p>
+
+<video class="video" poster="http://source.fooleap.org/replace-wechat-sight-01.mp4?vframe/jpg/offset/1" controls="">
+  <source src="http://source.fooleap.org/replace-wechat-sight-01.mp4" type="video/mp4" />
+  <source src="http://source.fooleap.org/replace-wechat-sight-01.webm" type="video/webm" />
+  <embed src="http://source.fooleap.org/flvplayer.swf" allowfullscreen="true" flashvars="vcastr_file=http://source.fooleap.org/replace-wechat-sight-01.flv&amp;IsAutoPlay=0&amp;IsContinue=1" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="640" height="360" />&lt;/embed&gt;  
+</video>
+
+<h2 id="id-section">录制小视频并临时保存</h2>
+
+<p>在微信主界面下拉拍摄小视频并保存即可。</p>
+
+<h2 id="id-section-1">替换掉保存的视频及首帧截图</h2>
+
+<p>此前，在 <a href="/backup-wechat-sight.html">备份 iOS 版微信小视频</a> 说过自己临时保存的小视频在以下目录：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Library/WechatPrivate/2e69ade238c7b7e8f308fe5d25a41a24/Sight/draft/
+</code></pre>
+</div>
+
+<p>每个微信号中间那串加密的字符串各不相同，准备好大小合适的 MP4 格式视频文件（个人认为 3M 以下较好，可使用 QQ 影音压缩）及 JPG 格式的首帧截图（一般宽度为 240 像素）。文件名改为微信保存后的文件名，并替换掉原文件。</p>
+
+<h2 id="id-section-2">选择已替换的小视频发送</h2>
+
+<p>按正常发送姿势发送即可。</p>
+
+<p><strong>本文历史</strong></p>
+
+<ul>
+  <li>2015 年 12 月 31 日 完成初稿</li>
+</ul>
+
+  </div>
+
+  <div id="posts">
+    <div id="random-posts" class="posts">
+      <strong>猜你喜欢</strong>
+      <ul>
+      </ul>
+    </div>
+  
+    <div id="recent-posts" class="posts">
+      <strong>最近更新</strong>
+      <ul>
+      
+        <li><a href="/configuring-ip-address-by-specifying-gateway" title="配置特定 IP 地址走指定网关">配置特定 IP 地址走指定网关 </a></li>
+      
+        <li><a href="/add-google-satellite-layer-in-amap" title="高德地图 API 叠加谷歌地图图层">高德地图 API 叠加谷歌地图图层 </a></li>
+      
+        <li><a href="/from-codoon-to-nikeplus" title="将咕咚的数据导入到 Nike+">将咕咚的数据导入到 Nike+ </a></li>
+      
+        <li><a href="/the-influence-of-sports-apps" title="运动 APP 的作用">运动 APP 的作用 </a></li>
+      
+        <li><a href="/the-last-run-of-june" title="今年 6 月的最后一次跑步">今年 6 月的最后一次跑步 </a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div id="info" class="tech">
+
+    <span id="share">
+  <div id="qrcode"></div>
+  <a id="wechat" title="分享到微信" data-wechat-url="http://127.0.0.1:4000/replace-wechat-sight" href="javascript:void(0);"><i class="icon-wechat"></i></a>
+  <a id="weibo" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=替换 iOS 版微信小视频 | 殷东亮的博客 via @&amp;url=http://127.0.0.1:4000/replace-wechat-sight&amp;type=3&amp;searchPic=1"><i class="icon-weibo"></i></a>
+  <a id="qzone" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://127.0.0.1:4000/replace-wechat-sight&amp;title=替换 iOS 版微信小视频 | 殷东亮的博客&amp;summary=昨日，看表弟在群里发一小视频，有几分钟时间长，而且还是原腾讯视频的。我认为那肯定不是用微信录制的，而是通过某些手段实现的。随便搜索了一下，点开了一个教程，却被误导，于是决定写一篇不大必要的教程。&amp;site=http://127.0.0.1:4000"><i class="icon-qzone"></i></a>
+  <a id="twitter" target="_blank" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=http://127.0.0.1:4000/replace-wechat-sight&amp;text=替换 iOS 版微信小视频｜殷东亮的博客&amp;via="><i class="icon-twitter"></i></a>
+  <a id="facebook" target="_blank" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=http://127.0.0.1:4000/replace-wechat-sight&amp;t=替换 iOS 版微信小视频 | 殷东亮的博客"><i class="icon-facebook-official"></i></a>
+  <a id="gplus" target="_blank" title="Share to Google+" href="https://plus.google.com/share?url=http://127.0.0.1:4000/replace-wechat-sight"><i class="icon-gplus-squared"></i></a>
+</span>
+
+
+    <span class='like'><a href="javascript:void(0)" title=""><i class="icon-heart-empty"></i> <span class="disqus-like-count"></span></a></span>
+    <span class='view-code'><a href="javascript:void(0)" data-md="https://raw.githubusercontent.com/fooleap/fooleap.github.io/master/_posts/2015-12-31-replace-wechat-sight.md" title="在正文中查看源码"><i class="icon-file-code"></i>源码</a></span>
+    <span class="number-of-word"><i class="icon-calc"></i>528 字</span>
+    <span class="page-tags"><i class="icon-tags"></i><ul class="tags"> <li class="tag"><a href="/tags.html#微信" target="_blank" title="查看“微信”的相关文章">微信</a></li><li class="tag"><a href="/tags.html#小视频" target="_blank" title="查看“小视频”的相关文章">小视频</a></li><li class="tag"><a href="/tags.html#iPhone" target="_blank" title="查看“iPhone”的相关文章">iPhone</a></li><li class="tag"><a href="/tags.html#iOS" target="_blank" title="查看“iOS”的相关文章">iOS</a></li></ul></span>
+  </div>
+
+</article>
+
+<div class="comment" id="disqus_thread">
+    <a class="show-comments" href="http://127.0.0.1:4000/replace-wechat-sight#disqus_thread" data-disqus-identifier="/replace-wechat-sight"><span class="has-comment"><i class="icon-chat-empty"></i> 留下</span>评论 <span class="disqus-comment-count" data-disqus-url="http://127.0.0.1:4000/replace-wechat-sight"></span></a>
+</div>
+
+  
+      <footer class="site-footer">
+        <small>&copy; 2012-2016 by Jekyll Theme</small>
+      </footer>
+  
+    </main>
+
+  </div>
+  <div id="backtotop">
+    <i class="icon-up-big"></i>
+  </div>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  </body>
+</html>

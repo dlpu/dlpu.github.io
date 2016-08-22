@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html class="ie lte8"><![endif]-->
+<!--[if IE]><html class="ie"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Disqus 和多说在 Jekyll 的恩怨情仇 | 殷东亮的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.3, user-scalable=no" />
+    <meta name="description" content="介绍 Disqus 的缺点，以及怎么从 Disqus 迁移到多说，顺便使多说异步加载。" />
+    <meta name="keywords" content="多说, Jekyll, Disqus, JavaScript" />
+    <meta name="author" content="fooleap" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="canonical" href="http://127.0.0.1:4000/talk-about-duoshuo" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="alternate" type="application/atom+xml" title="殷东亮的博客 Atom Feed" href="http://blog.fooleap.org/atom.xml" />
+    <script type="text/javascript" src="/assets/js/modernizr.js"></script>
+    <!--[if lte IE 9]>
+      <script src="/assets/js/html5shiv.min.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+      <script src="/assets/js/classList.min.js"></script>
+      <script type="text/javascript">
+        document.createElement('main');
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+  <nav id="navigation">
+      <ul class="navigation-list hide">
+          <li><a href="/" class="navigation-item"><i class="icon-home"></i>首页</a></li>
+          <li><a href="/archive.html" class="navigation-item"><i class="icon-box"></i>归档</a></li>
+          <li><a href="/about.html" class="navigation-item"><i class="icon-user"></i>关于</a></li>
+      </ul>
+      <i id="menu" class="icon icon-menu"></i>
+  </nav>
+  
+  <div class="container">
+    <main class="wrapper">
+      <header class="site-header">
+        <h1>
+          Disqus 和多说在 Jekyll 的恩怨情仇
+        </h1>
+        <h2 class="sub-heading">
+            <i class="icon-calendar"></i><time datetime="2015-08-01">2015 年 08 月 01 日</time>
+        </h2>
+      </header>
+  <article class="post-content">
+    
+  <div class="main-content">
+<ul id="toc">
+  <li><a href="#id-disqus-" id="markdown-toc-id-disqus-">Disqus 的缺点</a></li>
+  <li><a href="#id-disqus--1" id="markdown-toc-id-disqus--1">Disqus 迁移到多说</a></li>
+  <li><a href="#id-section" id="markdown-toc-id-section">异步加载多说评论</a></li>
+  <li><a href="#id-section-1" id="markdown-toc-id-section-1">参考资料</a></li>
+</ul>
+
+<h2 id="id-disqus-">Disqus 的缺点</h2>
+
+<p>自从使用 Jekyll 以来，一直使用 Disqus 作为评论系统，作为社会化评论系统的鼻祖，无论是用户量还是使用体验，Disqus 都是一级棒的，具体就不多说，毕竟这篇文章也并不是为了介绍 Disqus。</p>
+
+<p>可是在特色社会的我国，Disqus 也有一些缺点：</p>
+
+<ul>
+  <li>访问慢，有被墙的风险，这点不说也心知肚明，如浙江移动就无法访问 http://a.disquscdn.com</li>
+  <li>允许使用的第三方登录都是要上梯的网站，比如 Facebook、Google、Twitter，国内网友除了一小部分爬墙好手外，访问困难</li>
+</ul>
+
+<p>可以看出基本上就是网络的问题，所以鄙人也将 Disqus 弄成点击加载，而不是打开页面就立即加载。</p>
+
+<h2 id="id-disqus--1">Disqus 迁移到多说</h2>
+
+<p>那么国内的替代品是什么呢？友言，畅言？虽然有时候不是很稳定，但广受好评的还数多说。然而，从 WordPress 迁移到 Jekyll 已经有几年的“寒舍”，迁移成本并不低，正常迁移有那么几个步骤。</p>
+
+<ol>
+  <li>将 Disqus 的评论导出</li>
+  <li>将 Disqus 的 XML 文件转换为多说使用的 JSON 文件</li>
+  <li>导入多说后台并部署代码</li>
+</ol>
+
+<p>几步骤中比较头疼的恐怕就是转换导出文件，在 GitHub 上很容易找到别人造的轮子，例如 <a href="https://github.com/GavinFoo/DISQUS2DUOSHUO">GavinFoo/DISQUS2DUOSHUO</a>。</p>
+
+<p><img src="http://source.fooleap.org/talk-about-duoshuo-01.png" alt="多说的文章管理" />
+▲多说的文章管理</p>
+
+<p>转换后导入，多说后台的文章管理中，可以看到比较“迷茫”的 <code class="highlighter-rouge">Thread Key</code>，看起来并不美观，而看了多说在 <a href="http://dev.duoshuo.com/docs/5003ecd94cab3e7250000008/" title="评论框调用代码参数说明">文档</a> 里也说 <code class="highlighter-rouge">data-thread-key</code> 是文章的唯一标识，要正确的显示当前页的评论靠的是这个参数。</p>
+
+<p>在 Jekyll 中，据 <a href="http://jekyllrb.com/docs/variables/" title="Variables - Jekyll">Jekyll 文档</a> 页面 ID 可以用 <code class="highlighter-rouge">page.id</code> 这个变量，意味着在多说中原来的 <code class="highlighter-rouge">Thread Key</code> 便要一个一个改过，可以从后台改，也可以从后台导出文章数据后编辑完再导入，显然后者效率较高，倘若文章较多，恐怕手动修改是不可取的（太费时间）。</p>
+
+<p>修改后如下：</p>
+
+<p><img src="http://source.fooleap.org/talk-about-duoshuo-02.png" alt="修改后的 Thread Key" />
+▲修改后的 <code class="highlighter-rouge">Thread Key</code></p>
+
+<p>到这里，在 Jekyll 中部署多说就很方便了，仅需根据多说官方的代码，配合以 Jekyll 的变量即可轻松解决。</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ds-thread"</span> <span class="na">data-thread-key=</span><span class="s">"{{ page.id }}"</span>  <span class="na">data-title=</span><span class="s">"{{ page.title }} | {{ site.title }}"</span> <span class="na">data-url=</span><span class="s">"{{ site.url }}{{ page.url }}"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span><span class="kd">var</span> <span class="nx">duoshuoQuery</span> <span class="o">=</span> <span class="p">{</span><span class="na">short_name</span><span class="p">:</span><span class="s2">"fooleap"</span><span class="p">};</span><span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://static.duoshuo.com/embed.js"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
+
+<p>这里注意 Jekyll 的配置文件里有设置 <code class="highlighter-rouge">title</code>、<code class="highlighter-rouge">url</code> 才可使用 <code class="highlighter-rouge">site.title</code>、<code class="highlighter-rouge">site.url</code> 变量。</p>
+
+<h2 id="id-section">异步加载多说评论</h2>
+
+<p>那么，如何将多说做成点击再加载呢？官方亦给出了文档，详细可摸 <a href="http://dev.duoshuo.com/docs/50b344447f32d30066000147" title="动态加载多说评论框的方法 - 多说开发者中心">动态加载多说评论框的方法</a>。Jekyll 又该如何做呢？根据官方的代码填鸭之后如下。</p>
+
+<p>1、加载多说基础代码，跟上面一样。</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span><span class="kd">var</span> <span class="nx">duoshuoQuery</span> <span class="o">=</span> <span class="p">{</span><span class="na">short_name</span><span class="p">:</span><span class="s2">"fooleap"</span><span class="p">};</span><span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://static.duoshuo.com/embed.js"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
+
+<p>2、使用 JS 编写一个加载评论的函数。</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">toggleDuoshuoComments</span><span class="p">(</span><span class="nx">container</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-thread-key'</span><span class="p">,</span> <span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/</span><span class="se">\.</span><span class="sr">/</span><span class="p">)[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-url'</span><span class="p">,</span> <span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-author-key'</span><span class="p">,</span> <span class="s1">'fooleap'</span><span class="p">);</span>
+    <span class="nx">DUOSHUO</span><span class="p">.</span><span class="nx">EmbedThread</span><span class="p">(</span><span class="nx">el</span><span class="p">);</span>
+    <span class="nx">jQuery</span><span class="p">(</span><span class="nx">container</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">el</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>这里采用 <code class="highlighter-rouge">location.pathname.split(/\./)[0]</code> 获取和 Jekyll 的 <code class="highlighter-rouge">page.id</code> 变量一样的字符串，<code class="highlighter-rouge">location.href</code> 则是页面 URL。</p>
+
+<p>3、添加一个可以按的按钮。</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"javascript:void(0);"</span> <span class="na">onclick=</span><span class="s">"toggleDuoshuoComments('#comment-box');"</span><span class="nt">&gt;</span>展开评论<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"comment-box"</span> <span class="nt">&gt;&lt;/div&gt;</span></code></pre></figure>
+
+<p>到这里就差不多了，可以参考 <a href="http://liam0205.me/2014/07/22/duoshuo-delay/" title="异步加载多说评论框以加快页面访问速度 - 始终">这篇文章</a> 将参数的获取改成采用 Jekyll 的变量，将按钮定制成可开关式的。</p>
+
+<p>然而鄙人并没有将 Disqus 换成多说，这是为什么呢？因为原来的评论嵌套导入到多说后乱了，可能是转换过程中出错。</p>
+
+<h2 id="id-section-1">参考资料</h2>
+
+<ul>
+  <li><a href="http://jekyllrb.com/docs/variables/">Variables - Jekyll</a></li>
+  <li><a href="http://dev.duoshuo.com/docs/50b344447f32d30066000147">动态加载多说评论框的方法 - 多说开发者中心</a></li>
+</ul>
+
+<p><strong>本文历史</strong></p>
+
+<ul>
+  <li>2015 年 08 月 01 日 完成初稿</li>
+</ul>
+
+  </div>
+
+  <div id="posts">
+    <div id="random-posts" class="posts">
+      <strong>猜你喜欢</strong>
+      <ul>
+      </ul>
+    </div>
+  
+    <div id="recent-posts" class="posts">
+      <strong>最近更新</strong>
+      <ul>
+      
+        <li><a href="/configuring-ip-address-by-specifying-gateway" title="配置特定 IP 地址走指定网关">配置特定 IP 地址走指定网关 </a></li>
+      
+        <li><a href="/add-google-satellite-layer-in-amap" title="高德地图 API 叠加谷歌地图图层">高德地图 API 叠加谷歌地图图层 </a></li>
+      
+        <li><a href="/from-codoon-to-nikeplus" title="将咕咚的数据导入到 Nike+">将咕咚的数据导入到 Nike+ </a></li>
+      
+        <li><a href="/the-influence-of-sports-apps" title="运动 APP 的作用">运动 APP 的作用 </a></li>
+      
+        <li><a href="/the-last-run-of-june" title="今年 6 月的最后一次跑步">今年 6 月的最后一次跑步 </a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div id="info" class="tech">
+
+    <span id="share">
+  <div id="qrcode"></div>
+  <a id="wechat" title="分享到微信" data-wechat-url="http://127.0.0.1:4000/talk-about-duoshuo" href="javascript:void(0);"><i class="icon-wechat"></i></a>
+  <a id="weibo" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=Disqus 和多说在 Jekyll 的恩怨情仇 | 殷东亮的博客 via @&amp;url=http://127.0.0.1:4000/talk-about-duoshuo&amp;type=3&amp;searchPic=1"><i class="icon-weibo"></i></a>
+  <a id="qzone" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://127.0.0.1:4000/talk-about-duoshuo&amp;title=Disqus 和多说在 Jekyll 的恩怨情仇 | 殷东亮的博客&amp;summary=介绍 Disqus 的缺点，以及怎么从 Disqus 迁移到多说，顺便使多说异步加载。&amp;site=http://127.0.0.1:4000"><i class="icon-qzone"></i></a>
+  <a id="twitter" target="_blank" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=http://127.0.0.1:4000/talk-about-duoshuo&amp;text=Disqus 和多说在 Jekyll 的恩怨情仇｜殷东亮的博客&amp;via="><i class="icon-twitter"></i></a>
+  <a id="facebook" target="_blank" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=http://127.0.0.1:4000/talk-about-duoshuo&amp;t=Disqus 和多说在 Jekyll 的恩怨情仇 | 殷东亮的博客"><i class="icon-facebook-official"></i></a>
+  <a id="gplus" target="_blank" title="Share to Google+" href="https://plus.google.com/share?url=http://127.0.0.1:4000/talk-about-duoshuo"><i class="icon-gplus-squared"></i></a>
+</span>
+
+
+    <span class='like'><a href="javascript:void(0)" title=""><i class="icon-heart-empty"></i> <span class="disqus-like-count"></span></a></span>
+    <span class='view-code'><a href="javascript:void(0)" data-md="https://raw.githubusercontent.com/fooleap/fooleap.github.io/master/_posts/2015-08-01-talk-about-duoshuo.md" title="在正文中查看源码"><i class="icon-file-code"></i>源码</a></span>
+    <span class="number-of-word"><i class="icon-calc"></i>2297 字</span>
+    <span class="page-tags"><i class="icon-tags"></i><ul class="tags"> <li class="tag"><a href="/tags.html#多说" target="_blank" title="查看“多说”的相关文章">多说</a></li><li class="tag"><a href="/tags.html#Jekyll" target="_blank" title="查看“Jekyll”的相关文章">Jekyll</a></li><li class="tag"><a href="/tags.html#Disqus" target="_blank" title="查看“Disqus”的相关文章">Disqus</a></li><li class="tag"><a href="/tags.html#JavaScript" target="_blank" title="查看“JavaScript”的相关文章">JavaScript</a></li></ul></span>
+  </div>
+
+</article>
+
+<div class="comment" id="disqus_thread">
+    <a class="show-comments" href="http://127.0.0.1:4000/talk-about-duoshuo#disqus_thread" data-disqus-identifier="/talk-about-duoshuo"><span class="has-comment"><i class="icon-chat-empty"></i> 留下</span>评论 <span class="disqus-comment-count" data-disqus-url="http://127.0.0.1:4000/talk-about-duoshuo"></span></a>
+</div>
+
+  
+      <footer class="site-footer">
+        <small>&copy; 2012-2016 by Jekyll Theme</small>
+      </footer>
+  
+    </main>
+
+  </div>
+  <div id="backtotop">
+    <i class="icon-up-big"></i>
+  </div>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  </body>
+</html>
