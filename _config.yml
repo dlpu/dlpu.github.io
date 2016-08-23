@@ -9,7 +9,7 @@ permalink: /:title
 highlighter: rouge
 gems: [jekyll-paginate]
 paginate: 50
-PATH: http://yindl.qiniudn.com
+IMG_PATH: http://yindl.qiniudn.com
 markdown: kramdown
 exclude: ['media', 'update.lftp', 'pushbaidu.sh', '.htaccess', "LICENSE", "README.md", "CNAME", "vendor", "Gemfile"]
 sass:

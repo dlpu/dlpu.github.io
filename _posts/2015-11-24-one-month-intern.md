@@ -3,6 +3,7 @@ layout: post
 title: 在公司实习一个月来的感悟
 category: tech
 tags: [实习, Python]
+thumb: 'http://yindl.qiniudn.com/the-intern-job.png'
 ---
 
 从上个月开始在[大连云匠](http://cloudist.cc)实习，在公司做python后端，一个月来收获了很多。
