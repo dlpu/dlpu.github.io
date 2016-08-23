@@ -6,19 +6,11 @@ tags: [关于, blog]
 js: true
 ---
 
-<div style="text-align: center;display: none;">
-    <img src="/image/wechat.png" height="200" alt="加我微信~">
-    <div style="text-align: center;display: inline" class="sns-img">
-        <a href="https://github.com/tcitry/" target="_blank"><img src="/image/github.png"></a>
-        <a href="https://twitter.com/tcitry/" target="_blank"><img src="/image/twitter.png"></a>
-        <a href="http://www.douban.com/people/yindongliang/" target="_blank"><img src="/image/douban.png"></a>
-        <a href="mailto:tcitry@gmail.com" target="_blank"><img src="/image/gmail.png"></a>
-    </div>
-</div>
 <div>
     殷东亮/男/1993.12<br>
     2012-2016 本科/大连工业大学/计算机科学与技术<br>
     擅长：Python技术栈、Django框架<br>
+    <span class="icon-github"></span>Github: <a href="https://github.com/tcitry/" target="_blank">https://github.com/tcitry/</a><br>
     <h3>成长经历</h3>
     2016.5至今/北京优集品/Python工程师<br>
     2016.6大学毕业<br>

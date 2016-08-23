@@ -100,56 +100,6 @@ var links = document.querySelectorAll('a');
 var clientWidth = document.documentElement.clientWidth;
 var clientHeight = document.documentElement.clientHeight;
 
-// Vim 键绑定
-var inCombo = false;
-var lineHeight = 20;
-var keys = [];
-var row = 0;
-function keysDown(event) {
-  keys[event.keyCode] = true;
-  if (keys[16] && keys[71]) {
-    window.scrollTo(0, document.body.scrollHeight );
-  }
-  if (keys[67]) {
-    if (!document.getElementById('dsq-1')) {
-      commentBtn.click();
-    }
-  }
-  if (keys[71]) {
-    if (!inCombo) {
-      inCombo = true;
-      setTimeout('inCombo = false;', 500);
-    } else {
-      window.scrollTo(0, 0);
-    }
-  }
-  if (keys[74]) {
-    if (row) {
-      window.scrollBy(0, lineHeight * row );
-      row = 0;
-    } else {
-      window.scrollBy(0, lineHeight);
-    }
-  }
-  if (keys[75]) {
-    if (row) {
-      window.scrollBy(0, -lineHeight * row );
-      row = 0;
-    } else {
-      window.scrollBy(0, -lineHeight);
-    }
-  }
-  if (event.keyCode >= 48 && event.keyCode <= 57) {
-    for (var i = 48; i <= 57; i ++) {
-      keys[i] = i - 48;
-    }
-    row = parseInt(row.toString() + keys[event.keyCode].toString());
-  }
-}
-function keysUp(event) {
-  keys[event.keyCode] = false;
-}
-
 // 返回顶部按钮
 var backToTop = document.getElementById('backtotop');
 function toggleToTop(){
@@ -578,19 +528,12 @@ function tagCloud() {
 setTimeout(function(){
   if ( location.hostname === 'yindongliang.com' ){
     var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement('script');
-      hm.src = '//hm.baidu.com/hm.js?fa7ec982118ebd236663169678264582';
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
-    })();
-    
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   
-    ga('create', 'UA-16717905-7', 'auto');
+    ga('create', 'UA-50554094-4', 'auto');
     ga('send', 'pageview');
   }
 }, 1000);

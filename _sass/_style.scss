@@ -601,11 +601,7 @@ pre, code {
   background-color: $lightgray;
   overflow: auto;
   padding: 5px 10px;
-  word-wrap: break-word;
-  white-space: pre-wrap; 
-  white-space: -moz-pre-wrap; 
-  white-space: -pre-wrap; 
-  white-space: -o-pre-wrap; 
+  word-wrap: break-word; 
   border-radius: 3px;
 }
 
