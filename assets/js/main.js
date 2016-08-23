@@ -296,69 +296,6 @@ if (wechat) {
   }
 }
 
-// 相关文章
-if (!Array.prototype.indexOf) {
-  Array.prototype.indexOf = function(elt /*, from*/) {
-  var len = this.length >>> 0;
-  var from = Number(arguments[1]) || 0;
-  from = (from < 0)
-    ? Math.ceil(from)
-    : Math.floor(from);
-    if (from < 0)
-      from += len;
-    for (; from < len; from++){
-      if (from in this &&
-        this[from] === elt)
-      return from;
-  }
-    return -1;
-  };
-}
-function randomPosts (count, post) {
-  var postsCount = count;
-  var posts = post;
-  var randomIndexUsed = [];
-  var counter = 0;
-  var numberOfPosts = 5;
-  var RandomPosts = document.querySelector('#random-posts ul');
-  while (counter < numberOfPosts) {
-    var randomIndex = Math.floor(Math.random() * postsCount);
-    if (randomIndexUsed.indexOf(randomIndex) == '-1') {
-      var postHref = posts[randomIndex].href;
-      var postTitle = posts[randomIndex].title;
-      RandomPosts.insertAdjacentHTML('beforeend', '<li><a href="' + postHref + '" title="' + postTitle + '">' + postTitle + '</a></li>\n');
-      randomIndexUsed.push(randomIndex);
-      counter++;
-    }
-  } 
-}
-var info = document.getElementById('info');
-function random (data) {
-  if (info.classList.contains('tech')){
-    var count = data.tech.length;
-    var post = data.tech;
-    randomPosts (count, post);
-  } else if (info.classList.contains('life')){
-    var count = data.life.length;
-    var post = data.life;
-    randomPosts (count, post);
-  } 
-}
-if(info){
-  if(info.classList.contains('tech') || info.classList.contains('life')){
-    var postsJson = 'http://' + location.host + '/assets/js/posts.json';
-    var xhrPosts = new XMLHttpRequest();
-    xhrPosts.open('GET', postsJson, true);
-    xhrPosts.send();
-    xhrPosts.onreadystatechange = function() {
-      if (xhrPosts.readyState == 4 && xhrPosts.status == 200) {
-        var posts = JSON.parse(xhrPosts.responseText);
-        random(posts);
-      }
-    }
-  }
-}
-
 // 查看源码
 var postContent = document.querySelector('.post-content');
 var mainContent = document.querySelector('.main-content');
