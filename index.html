@@ -2,37 +2,24 @@
 layout: default
 ---
 
-<section class="articles">
-  <ul>
-  {% for post in paginator.posts %}
-    <li>
-      {% if post.thumb %}<img class="thumbnail" src="{{ post.thumb }}?imageView2/1/w/48/h/48" />{% else %}{% if post.content contains site.IMG_PATH %}{% assign images = post.content | split:"<img " %}{% for image in images %}{% if image contains site.IMG_PATH %}{% if image contains 'imageView'%}{% assign thumbnail = image | split:"?imageView" | first | replace:'jpg',"jpg?imageView2/1/w/48/h/48/q/90" | replace:'png',"png?imageView2/1/w/48/h/48/q/90" |append:'"' %}{% else %}{% assign thumbnail = image | split:">" | first | remove:'_640' | replace:'jpg',"jpg?imageView2/1/w/48/h/48/q/90" | replace:'png',"png?imageView2/1/w/48/h/48/q/90" %}{% endif %}<img class="thumbnail" {{ thumbnail | split:' alt' | first }} alt="{{ post.title }}" />{% break %}{% endif %}{% endfor %}{% else %}<img class="thumbnail"  src="{{ site.IMG_PATH }}/default.png?imageView2/1/w/48/h/48/q/90" alt="{{ post.title }}" />{% endif %}{% endif %}
-    <div class="comment-count"><a class="disqus-comment-count" title="查看评论" data-disqus-url="{{site.url }}{{ post.url }}" href="{{ post.url }}#disqus_thread"></a></div>
-    <div class="post-infos">
-      <h3 class="post-title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
-      <abbr class="post-date timeago" title="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y 年 %m 月 %d 日" }}</abbr>
-    </div>
-    </li>
-  {% endfor %}
-  </ul>
+<section>
+	<ul>
+
+		{% for post in site.posts %}
+
+		<li>
+			<div class="post-date">
+				<span>{{ post.date | date: "%b %d, %Y" }}</span>
+			</div>
+			<div class="title">
+				<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+			</div>
+		</li>
+
+		{% endfor %}
+
+	</ul>
+	
 </section>
 
-<nav class="pagination">
-  <ul>
-    {% if paginator.next_page %}
-    <li class="older"><a href="/page{{paginator.next_page}}">&laquo; 较旧文章</a></li>
-    {% else %}
-    <li class="older disable">没有了</li>
-    {% endif %}
-    <li class="number">{{paginator.page}} / {{paginator.total_pages}}</li>
-    {% if paginator.previous_page %}
-      {% if paginator.previous_page == 1 %}
-    <li class="newer"><a href="/">较新文章 &raquo;</a></li>
-      {% else %}
-    <li class="newer"><a href="/page{{paginator.previous_page}}/">较新文章 &raquo;</a></li>
-      {% endif %}
-    {% else %}
-    <li class="newer"></li>
-    {% endif %}
-  </ul>
-</nav>
+

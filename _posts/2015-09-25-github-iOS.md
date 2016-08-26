@@ -1,9 +1,6 @@
 ---
 layout: post
 title: Github上关于iOS开发集合
-categore: tech
-tags: [iOS, github]
-thumb: 'http://yindl.qiniudn.com/apple_logo.png'
 ---
 
 一些别人总结好的东西，汇总一下，平常每次现找都好麻烦。。

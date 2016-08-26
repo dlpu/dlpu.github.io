@@ -1,29 +1,50 @@
-encoding: utf-8
-title: 殷东亮的博客
-email: tcitry@gmail.com
-keywords: [殷东亮, 后端, Linux, Python, Mac, iOS]
-description: "yindongliang's blog"
-url: 'http://yindongliang.com'
-timezone: Asia/Shanghai
-permalink: /:title
-highlighter: rouge
-gems: [jekyll-paginate]
-paginate: 50
-IMG_PATH: http://yindl.qiniudn.com
-markdown: kramdown
-exclude: ['media', 'update.lftp', 'pushbaidu.sh', '.htaccess', "LICENSE", "README.md", "CNAME", "vendor", "Gemfile"]
+# Site Info
+title:              "殷东亮的博客"
+description:        "殷东亮的博客"
+# google_verify:      epFgX0s_0RM3CdjwFcsewfXzPov2g8s9ZBOLyaIUH-o
+google_analytics:   UA-50554094-4 # Put your Google Analytics code
+
+# Author Info
+author_name:        "殷东亮"
+author_email:       tcitry@gmail.com
+author_gravatar:    4d5229b40a02e193dd556a6f62a056b7 # Gravatar md5 hash
+twitter_username:   tcitry
+
+# Site Settings
+baseurl:            "" # Base URL must end WITHOUT a slash, default: ""
+permalink:          /:title # Post permalink
+timezone:           Asia/Shanghai # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+# Site Build
+highlighter:        rouge
+markdown:           kramdown
 sass:
-  sass_dir: _sass
-  style: :compressed
-kramdown: 
-  auto_ids:       true
-  auto_id_prefix: 'id-'
-  toc_levels:     '2,3'
-  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+    style:          :compressed
+
+# Other Params
+include:            [ "robots.txt" ]
+exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile" ]
+gems:
+  - jekyll-sitemap
+
+compress_html:
+    clippings:      all
+    ingore:
+        envs:       [ "test" ]
+
 defaults:
   -
     scope:
-      path: '_posts'
-      type: posts 
+      path:         ""
     values:
-      is_post: true
+      layout:       "null"
+  -
+    scope:
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      type:         "posts"
+    values:
+      layout:       "post"

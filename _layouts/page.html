@@ -1,10 +1,13 @@
 ---
 layout: default
 ---
-<article class="post-content">
-  {{ content | replace_first:'markdown-toc','toc' }}
 
-  <div id="info" class="{{ page.categories }}">
-  
-  </div>
+<article>
+
+	<h1 class="title">{{ page.title }}</h1>
+
+	<div class="divider"></div>
+
+	{{ content }}
+
 </article>
