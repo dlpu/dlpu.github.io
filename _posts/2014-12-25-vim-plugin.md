@@ -13,7 +13,7 @@ alias vi=vim
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim 
 ```
 
-[在这里](https://github.com/tcitry/my-tools/blob/master/vimrc)是我的.vimrc的配置。
+[在这里](https://github.com/tcitry/tools/blob/master/vimrc)是我的.vimrc的配置。
 
 ## 常用插件推荐
 
