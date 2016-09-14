@@ -25,7 +25,7 @@ img {
   display: inline;
 }
 a {
-  color: #468DF0;
+  color: #dd0000;
   text-decoration: none;
   &.image {
     display: block;
@@ -123,7 +123,7 @@ span[data-note] {
   -webkit-animation-name: bounce;
   a {
     background: #ddd url("gravatar_wrapper.png");
-    color: #000;
+    color: #dd0000;
     text-decoration: none;
     font-weight: 700;
     height: 100px;
@@ -137,7 +137,7 @@ span[data-note] {
     box-sizing: border-box;
     &:hover,
     &:focus {
-      background: #f14e32;
+      background: #dd0000;
     }
     &:hover + .logo-prompt,
     &:focus + .logo-prompt {
@@ -211,7 +211,7 @@ pre {
   font-family: consola,monospace;
 }
 code {
-  color: #f14e32;
+  color: #dd0000;
   background: #eee;
   padding: 2px 4px;
   font-size: 14px;
