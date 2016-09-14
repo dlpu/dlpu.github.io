@@ -1,9 +1,10 @@
 ---
 layout: post
 title: Ubuntu下部署Django应用
+published: true
 ---
 
-做了一个Django小应用，主要内容是一个论坛，源码在[Github](https://github.com/tcitry/dlpucsdn), 经过好几天的研究，也可以在服务器端运行了，以下所有代码中的操作都需要在命令行运行
+做了一个Django小应用，主要内容是一个论坛，源码在[Github](https://github.com/tcitry/dlpucsdn), 经过好几天的研究，也可以在服务器端运行了，以下所有代码中的操作都需要在命令行运行。
 
 ## 安装mysql
 
