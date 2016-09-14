@@ -123,7 +123,7 @@ span[data-note] {
   -webkit-animation-name: bounce;
   a {
     background: #ddd url("gravatar_wrapper.png");
-    color: #dd0000;
+    color: #f14e32;
     text-decoration: none;
     font-weight: 700;
     height: 100px;
@@ -137,7 +137,7 @@ span[data-note] {
     box-sizing: border-box;
     &:hover,
     &:focus {
-      background: #dd0000;
+      background: #f14e32;
     }
     &:hover + .logo-prompt,
     &:focus + .logo-prompt {
@@ -328,12 +328,12 @@ section {
       a {
         text-decoration: none;
         border: 0;
-        color: #000;
+        color: #dd0000;
         box-sizing: border-box;
       }
       .post-date {
-        float: right;
-        margin: 0 0 0 20px;
+        float: left;
+        margin: 0 20px 0 0;
       }
       span {
         display: inline-block;
